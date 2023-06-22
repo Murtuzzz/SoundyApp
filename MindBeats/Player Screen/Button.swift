@@ -9,19 +9,9 @@ import UIKit
 
 final class ButtonView: UIButton {
     
-    
-//    let startButton: UIButton = {
-//        let button = UIButton(type: .system)
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        button.tintColor = R.Colors.background
-//
-//        button.layer.cornerRadius = 5
-//        return button
-//    }()
-    
-    init(buttonImage: UIImage) {
+    init(buttonImage: UIImage? = nil, type: UIButton.ButtonType) {
         super.init(frame: .zero)
-//        addSubview(startButton)
+        
         setImage(buttonImage, for: .normal)
         translatesAutoresizingMaskIntoConstraints = false
         tintColor = R.Colors.background

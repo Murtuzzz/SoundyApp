@@ -77,11 +77,19 @@ final class MainView: UIViewController {
         constraints()
         view.backgroundColor = R.Colors.background
         lofiButton.addTarget(self, action: #selector(loFiController), for: .touchUpInside)
+        soundsButton.addTarget(self, action: #selector(natureController), for: .touchUpInside)
     }
     
     @objc
     func loFiController() {
         navigationController?.pushViewController(MusicController(), animated: true)
+        
+    }
+    
+    @objc
+    func natureController() {
+        navigationController?.pushViewController(SoundsController(), animated: true)
+        
     }
     
     func constraints() {

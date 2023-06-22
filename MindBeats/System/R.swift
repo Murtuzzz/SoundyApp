@@ -18,7 +18,7 @@ enum R {
         static let background = UIColor(hexString: "#F0E9E0")
         static let inactive = UIColor(hexString: "#E4C8A2")
         static let orange = UIColor(hexString: "#FF9C41")
-        static let blueBG = UIColor(hexString: "#E5D1FA")
+        static let blueBG = UIColor(hexString: "#293447")
         
     }
     enum Images {

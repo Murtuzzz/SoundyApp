@@ -30,21 +30,6 @@ final class MusicController: UIViewController {
         return view
     }()
     
-    private let durationLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .systemGray
-        label.text = "00:00"
-        return label
-    }()
-    
-    private let durationLabelFull: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .systemGray
-        return label
-    }()
-    
     private let slider: UISlider = {
         let slider = UISlider()
         slider.translatesAutoresizingMaskIntoConstraints = false
@@ -60,15 +45,22 @@ final class MusicController: UIViewController {
         let button = UIButton(type: .system)
         button.setImage(UIImage(systemName: "play.fill"), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .black
+        button.backgroundColor = R.Colors.blueBG
         button.tintColor = .white
         button.layer.cornerRadius = 30
         return button
     }()
     
-    private let repeatButton = ButtonView(buttonImage: UIImage(systemName: "repeat")!)
-    private let nextButton = ButtonView(buttonImage: UIImage(systemName: "forward.fill")!)
-    private let prevButton = ButtonView(buttonImage: UIImage(systemName: "backward.fill")!)
+    private let repeatButton: ButtonView = {
+        let button = ButtonView(buttonImage: UIImage(systemName: "repeat")!, type: .system)
+        button.backgroundColor = .black.withAlphaComponent(0.3)
+        button.tintColor = .white
+        button.layer.cornerRadius = 25
+        
+        return button
+    }()
+    private let nextButton = ButtonView(buttonImage: UIImage(systemName: "forward.fill")!,type: .system)
+    private let prevButton = ButtonView(buttonImage: UIImage(systemName: "backward.fill")!,type: .system)
     
     private var player = AVAudioPlayer()
     
@@ -76,17 +68,12 @@ final class MusicController: UIViewController {
         slider.value = Float(player.currentTime)
     }
     
-    @objc func durationLabelCount() {
-        let durationLabelSec = Int(player.currentTime)
-        durationLabel.text = dateFormatter(durationLabelSec)
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        let thumbImageSize = CGSize(width: 18, height: 12) // Установите нужный размер для кастомного thumb
+        let thumbImageSize = CGSize(width: 0.1, height: 0.1) // Установите нужный размер для кастомного thumb
         if let thumbImage = createThumbImage(withSize: thumbImageSize) {
             slider.setThumbImage(thumbImage, for: .normal)
         }
@@ -126,11 +113,9 @@ final class MusicController: UIViewController {
             let audioPath = Bundle.main.path(forResource: "\(musicList[num])", ofType: "mp3")
             try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
             slider.maximumValue = Float(player.duration)
-            durationLabelFull.text = "\(Int(player.duration))"
         } catch {
             print("Error")
         }
-        durationLabelFull.text = dateFormatter(Int(player.duration))
         
     }
     
@@ -208,7 +193,6 @@ final class MusicController: UIViewController {
         
         timer?.invalidate() // Остановите существующий таймер, если он уже запущен
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(durationLabelCount), userInfo: nil, repeats: true)
     }
     
     func rotateView(_ viewToRotate: UIView) {
@@ -248,10 +232,10 @@ final class MusicController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            repeatButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -25),
-            repeatButton.bottomAnchor.constraint(equalTo: albumView.bottomAnchor, constant: -25),
-            repeatButton.heightAnchor.constraint(equalToConstant: 20),
-            repeatButton.widthAnchor.constraint(equalToConstant: 20),
+            repeatButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
+            repeatButton.bottomAnchor.constraint(equalTo: albumView.bottomAnchor, constant: -100),
+            repeatButton.heightAnchor.constraint(equalToConstant: 50),
+            repeatButton.widthAnchor.constraint(equalToConstant: 50),
             
             musicNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             musicNavBar.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
@@ -261,27 +245,15 @@ final class MusicController: UIViewController {
             
             mainDisk.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             mainDisk.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-//            mainDisk.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -350),
-//            mainDisk.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
-//            mainDisk.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-//            mainDisk.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
-            
-
             
             albumView.topAnchor.constraint(equalTo: view.topAnchor),
             albumView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             albumView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             albumView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            durationLabel.leadingAnchor.constraint(equalTo: slider.leadingAnchor),
-            durationLabel.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -20),
-            
-            durationLabelFull.trailingAnchor.constraint(equalTo: slider.trailingAnchor),
-            durationLabelFull.bottomAnchor.constraint(equalTo: slider.topAnchor, constant: -20),
-            
             slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            slider.topAnchor.constraint(equalTo: mainDisk.bottomAnchor, constant: 70),
-            slider.widthAnchor.constraint(equalToConstant: 100),
+            slider.topAnchor.constraint(equalTo: musicNavBar.bottomAnchor, constant: 5),
+            slider.widthAnchor.constraint(equalToConstant: 150),
             
             startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
 //            startButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 50),
@@ -334,7 +306,7 @@ extension MusicController {
         context?.addPath(path.cgPath)
         context?.fillPath()
         context?.addPath(path.cgPath)
-        context?.setLineWidth(2) // толщина обводки (можно изменить на желаемое значение)
+        //context?.setLineWidth(0) // толщина обводки (можно изменить на желаемое значение)
         context?.strokePath()
         
         let thumbImage = UIGraphicsGetImageFromCurrentImageContext()
