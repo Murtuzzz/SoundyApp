@@ -63,12 +63,17 @@ class SoundsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
-        view.backgroundColor = R.Colors.background
+        view.backgroundColor = R.Colors.greenBg
         constraints()
+        addNavBarButton(at: .left,and: UIImage(systemName: "arrow.left"))
         
-        title = "Sounds"
         
     }
+    
+    override func navBarLeftButtonHandler() {
+        navigationController?.popViewController(animated: true)
+    }
+    
     
     func addViews() {
         view.addSubview(scrollView)

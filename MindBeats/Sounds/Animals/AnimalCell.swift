@@ -21,8 +21,8 @@ class AnimalCollectionCell: UICollectionViewCell {
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderWidth = 1
-        view.layer.borderColor = R.Colors.blueBG.cgColor
-        view.backgroundColor = .white
+        view.layer.borderColor = R.Colors.greenBg.cgColor
+        view.backgroundColor = R.Colors.background
         return view
     }()
     
@@ -38,7 +38,7 @@ class AnimalCollectionCell: UICollectionViewCell {
     
     private let textBackground: UIView = {
         let view = UIImageView()
-        view.backgroundColor = R.Colors.blueBG
+        view.backgroundColor = R.Colors.bar
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 1
@@ -49,7 +49,7 @@ class AnimalCollectionCell: UICollectionViewCell {
     private let mainLabel: UILabel = {
         let label = UILabel()
         label.text = "Album"
-        label.textColor = .white
+        label.textColor = R.Colors.background
         label.textAlignment = .left
         label.font = R.Fonts.Italic(with: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +77,7 @@ class AnimalCollectionCell: UICollectionViewCell {
     
     public func configure(label: String, image: UIImage) {
         mainLabel.text = label
-        myImageView.image = image
+        myImageView.image = image.withRenderingMode(.alwaysTemplate)
         
     }
     
@@ -90,7 +90,7 @@ class AnimalCollectionCell: UICollectionViewCell {
             condition = false
         } else {
             condition = true
-            container.backgroundColor = .white
+            container.backgroundColor = R.Colors.background
             myImageView.tintColor = R.Colors.blueBG
             player.stop()
         }

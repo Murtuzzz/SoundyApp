@@ -29,7 +29,7 @@ final class OtherCollection: UIView, UICollectionViewDelegateFlowLayout, UIColle
         layout.minimumInteritemSpacing = 1
         
         dataSource = [
-            .init(title: "Rain", image: UIImage(systemName: "cloud.bolt.rain.fill")!),
+            .init(title: "Keyboard", image: UIImage(systemName: "keyboard.fill")!),
             .init(title: "Waves", image: UIImage(systemName: "water.waves")!),
             .init(title: "Forest", image: UIImage(systemName: "tree")!),
             .init(title: "Fire", image: UIImage(systemName: "flame")!),

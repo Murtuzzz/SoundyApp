@@ -22,7 +22,7 @@ class OtherCollectionCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderWidth = 1
         view.layer.borderColor = R.Colors.blueBG.cgColor
-        view.backgroundColor = .white
+        view.backgroundColor = R.Colors.background
         return view
     }()
     
@@ -38,7 +38,7 @@ class OtherCollectionCell: UICollectionViewCell {
     
     private let textBackground: UIView = {
         let view = UIImageView()
-        view.backgroundColor = R.Colors.blueBG
+        view.backgroundColor = R.Colors.bar
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
         view.layer.borderWidth = 1
@@ -49,7 +49,7 @@ class OtherCollectionCell: UICollectionViewCell {
     private let mainLabel: UILabel = {
         let label = UILabel()
         label.text = "Album"
-        label.textColor = .white
+        label.textColor = R.Colors.background
         label.textAlignment = .left
         label.font = R.Fonts.Italic(with: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -86,14 +86,14 @@ class OtherCollectionCell: UICollectionViewCell {
     
     public func changeCondition(_ num: Int) {
         if (condition == true) {
-            container.backgroundColor = R.Colors.active
-            myImageView.tintColor = R.Colors.background
+            container.backgroundColor = .systemMint
+            myImageView.tintColor = .white
             createPlayer(num)
             player.play()
             condition = false
         } else {
             condition = true
-            container.backgroundColor = .white
+            container.backgroundColor = R.Colors.background
             myImageView.tintColor = R.Colors.blueBG
             player.stop()
         }

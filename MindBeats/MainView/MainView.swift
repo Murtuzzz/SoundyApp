@@ -9,15 +9,42 @@ import UIKit
 
 final class MainView: UIViewController {
     
-    private let shade: UIView = {
+    private let mainTitle: UILabel =  {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Mind Beats"
+        label.font = R.Fonts.Italic(with: 72)
+        label.numberOfLines = 2
+        label.adjustsFontForContentSizeCategory = true
+        label.adjustsFontSizeToFitWidth = true
+        label.textColor = .white
+        label.textAlignment = .center
+        label.layer.masksToBounds = true
+        return label
+    }()
+    
+    
+    
+    private let container: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .black
         view.layer.cornerRadius = 40
-        view.layer.shadowColor = (UIColor(ciColor: .gray)).cgColor
-        view.layer.shadowOpacity = 1.0;
-        view.layer.shadowRadius = 1.0;
-        view.layer.shadowOffset = CGSizeMake(8, 8);
+        return view
+    }()
+    
+    private let lofiImageView: UIImageView = {
+        let view = UIImageView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .black
+        view.layer.cornerRadius = 30
+        view.layer.masksToBounds = true
+        view.contentMode = .scaleAspectFill
+        view.image = UIImage(named: "bg2")
+//        view.layer.shadowColor = (UIColor(ciColor: .black)).cgColor
+//        view.layer.shadowOpacity = 1.0;
+//        view.layer.shadowRadius = 1.0;
+//        view.layer.shadowOffset = CGSizeMake(8, 8);
         return view
     }()
     
@@ -28,19 +55,21 @@ final class MainView: UIViewController {
         return view
     }()
     
-    private let shade2: UIView = {
-        let view = UIView()
+    private let soundsImageView: UIImageView = {
+        let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .black
-        view.layer.cornerRadius = 40
-        view.layer.shadowColor = (UIColor(ciColor: .gray)).cgColor
-        view.layer.shadowOpacity = 1.0;
-        view.layer.shadowRadius = 1.0;
-        view.layer.shadowOffset = CGSizeMake(8, 8);
+        view.layer.cornerRadius = 30
+        view.layer.masksToBounds = true
+        view.contentMode = .scaleAspectFill
+        view.image = UIImage(named: "bg4")
+//        view.layer.shadowColor = (UIColor(ciColor: .black)).cgColor
+//        view.layer.shadowOpacity = 1.0;
+//        view.layer.shadowRadius = 1.0;
+//        view.layer.shadowOffset = CGSizeMake(8, 8);
         return view
     }()
     
-    private let loFi: UILabel =  {
+    private let lofiTitle: UILabel =  {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Lo-Fi"
@@ -49,7 +78,7 @@ final class MainView: UIViewController {
         return label
     }()
     
-    private let sounds: UILabel =  {
+    private let soundsTitle: UILabel =  {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sounds"
@@ -61,38 +90,39 @@ final class MainView: UIViewController {
     private let soundsButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = R.Colors.inactive
-        button.setBackgroundImage(UIImage(named: "album2"), for: .normal)
-        button.layer.cornerRadius = 40
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 30
         button.layer.masksToBounds = true
-        button.alpha = 0.7
+        button.alpha = 0.3
         return button
     }()
     
     private let lofiButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = R.Colors.inactive
-        button.setBackgroundImage(UIImage(named: "Lo-FiCover"), for: .normal)
-        button.layer.cornerRadius = 40
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 30
         button.layer.masksToBounds = true
-        button.alpha = 0.6
+        button.alpha = 0.4
         return button
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.addSubview(backgroundView)
-        view.addSubview(shade)
-        view.addSubview(shade2)
+        view.addSubview(backgroundView)
+        view.addSubview(container)
+        view.addSubview(lofiImageView)
+        view.addSubview(soundsImageView)
         view.addSubview(lofiButton)
         view.addSubview(soundsButton)
-        view.addSubview(loFi)
-        view.addSubview(sounds)
-        view.backgroundColor = .white
+        view.addSubview(lofiTitle)
+        view.addSubview(soundsTitle)
+        view.addSubview(mainTitle)
+        
+       
         
         constraints()
-        view.backgroundColor = R.Colors.background
+        view.backgroundColor = R.Colors.greenBg
         lofiButton.addTarget(self, action: #selector(loFiController), for: .touchUpInside)
         soundsButton.addTarget(self, action: #selector(natureController), for: .touchUpInside)
     }
@@ -111,46 +141,64 @@ final class MainView: UIViewController {
     
     
     func constraints() {
-        lofiButton.translatesAutoresizingMaskIntoConstraints = false
-        soundsButton.translatesAutoresizingMaskIntoConstraints = false
         
         
         NSLayoutConstraint.activate([
             
-            lofiButton.heightAnchor.constraint(equalToConstant: 250),
-            lofiButton.widthAnchor.constraint(equalToConstant: 250),
-            lofiButton.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),
+          
+            
+            
+            mainTitle.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 30),
+            mainTitle.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -30),
+            mainTitle.topAnchor.constraint(equalTo: container.topAnchor, constant: 30),
+            mainTitle.bottomAnchor.constraint(equalTo: soundsButton.topAnchor, constant: -10),
+            
+            
+            container.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            container.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            container.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
+            container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+            container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),
+            //container.bottomAnchor.constraint(equalTo: view.topAnchor, constant: -50),
+            
+            lofiButton.heightAnchor.constraint(equalToConstant: 150),
+            lofiButton.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
+            lofiButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
+            lofiButton.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -20),
             lofiButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            shade.heightAnchor.constraint(equalToConstant: 250),
-            shade.widthAnchor.constraint(equalToConstant: 250),
-            shade.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 150),
-            shade.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            lofiImageView.heightAnchor.constraint(equalToConstant: 150),
+            lofiImageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
+            lofiImageView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
+            lofiImageView.bottomAnchor.constraint(equalTo: container.bottomAnchor, constant: -20),
+            lofiImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            loFi.centerYAnchor.constraint(equalTo: lofiButton.centerYAnchor),
-            loFi.centerXAnchor.constraint(equalTo: lofiButton.centerXAnchor),
-            loFi.heightAnchor.constraint(equalToConstant: 52),
-            loFi.widthAnchor.constraint(equalToConstant: 105),
+            lofiTitle.centerYAnchor.constraint(equalTo: lofiButton.centerYAnchor),
+            lofiTitle.centerXAnchor.constraint(equalTo: lofiButton.centerXAnchor),
+            lofiTitle.heightAnchor.constraint(equalToConstant: 52),
+            lofiTitle.widthAnchor.constraint(equalToConstant: 105),
             
-            soundsButton.heightAnchor.constraint(equalToConstant: 250),
-            soundsButton.widthAnchor.constraint(equalToConstant: 250),
-            soundsButton.bottomAnchor.constraint(equalTo: lofiButton.topAnchor, constant: -60),
+            soundsButton.heightAnchor.constraint(equalToConstant: 150),
+            soundsButton.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
+            soundsButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
+            soundsButton.bottomAnchor.constraint(equalTo: lofiButton.topAnchor, constant: -20),
             soundsButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            shade2.heightAnchor.constraint(equalToConstant: 250),
-            shade2.widthAnchor.constraint(equalToConstant: 250),
-            shade2.bottomAnchor.constraint(equalTo: lofiButton.topAnchor, constant: -60),
-            shade2.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            soundsImageView.heightAnchor.constraint(equalToConstant: 150),
+            soundsImageView.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 20),
+            soundsImageView.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -20),
+            soundsImageView.bottomAnchor.constraint(equalTo: lofiButton.topAnchor, constant: -20),
+            soundsImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            sounds.centerYAnchor.constraint(equalTo: soundsButton.centerYAnchor),
-            sounds.centerXAnchor.constraint(equalTo: soundsButton.centerXAnchor),
-            sounds.heightAnchor.constraint(equalToConstant: 52),
-            sounds.widthAnchor.constraint(equalToConstant: 150),
+            soundsTitle.centerYAnchor.constraint(equalTo: soundsButton.centerYAnchor),
+            soundsTitle.centerXAnchor.constraint(equalTo: soundsButton.centerXAnchor),
+            soundsTitle.heightAnchor.constraint(equalToConstant: 52),
+            soundsTitle.widthAnchor.constraint(equalToConstant: 150),
             
-//            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
-//            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 //
         ])
     }

@@ -14,11 +14,12 @@ enum NavBarPosition {
 
 extension UIViewController {
     
-    func addNavBarButton(at position: NavBarPosition, with title: String) {
+    func addNavBarButton(at position: NavBarPosition, with title: String? = nil, and image: UIImage? = nil) {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
-        button.setTitleColor(R.Colors.active, for: .normal)
-        button.setTitleColor(R.Colors.inactive, for: .disabled)
+        button.setImage(image, for: .normal)
+        button.tintColor = R.Colors.background
+        
         button.titleLabel?.font = R.Fonts.Italic(with: 20)
         
         switch position {

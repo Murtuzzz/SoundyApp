@@ -32,7 +32,8 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         
         dataSource = [
             .init(title: "Birds", image: UIImage(systemName: "bird.fill")!),
-            .init(title: "Cat", image: UIImage(systemName: "pawprint.circle.fill")!),
+            .init(title: "Cats", image: UIImage(named: "cats")!),
+            .init(title: "Frogs", image: UIImage(named: "frogs")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

@@ -78,7 +78,7 @@ final class MusicController: UIViewController {
             slider.setThumbImage(thumbImage, for: .normal)
         }
         
-        view.addSubview(albumView)
+        //view.addSubview(albumView)
         view.addSubview(slider)
         view.addSubview(mainDisk)
         view.addSubview(musicNavBar)
@@ -87,6 +87,7 @@ final class MusicController: UIViewController {
         view.addSubview(prevButton)
         view.addSubview(startButton)
         view.addSubview(slider)
+        view.backgroundColor = R.Colors.greenBg
         constraints()
         
         
@@ -233,7 +234,7 @@ final class MusicController: UIViewController {
         NSLayoutConstraint.activate([
             
             repeatButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
-            repeatButton.bottomAnchor.constraint(equalTo: albumView.bottomAnchor, constant: -100),
+            repeatButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
             repeatButton.heightAnchor.constraint(equalToConstant: 50),
             repeatButton.widthAnchor.constraint(equalToConstant: 50),
             
@@ -242,15 +243,14 @@ final class MusicController: UIViewController {
             
             mainDisk.heightAnchor.constraint(equalToConstant: 300),
             mainDisk.widthAnchor.constraint(equalToConstant: 300),
-            
             mainDisk.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             mainDisk.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-            albumView.topAnchor.constraint(equalTo: view.topAnchor),
-            albumView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            albumView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            albumView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-            
+//            albumView.topAnchor.constraint(equalTo: view.topAnchor),
+//            albumView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+//            albumView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+//            albumView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+//
             slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             slider.topAnchor.constraint(equalTo: musicNavBar.bottomAnchor, constant: 5),
             slider.widthAnchor.constraint(equalToConstant: 150),

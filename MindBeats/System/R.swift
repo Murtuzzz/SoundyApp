@@ -9,13 +9,13 @@ import UIKit
 
 enum R {
     enum Colors {
-        
+        static let greenBg = UIColor(hexString: "#63846a")
         static let green = UIColor(hexString: "#00D971")
         static let sep = UIColor(hexString: "#2D344B")
         static let text = UIColor(hexString: "#EBEBF5")
         static let active = UIColor(hexString: "#4870FF")
-        static let bar = UIColor(hexString: "#A16630")
-        static let background = UIColor(hexString: "#63846a")
+        static let bar = UIColor(hexString: "#8b5b3c")
+        static let background = UIColor(hexString: "#fff1de")
         static let inactive = UIColor(hexString: "#E4C8A2")
         static let orange = UIColor(hexString: "#FF9C41")
         static let blueBG = UIColor(hexString: "#293447")

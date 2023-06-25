@@ -9,6 +9,13 @@ import UIKit
 
 final class MusicHeaders: UIView {
     
+    private let container: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
+    
     private let title: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 22)
@@ -20,7 +27,7 @@ final class MusicHeaders: UIView {
     private let subTitle: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 18)
-        label.textColor = .gray
+        label.textColor = R.Colors.background
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -32,6 +39,7 @@ final class MusicHeaders: UIView {
         subTitle.text = desc
         addSubview(title)
         addSubview(subTitle)
+        
       
         constraints()
         
