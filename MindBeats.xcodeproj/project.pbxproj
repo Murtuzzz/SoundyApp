@@ -27,14 +27,12 @@
 		B41FBE4A2A42726E00037A54 /* Rain.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE492A42726E00037A54 /* Rain.mp3 */; };
 		B41FBE4C2A42740800037A54 /* SilentWood.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE4B2A42740800037A54 /* SilentWood.mp3 */; };
 		B41FBE4E2A42757200037A54 /* PurpleDream.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE4D2A42757200037A54 /* PurpleDream.mp3 */; };
-		B41FBE502A448E3800037A54 /* PlayerBackgroung.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE4F2A448E3800037A54 /* PlayerBackgroung.swift */; };
 		B41FBE6E2A44A14800037A54 /* SoundsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE6D2A44A14800037A54 /* SoundsController.swift */; };
 		B41FBE722A44A18600037A54 /* OtherCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE712A44A18600037A54 /* OtherCollection.swift */; };
 		B41FBE742A44A19300037A54 /* OtherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE732A44A19300037A54 /* OtherCell.swift */; };
 		B41FBE772A44A1C500037A54 /* AnimalCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE762A44A1C500037A54 /* AnimalCollection.swift */; };
 		B41FBE792A44A1D400037A54 /* AnimalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE782A44A1D400037A54 /* AnimalCell.swift */; };
 		B41FBE7B2A44A21800037A54 /* SoundsHeaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE7A2A44A21800037A54 /* SoundsHeaders.swift */; };
-		B41FBE7D2A44A23000037A54 /* SoundsHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE7C2A44A23000037A54 /* SoundsHeaderView.swift */; };
 		B41FBE7F2A44A27A00037A54 /* NatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE7E2A44A27A00037A54 /* NatureCell.swift */; };
 		B41FBE822A44A2AA00037A54 /* NatureCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE812A44A2AA00037A54 /* NatureCollectionView.swift */; };
 		B41FBE842A46E76F00037A54 /* birds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE832A46E76F00037A54 /* birds.mp3 */; };
@@ -43,6 +41,7 @@
 		B41FBE8C2A46FCD600037A54 /* Fire.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE8B2A46FCD600037A54 /* Fire.mp3 */; };
 		B41FBE932A47063C00037A54 /* Cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE922A47063C00037A54 /* Cat.mp3 */; };
 		B41FBE952A47082600037A54 /* Waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE942A47082600037A54 /* Waves.mp3 */; };
+		B41FBE972A48AC2700037A54 /* Keyboard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE962A48AC2700037A54 /* Keyboard.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,14 +67,12 @@
 		B41FBE492A42726E00037A54 /* Rain.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Rain.mp3; path = ../../../../../../Downloads/Rain.mp3; sourceTree = "<group>"; };
 		B41FBE4B2A42740800037A54 /* SilentWood.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = SilentWood.mp3; path = ../../../../../../Downloads/SilentWood.mp3; sourceTree = "<group>"; };
 		B41FBE4D2A42757200037A54 /* PurpleDream.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PurpleDream.mp3; path = ../../../../../../Downloads/PurpleDream.mp3; sourceTree = "<group>"; };
-		B41FBE4F2A448E3800037A54 /* PlayerBackgroung.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBackgroung.swift; sourceTree = "<group>"; };
 		B41FBE6D2A44A14800037A54 /* SoundsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsController.swift; sourceTree = "<group>"; };
 		B41FBE712A44A18600037A54 /* OtherCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCollection.swift; sourceTree = "<group>"; };
 		B41FBE732A44A19300037A54 /* OtherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherCell.swift; sourceTree = "<group>"; };
 		B41FBE762A44A1C500037A54 /* AnimalCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCollection.swift; sourceTree = "<group>"; };
 		B41FBE782A44A1D400037A54 /* AnimalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalCell.swift; sourceTree = "<group>"; };
 		B41FBE7A2A44A21800037A54 /* SoundsHeaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsHeaders.swift; sourceTree = "<group>"; };
-		B41FBE7C2A44A23000037A54 /* SoundsHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundsHeaderView.swift; sourceTree = "<group>"; };
 		B41FBE7E2A44A27A00037A54 /* NatureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureCell.swift; sourceTree = "<group>"; };
 		B41FBE812A44A2AA00037A54 /* NatureCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NatureCollectionView.swift; sourceTree = "<group>"; };
 		B41FBE832A46E76F00037A54 /* birds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = birds.mp3; path = ../../../../../../Downloads/birds.mp3; sourceTree = "<group>"; };
@@ -84,6 +81,7 @@
 		B41FBE8B2A46FCD600037A54 /* Fire.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Fire.mp3; path = ../../../../../../Downloads/Fire.mp3; sourceTree = "<group>"; };
 		B41FBE922A47063C00037A54 /* Cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Cat.mp3; path = ../../../../../../Downloads/Cat.mp3; sourceTree = "<group>"; };
 		B41FBE942A47082600037A54 /* Waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Waves.mp3; path = ../../../../../../Downloads/Waves.mp3; sourceTree = "<group>"; };
+		B41FBE962A48AC2700037A54 /* Keyboard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Keyboard.mp3; path = ../../../../../../Downloads/Keyboard.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +133,6 @@
 				B401E38D2A3D73870084557F /* MusicController.swift */,
 				B401E3B02A404F350084557F /* Button.swift */,
 				B401E3AA2A3F99BD0084557F /* Disk.swift */,
-				B41FBE4F2A448E3800037A54 /* PlayerBackgroung.swift */,
 			);
 			path = "Player Screen";
 			sourceTree = "<group>";
@@ -156,6 +153,7 @@
 		B41FBE3F2A41945900037A54 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
+				B41FBE962A48AC2700037A54 /* Keyboard.mp3 */,
 				B41FBE942A47082600037A54 /* Waves.mp3 */,
 				B41FBE922A47063C00037A54 /* Cat.mp3 */,
 				B41FBE8B2A46FCD600037A54 /* Fire.mp3 */,
@@ -189,7 +187,6 @@
 				B41FBE702A44A16D00037A54 /* Other */,
 				B41FBE6D2A44A14800037A54 /* SoundsController.swift */,
 				B41FBE7A2A44A21800037A54 /* SoundsHeaders.swift */,
-				B41FBE7C2A44A23000037A54 /* SoundsHeaderView.swift */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -287,6 +284,7 @@
 				B41FBE482A42208A00037A54 /* StormClouds.mp3 in Resources */,
 				B41FBE4C2A42740800037A54 /* SilentWood.mp3 in Resources */,
 				B41FBE4A2A42726E00037A54 /* Rain.mp3 in Resources */,
+				B41FBE972A48AC2700037A54 /* Keyboard.mp3 in Resources */,
 				B401E3932A3D73890084557F /* Assets.xcassets in Resources */,
 				B401E39E2A3D74F30084557F /* PurrpleCat.mp3 in Resources */,
 				B41FBE3A2A4077B400037A54 /* Heart-Of-The-Ocean.mp3 in Resources */,
@@ -309,7 +307,6 @@
 				B41FBE742A44A19300037A54 /* OtherCell.swift in Sources */,
 				B401E3AD2A40474E0084557F /* NavigationBar.swift in Sources */,
 				B41FBE7F2A44A27A00037A54 /* NatureCell.swift in Sources */,
-				B41FBE7D2A44A23000037A54 /* SoundsHeaderView.swift in Sources */,
 				B401E3A02A3D75440084557F /* Colors.swift in Sources */,
 				B401E38A2A3D73870084557F /* AppDelegate.swift in Sources */,
 				B41FBE432A41AC9A00037A54 /* MainScreenButtons.swift in Sources */,
@@ -317,7 +314,6 @@
 				B41FBE6E2A44A14800037A54 /* SoundsController.swift in Sources */,
 				B41FBE452A41D8AB00037A54 /* Ext.swift in Sources */,
 				B41FBE7B2A44A21800037A54 /* SoundsHeaders.swift in Sources */,
-				B41FBE502A448E3800037A54 /* PlayerBackgroung.swift in Sources */,
 				B401E3A22A3D768B0084557F /* R.swift in Sources */,
 				B41FBE822A44A2AA00037A54 /* NatureCollectionView.swift in Sources */,
 				B401E3B12A404F350084557F /* Button.swift in Sources */,

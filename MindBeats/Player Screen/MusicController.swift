@@ -21,14 +21,12 @@ final class MusicController: UIViewController {
     
     let musicList: [String] = ["PurrpleCat", "Heart-Of-The-Ocean","StormClouds","Rain","SilentWood","PurpleDream"]
     
-    
-    
     private let albumView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "Background")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
     
     private let slider: UISlider = {
         let slider = UISlider()
@@ -72,13 +70,19 @@ final class MusicController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        blurEffectView.frame = view.bounds
+        //blurEffectView.alpha = 0.9
         
         let thumbImageSize = CGSize(width: 0.1, height: 0.1) // Установите нужный размер для кастомного thumb
         if let thumbImage = createThumbImage(withSize: thumbImageSize) {
             slider.setThumbImage(thumbImage, for: .normal)
         }
         
-        //view.addSubview(albumView)
+        view.addSubview(albumView)
+        view.addSubview(blurEffectView)
         view.addSubview(slider)
         view.addSubview(mainDisk)
         view.addSubview(musicNavBar)
@@ -87,9 +91,10 @@ final class MusicController: UIViewController {
         view.addSubview(prevButton)
         view.addSubview(startButton)
         view.addSubview(slider)
-        view.backgroundColor = R.Colors.greenBg
+                //view.backgroundColor = R.Colors.greenBg
         constraints()
         
+        albumView.image = UIImage(named: musicList[index])
         
         startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
         nextButton.addTarget(self, action: #selector(nextSong), for: .touchUpInside)
@@ -141,22 +146,27 @@ final class MusicController: UIViewController {
         createPlayer(index)
         startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         mainDisk.imageView.image = UIImage(named: musicList[index])
+        albumView.image = UIImage(named: musicList[index])
         print(index)
         
     }
     
     @objc
     func prevSong() {
-        player.stop()
-        self.rotationAngle = 0.0
-        mainDisk.layer.removeAllAnimations()
-        mainDisk.transform = CGAffineTransform(rotationAngle: 0)
-        isRotating = false
-        index -= 1
-        createPlayer(index)
-        startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        mainDisk.imageView.image = UIImage(named: musicList[index])
-        print(index)
+        if player.duration - player.currentTime == player.duration {
+            player.stop()
+            self.rotationAngle = 0.0
+            mainDisk.layer.removeAllAnimations()
+            mainDisk.transform = CGAffineTransform(rotationAngle: 0)
+            isRotating = false
+            index -= 1
+            createPlayer(index)
+            startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            mainDisk.imageView.image = UIImage(named: musicList[index])
+            print(index)
+        } else {
+            player.currentTime = 0
+        }
         
     }
     
@@ -177,17 +187,18 @@ final class MusicController: UIViewController {
         
     @objc
     func start() {
+        
         if player.isPlaying {
             startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
-            stopRotation(mainDisk)
+            //stopRotation(mainDisk)
             //mainDisk.layer.removeAllAnimations()
             
             isRotating = false
             player.pause()
         } else {
             player.play()
-            isRotating = true
-            rotateView(mainDisk)
+            //isRotating = true
+            //rotateView(mainDisk)
             startButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
         }
         
@@ -234,7 +245,7 @@ final class MusicController: UIViewController {
         NSLayoutConstraint.activate([
             
             repeatButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
-            repeatButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100),
+            repeatButton.topAnchor.constraint(equalTo: mainDisk.bottomAnchor, constant: 20),
             repeatButton.heightAnchor.constraint(equalToConstant: 50),
             repeatButton.widthAnchor.constraint(equalToConstant: 50),
             
@@ -246,11 +257,11 @@ final class MusicController: UIViewController {
             mainDisk.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             mainDisk.centerYAnchor.constraint(equalTo: view.centerYAnchor),
             
-//            albumView.topAnchor.constraint(equalTo: view.topAnchor),
-//            albumView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            albumView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            albumView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-//
+            albumView.topAnchor.constraint(equalTo: view.topAnchor),
+            albumView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            albumView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 200),
+            albumView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
             slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             slider.topAnchor.constraint(equalTo: musicNavBar.bottomAnchor, constant: 5),
             slider.widthAnchor.constraint(equalToConstant: 150),

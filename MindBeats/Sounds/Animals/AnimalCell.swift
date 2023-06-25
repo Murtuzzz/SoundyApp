@@ -21,8 +21,12 @@ class AnimalCollectionCell: UICollectionViewCell {
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderWidth = 1
-        view.layer.borderColor = R.Colors.greenBg.cgColor
-        view.backgroundColor = R.Colors.background
+        view.layer.borderColor = R.Colors.green.cgColor
+        view.backgroundColor = .white
+        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowOpacity = 1.0;
+        view.layer.shadowRadius = 1.0;
+        view.layer.shadowOffset = CGSizeMake(5, 5);
         return view
     }()
     
@@ -38,11 +42,13 @@ class AnimalCollectionCell: UICollectionViewCell {
     
     private let textBackground: UIView = {
         let view = UIImageView()
-        view.backgroundColor = R.Colors.bar
+        view.backgroundColor = R.Colors.green
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
-        view.layer.borderWidth = 1
-        view.layer.borderColor = R.Colors.blueBG.cgColor
+        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowOpacity = 1.0;
+        view.layer.shadowRadius = 1.0;
+        view.layer.shadowOffset = CGSizeMake(5, 5);
         return view
     }()
     
@@ -79,21 +85,23 @@ class AnimalCollectionCell: UICollectionViewCell {
         mainLabel.text = label
         myImageView.image = image.withRenderingMode(.alwaysTemplate)
         
+        
     }
     
     public func changeCondition(_ num: Int) {
         if (condition == true) {
-            container.backgroundColor = .systemMint
+            container.backgroundColor = R.Colors.green
             myImageView.tintColor = .white
             createPlayer(num)
             player.play()
             condition = false
         } else {
             condition = true
-            container.backgroundColor = R.Colors.background
+            container.backgroundColor = .white
             myImageView.tintColor = R.Colors.blueBG
             player.stop()
         }
+
     }
     
     func createPlayer(_ num: Int) {

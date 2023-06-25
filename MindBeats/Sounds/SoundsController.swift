@@ -9,9 +9,17 @@ import UIKit
 
 class SoundsController: UIViewController {
     
+    private let gradient: CAGradientLayer = {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [UIColor(hexString: "#ACAD9D").cgColor, UIColor(hexString: "#2D322B").cgColor]
+        gradientLayer.locations = [0.0, 1.0]
+
+        return gradientLayer
+    }()
+    
     private let backgroundView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "bg2")
+        view.image = UIImage(named: "bg4")
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -63,10 +71,11 @@ class SoundsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addViews()
-        view.backgroundColor = R.Colors.greenBg
+        view.backgroundColor = .white
         constraints()
         addNavBarButton(at: .left,and: UIImage(systemName: "arrow.left"))
-        
+        //gradient.frame = view.bounds
+        //view.layer.insertSublayer(gradient, at: 0)
         
     }
     
@@ -86,7 +95,6 @@ class SoundsController: UIViewController {
         middleView.addSubview(animalCollection)
         middleView.addSubview(animalHeader)
         
-       // contentView.addSubview(topView)
         contentView.addSubview(middleView)
         
         scrollView.addSubview(contentView)

@@ -13,7 +13,7 @@ class OtherCollectionCell: UICollectionViewCell {
     static var id = "ChildComposerCollection"
     
     private var player = AVAudioPlayer()
-    let musicList: [String] = ["RainSound","Waves","Forest","Fire"]
+    let musicList: [String] = ["Keyboard","Waves","Forest","Fire"]
     private var condition = true
     
     private let container: UIView = {
@@ -22,7 +22,11 @@ class OtherCollectionCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderWidth = 1
         view.layer.borderColor = R.Colors.blueBG.cgColor
-        view.backgroundColor = R.Colors.background
+        view.backgroundColor = .white
+        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowOpacity = 1.0;
+        view.layer.shadowRadius = 1.0;
+        view.layer.shadowOffset = CGSizeMake(5, 5);
         return view
     }()
     
@@ -38,11 +42,13 @@ class OtherCollectionCell: UICollectionViewCell {
     
     private let textBackground: UIView = {
         let view = UIImageView()
-        view.backgroundColor = R.Colors.bar
+        view.backgroundColor = R.Colors.green
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
-        view.layer.borderWidth = 1
-        view.layer.borderColor = R.Colors.blueBG.cgColor
+        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowOpacity = 1.0;
+        view.layer.shadowRadius = 1.0;
+        view.layer.shadowOffset = CGSizeMake(5, 5);
         return view
     }()
     
@@ -86,14 +92,14 @@ class OtherCollectionCell: UICollectionViewCell {
     
     public func changeCondition(_ num: Int) {
         if (condition == true) {
-            container.backgroundColor = .systemMint
+            container.backgroundColor = R.Colors.green
             myImageView.tintColor = .white
             createPlayer(num)
             player.play()
             condition = false
         } else {
             condition = true
-            container.backgroundColor = R.Colors.background
+            container.backgroundColor = .white
             myImageView.tintColor = R.Colors.blueBG
             player.stop()
         }

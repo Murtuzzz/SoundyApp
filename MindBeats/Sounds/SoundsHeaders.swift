@@ -9,17 +9,10 @@ import UIKit
 
 final class MusicHeaders: UIView {
     
-    private let container: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
-    }()
-    
     private let title: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 22)
-        label.textColor = R.Colors.blueBG
+        label.textColor = R.Colors.green
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -27,7 +20,7 @@ final class MusicHeaders: UIView {
     private let subTitle: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 18)
-        label.textColor = R.Colors.background
+        label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -52,6 +45,7 @@ final class MusicHeaders: UIView {
     func constraints() {
         
         NSLayoutConstraint.activate([
+            
             title.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
             subTitle.topAnchor.constraint(equalTo: title.bottomAnchor),

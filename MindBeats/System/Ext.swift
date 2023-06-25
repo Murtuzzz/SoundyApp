@@ -18,7 +18,7 @@ extension UIViewController {
         let button = UIButton(type: .system)
         button.setTitle(title, for: .normal)
         button.setImage(image, for: .normal)
-        button.tintColor = R.Colors.background
+        button.tintColor = R.Colors.green
         
         button.titleLabel?.font = R.Fonts.Italic(with: 20)
         

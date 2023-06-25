@@ -38,7 +38,7 @@ final class Disk: UIView {
     
     let imageView: UIImageView = {
         let view = UIImageView()
-        view.layer.cornerRadius = 150
+        view.layer.cornerRadius = 30
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFill

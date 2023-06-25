@@ -21,8 +21,12 @@ class NatureCollectionCell: UICollectionViewCell {
         view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderWidth = 1
-        view.layer.borderColor = R.Colors.blueBG.cgColor
-        view.backgroundColor = R.Colors.background
+        view.layer.borderColor = R.Colors.green.cgColor
+        view.backgroundColor = .white
+        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowOpacity = 1.0;
+        view.layer.shadowRadius = 1.0;
+        view.layer.shadowOffset = CGSizeMake(5, 5);
         return view
     }()
     
@@ -38,18 +42,20 @@ class NatureCollectionCell: UICollectionViewCell {
     
     private let textBackground: UIView = {
         let view = UIImageView()
-        view.backgroundColor = R.Colors.bar
+        view.backgroundColor = R.Colors.green
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
-        view.layer.borderWidth = 1
-        view.layer.borderColor = R.Colors.blueBG.cgColor
+        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowOpacity = 1.0;
+        view.layer.shadowRadius = 1.0;
+        view.layer.shadowOffset = CGSizeMake(5, 5);
         return view
     }()
     
     private let mainLabel: UILabel = {
         let label = UILabel()
         label.text = "Album"
-        label.textColor = R.Colors.background
+        label.textColor = .white
         label.textAlignment = .left
         label.font = R.Fonts.Italic(with: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -86,14 +92,14 @@ class NatureCollectionCell: UICollectionViewCell {
     
     public func changeCondition(_ num: Int) {
         if (condition == true) {
-            container.backgroundColor = R.Colors.blueBG
+            container.backgroundColor = R.Colors.green
             myImageView.tintColor = .white
             createPlayer(num)
             player.play()
             condition = false
         } else {
             condition = true
-            container.backgroundColor = R.Colors.background
+            container.backgroundColor = .white
             myImageView.tintColor = R.Colors.blueBG
             player.stop()
         }
