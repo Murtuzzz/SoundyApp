@@ -9,6 +9,13 @@ import UIKit
 
 class SoundsController: UIViewController {
     
+    private let backgroundView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "bg2")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private let scrollView: UIScrollView = {
         let view = UIScrollView()
         view.showsVerticalScrollIndicator = false
@@ -28,19 +35,19 @@ class SoundsController: UIViewController {
     let middleView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = R.Colors.background
+        view.backgroundColor = .clear
         return view
     }()
     
-    let childCollection = ChildCollection()
-    let natureCollection = NatureCollection()
-    let animalCollection = AnimalsCollection()
+    let childCollection = NatureCollection()
+    let natureCollection = AnimalCollection()
+    let animalCollection = OtherCollection()
     
-    private let childHeader = MusicHeaders(header: "Child", desc: "Quickly stabilize your baby’s emotions")
-    private let natureHeader = MusicHeaders(header: "Nature", desc: "It will allow you to merge with nature")
-    private let animalHeader = MusicHeaders(header: "Animals", desc: "Animal voices will improve your sleep")
+    private let childHeader = MusicHeaders(header: "Nature", desc: "It will allow you to merge with nature")
+    private let natureHeader = MusicHeaders(header: "Animals", desc: "Animal voices will improve your sleep")
+    private let animalHeader = MusicHeaders(header: "Other", desc: "Animal voices will improve your sleep")
     
-    private let navController = NavController(header: "Composer")
+    private let navController = MusicNavBar(header: "Sounds")
     
     private var collectionView: UICollectionView?
     
@@ -59,11 +66,13 @@ class SoundsController: UIViewController {
         view.backgroundColor = R.Colors.background
         constraints()
         
+        title = "Sounds"
+        
     }
     
     func addViews() {
         view.addSubview(scrollView)
-        
+        //middleView.addSubview(backgroundView)
         view.addSubview(navController)
         middleView.addSubview(childCollection)
         middleView.addSubview(childHeader)
@@ -99,12 +108,12 @@ class SoundsController: UIViewController {
             contentView.widthAnchor.constraint(equalTo: view.widthAnchor), // Устанавливает ширину
             contentView.heightAnchor.constraint(equalToConstant: 740),
             
-            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            middleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
+            middleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 70),
             middleView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             middleView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             middleView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
@@ -135,7 +144,11 @@ class SoundsController: UIViewController {
             animalCollection.heightAnchor.constraint(equalToConstant: 200),
             animalCollection.widthAnchor.constraint(equalToConstant: view.frame.width),
             
-            
+//            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+//            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -100),
+//            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 100),
+//            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+
             navController.topAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.topAnchor, constant: 10),
             navController.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             navController.trailingAnchor.constraint(equalTo: view.trailingAnchor),

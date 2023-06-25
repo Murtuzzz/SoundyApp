@@ -10,6 +10,12 @@ import UIKit
 final class SectionHeaderView: UICollectionReusableView {
     static let id = "SectionHeader"
     
+    private let backgroundView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "bg3")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private let title: UILabel = {
         let label = UILabel()
@@ -57,6 +63,7 @@ final class SectionHeaderView: UICollectionReusableView {
                     
                     subTitle.centerXAnchor.constraint(equalTo: centerXAnchor),
                     subTitle.topAnchor.constraint(equalTo: title.bottomAnchor, constant: -10),
+                    
                     
                 ])
     }

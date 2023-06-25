@@ -6,15 +6,23 @@
 //
 
 import UIKit
+import AVFAudio
 
-class ChildCollectionCell: UICollectionViewCell {
+class NatureCollectionCell: UICollectionViewCell {
     
     static var id = "ChildComposerCollection"
     
+    private var player = AVAudioPlayer()
+    let musicList: [String] = ["RainSound","Waves","Forest","Fire"]
+    private var condition = true
+    
     private let container: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 10
+        view.layer.cornerRadius = 20
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.borderWidth = 1
+        view.layer.borderColor = R.Colors.blueBG.cgColor
+        view.backgroundColor = .white
         return view
     }()
     
@@ -23,14 +31,18 @@ class ChildCollectionCell: UICollectionViewCell {
         imageView.image = UIImage(named: "profile")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
+        imageView.tintColor = R.Colors.blueBG
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private let textBackground: UIView = {
         let view = UIImageView()
-        view.backgroundColor = R.Colors.sep
+        view.backgroundColor = R.Colors.blueBG
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.cornerRadius = 10
+        view.layer.borderWidth = 1
+        view.layer.borderColor = R.Colors.blueBG.cgColor
         return view
     }()
     
@@ -65,11 +77,35 @@ class ChildCollectionCell: UICollectionViewCell {
         
     }
     
-    public func configure(label: String, image: UIImage, condition: UIColor) {
+    public func configure(label: String, image: UIImage) {
         mainLabel.text = label
         myImageView.image = image
-        container.backgroundColor = condition
         
+        
+    }
+    
+    public func changeCondition(_ num: Int) {
+        if (condition == true) {
+            container.backgroundColor = R.Colors.green
+            myImageView.tintColor = R.Colors.blueBG
+            createPlayer(num)
+            player.play()
+            condition = false
+        } else {
+            condition = true
+            container.backgroundColor = .white
+            myImageView.tintColor = R.Colors.blueBG
+            player.stop()
+        }
+    }
+    
+    func createPlayer(_ num: Int) {
+        do {
+            let audioPath = Bundle.main.path(forResource: "\(musicList[num])", ofType: "mp3")
+            try player = AVAudioPlayer(contentsOf: URL(fileURLWithPath: audioPath!))
+        } catch {
+            print("Error")
+        }
         
     }
     
@@ -78,13 +114,12 @@ class ChildCollectionCell: UICollectionViewCell {
                     container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
                     container.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
                     container.centerYAnchor.constraint(equalTo: centerYAnchor),
-                    container.heightAnchor.constraint(equalToConstant: 125),
+                    container.heightAnchor.constraint(equalToConstant: 120),
 //                    container.widthAnchor.constraint(equalToConstant: 100),
                     
                     textBackground.leadingAnchor.constraint(equalTo: container.leadingAnchor),
                     textBackground.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-                    textBackground.topAnchor.constraint(equalTo: container.topAnchor, constant: 100),
-//                    textBackground.heightAnchor.constraint(equalToConstant: 10),
+                    textBackground.bottomAnchor .constraint(equalTo: container.bottomAnchor),
                     textBackground.heightAnchor.constraint(equalToConstant: 35),
                     
                     

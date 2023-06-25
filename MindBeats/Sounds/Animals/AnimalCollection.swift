@@ -1,35 +1,18 @@
-//
-//  ChildContainer.swift
-//  CobraApp
-//
-//  Created by Мурат Кудухов on 12.06.2023.
-//
-
 import UIKit
+import AVFAudio
 
-//struct ChildItems {
-//    struct ChildObjects {
-//        let title: String
-//        let image: UIImage
-//        let color: UIColor
-//    }
-//
-//    let title: String
-//    let subtitle: String
-//    let items: [ChildObjects]
-//}
 
-struct ChildItems {
+struct NatureItems {
         let title: String
         let image: UIImage
-        let color: UIColor
 }
 
 
 
-final class ChildCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    private var dataSource:[ChildItems] = []
+    
+    private var dataSource:[NatureItems] = []
     private var collectionView: UICollectionView?
     
     override init(frame: CGRect) {
@@ -48,22 +31,20 @@ final class ChildCollection: UIView, UICollectionViewDelegateFlowLayout, UIColle
         layout.minimumInteritemSpacing = 1
         
         dataSource = [
-                    .init(title: "Female voice", image: UIImage(named: "girl")!, color: R.Colors.bar),
-                    .init(title: "White noize", image: UIImage(named: "micro")!, color: R.Colors.active),
-                    .init(title: "Lullaby", image: UIImage(named: "moon2")!, color: R.Colors.bar),
-                    .init(title: "Lullaby", image: UIImage(named: "moon2")!, color: R.Colors.bar),
+            .init(title: "Birds", image: UIImage(systemName: "bird.fill")!),
+            .init(title: "Cat", image: UIImage(systemName: "pawprint.circle.fill")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         guard let collectionView = collectionView else {return}
         
-        collectionView.register(ChildCollectionCell.self, forCellWithReuseIdentifier: ChildCollectionCell.id)
+        collectionView.register(AnimalCollectionCell.self, forCellWithReuseIdentifier: AnimalCollectionCell.id)
         
-        collectionView.backgroundColor = R.Colors.background
+        collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = true
         
         addSubview(collectionView)
         
@@ -71,7 +52,7 @@ final class ChildCollection: UIView, UICollectionViewDelegateFlowLayout, UIColle
         
         NSLayoutConstraint.activate([
                    collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-                   collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+                   collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 1),
                    collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
                    collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
                ])
@@ -80,21 +61,22 @@ final class ChildCollection: UIView, UICollectionViewDelegateFlowLayout, UIColle
     func constraints() {
         
     }
+    
 }
 
 
 
-extension ChildCollection {
+extension AnimalCollection {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ChildCollectionCell.id, for: indexPath) as! ChildCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalCollectionCell.id, for: indexPath) as! AnimalCollectionCell
         
         let item = dataSource[indexPath.row]
         
-        cell.configure(label: item.title, image: item.image, condition: item.color)
+        cell.configure(label: item.title, image: item.image)
                   return cell
     }
     
@@ -102,5 +84,12 @@ extension ChildCollection {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 126, height: 180)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! AnimalCollectionCell
+        cell.changeCondition(indexPath.row)
+        
+        
     }
 }

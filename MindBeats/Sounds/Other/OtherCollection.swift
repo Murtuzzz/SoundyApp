@@ -1,15 +1,14 @@
 import UIKit
 
 
-struct NatureItems {
+struct AnimalsItems {
         let title: String
         let image: UIImage
-        let color: UIColor
 }
 
 
 
-final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+final class OtherCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     private var dataSource:[NatureItems] = []
     private var collectionView: UICollectionView?
@@ -30,19 +29,20 @@ final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         layout.minimumInteritemSpacing = 1
         
         dataSource = [
-                    .init(title: "Rain", image: UIImage(named: "rain")!, color: R.Colors.green),
-                    .init(title: "Forest", image: UIImage(named: "trees")!, color: R.Colors.bar),
-                    .init(title: "Ocean", image: UIImage(named: "ocean")!, color: R.Colors.bar),
-                    .init(title: "Lullaby", image: UIImage(named: "moon2")!, color: R.Colors.bar),
+            .init(title: "Rain", image: UIImage(systemName: "cloud.bolt.rain.fill")!),
+            .init(title: "Waves", image: UIImage(systemName: "water.waves")!),
+            .init(title: "Forest", image: UIImage(systemName: "tree")!),
+            .init(title: "Fire", image: UIImage(systemName: "flame")!),
+            .init(title: "Wind", image: UIImage(systemName: "wind")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         guard let collectionView = collectionView else {return}
         
-        collectionView.register(NatureCollectionCell.self, forCellWithReuseIdentifier: NatureCollectionCell.id)
+        collectionView.register(OtherCollectionCell.self, forCellWithReuseIdentifier: OtherCollectionCell.id)
         
-        collectionView.backgroundColor = R.Colors.background
+        collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.showsHorizontalScrollIndicator = false
@@ -53,7 +53,7 @@ final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         
         NSLayoutConstraint.activate([
                    collectionView.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-                   collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+                   collectionView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 1),
                    collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
                    collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
                ])
@@ -66,17 +66,17 @@ final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
 
 
 
-extension NatureCollection {
+extension OtherCollection {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         dataSource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NatureCollectionCell.id, for: indexPath) as! NatureCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OtherCollectionCell.id, for: indexPath) as! OtherCollectionCell
         
         let item = dataSource[indexPath.row]
         
-        cell.configure(label: item.title, image: item.image, condition: item.color)
+        cell.configure(label: item.title, image: item.image)
                   return cell
     }
     
@@ -84,5 +84,12 @@ extension NatureCollection {
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         CGSize(width: 126, height: 180)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! OtherCollectionCell
+        cell.changeCondition(indexPath.row)
+        
+        
     }
 }
