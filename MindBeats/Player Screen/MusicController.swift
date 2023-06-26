@@ -18,6 +18,7 @@ final class MusicController: UIViewController {
     var isRotating = false
     private var mainDisk = Disk()
     var index = 0
+    var isRepeating = false
     
     let musicList: [String] = ["PurrpleCat", "Heart-Of-The-Ocean","StormClouds","Rain","SilentWood","PurpleDream"]
     
@@ -95,22 +96,11 @@ final class MusicController: UIViewController {
         constraints()
         
         albumView.image = UIImage(named: musicList[index])
-        
-        startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
-        nextButton.addTarget(self, action: #selector(nextSong), for: .touchUpInside)
-        prevButton.addTarget(self, action: #selector(prevSong), for: .touchUpInside)
-        slider.addTarget(self, action: #selector(change), for: .valueChanged)
     
         createPlayer(index)
-        if player.currentTime == player.duration {
-            player.stop()
-            self.rotationAngle = 0.0
-            mainDisk.layer.removeAllAnimations()
-            mainDisk.transform = CGAffineTransform(rotationAngle: 0)
-            isRotating = false
-            startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        }
+        settings()
     }
+    
     
     func createPlayer(_ num: Int) {
         
@@ -135,35 +125,92 @@ final class MusicController: UIViewController {
             }
     }
     
-    @objc
-    func nextSong() {
-        player.stop()
-        self.rotationAngle = 0.0
-        mainDisk.layer.removeAllAnimations()
-        mainDisk.transform = CGAffineTransform(rotationAngle: 0)
-        isRotating = false
-        index += 1
-        createPlayer(index)
-        startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
-        mainDisk.imageView.image = UIImage(named: musicList[index])
-        albumView.image = UIImage(named: musicList[index])
-        print(index)
+    func settings() {
+        startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
+        nextButton.addTarget(self, action: #selector(nextSong), for: .touchUpInside)
+        prevButton.addTarget(self, action: #selector(prevSong), for: .touchUpInside)
+        slider.addTarget(self, action: #selector(change), for: .valueChanged)
         
-    }
-    
-    @objc
-    func prevSong() {
-        if player.duration - player.currentTime == player.duration {
+        repeatButton.addTarget(self, action: #selector(repeatSong), for: .touchUpInside)
+        
+        if player.currentTime == player.duration {
             player.stop()
             self.rotationAngle = 0.0
             mainDisk.layer.removeAllAnimations()
             mainDisk.transform = CGAffineTransform(rotationAngle: 0)
             isRotating = false
-            index -= 1
+            startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+        }
+        prevButton.tintColor = .gray
+    }
+    
+    @objc
+    func repeatSong() {
+        if isRepeating == true {
+            isRepeating = false
+            repeatButton.backgroundColor = .black.withAlphaComponent(0.3)
+        } else {
+            isRepeating = true
+            repeatButton.backgroundColor = R.Colors.active
+            if player.currentTime == player.duration {
+                player.currentTime = 0
+                player.play()
+            }
+        }
+        
+        
+    }
+    
+    @objc
+    func nextSong() {
+        if index >= 0 {
+            prevButton.tintColor = .white
+        }
+        if index == (musicList.count - 1) {
+        } else {
+            player.stop()
+            self.rotationAngle = 0.0
+            mainDisk.layer.removeAllAnimations()
+            mainDisk.transform = CGAffineTransform(rotationAngle: 0)
+            isRotating = false
+            index += 1
             createPlayer(index)
             startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             mainDisk.imageView.image = UIImage(named: musicList[index])
+            albumView.image = UIImage(named: musicList[index])
+            if index == (musicList.count - 1) {
+                nextButton.tintColor = .gray
+            }
             print(index)
+            
+        }
+        
+    }
+    
+    @objc
+    func prevSong() {
+        if index == musicList.count - 1 {
+            nextButton.tintColor = .white
+        }
+        if index == 1 {
+            prevButton.tintColor = .gray
+        }
+        if index > 0 {
+            if player.duration - player.currentTime == player.duration {
+                player.stop()
+                self.rotationAngle = 0.0
+                mainDisk.layer.removeAllAnimations()
+                mainDisk.transform = CGAffineTransform(rotationAngle: 0)
+                isRotating = false
+                index -= 1
+                createPlayer(index)
+                startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                mainDisk.imageView.image = UIImage(named: musicList[index])
+                albumView.image = UIImage(named: musicList[index])
+                print(index)
+            } else {
+                player.currentTime = 0
+            }
         } else {
             player.currentTime = 0
         }

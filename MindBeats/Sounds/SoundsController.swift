@@ -70,10 +70,18 @@ class SoundsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        
+        blurEffectView.frame = view.bounds
+        
+        
         addViews()
         view.backgroundColor = .white
         constraints()
         addNavBarButton(at: .left,and: UIImage(systemName: "arrow.left"))
+        
+        
         //gradient.frame = view.bounds
         //view.layer.insertSublayer(gradient, at: 0)
         
@@ -85,8 +93,9 @@ class SoundsController: UIViewController {
     
     
     func addViews() {
+        
         view.addSubview(scrollView)
-        //middleView.addSubview(backgroundView)
+        middleView.addSubview(backgroundView)
         view.addSubview(navController)
         middleView.addSubview(childCollection)
         middleView.addSubview(childHeader)
@@ -157,10 +166,10 @@ class SoundsController: UIViewController {
             animalCollection.heightAnchor.constraint(equalToConstant: 200),
             animalCollection.widthAnchor.constraint(equalToConstant: view.frame.width),
             
-//            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
-//            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -100),
-//            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 100),
-//            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -300),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 300),
+            backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             navController.topAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.topAnchor, constant: 10),
             navController.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),

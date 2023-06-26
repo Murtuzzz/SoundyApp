@@ -12,7 +12,7 @@ final class MusicHeaders: UIView {
     private let title: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 22)
-        label.textColor = R.Colors.green
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
