@@ -42,6 +42,8 @@
 		B41FBE932A47063C00037A54 /* Cat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE922A47063C00037A54 /* Cat.mp3 */; };
 		B41FBE952A47082600037A54 /* Waves.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE942A47082600037A54 /* Waves.mp3 */; };
 		B41FBE972A48AC2700037A54 /* Keyboard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE962A48AC2700037A54 /* Keyboard.mp3 */; };
+		B41FBE992A49D57900037A54 /* Frogs.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE982A49D57900037A54 /* Frogs.mp3 */; };
+		B41FBE9B2A4B1E5600037A54 /* River.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE9A2A4B1E5600037A54 /* River.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +84,8 @@
 		B41FBE922A47063C00037A54 /* Cat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Cat.mp3; path = ../../../../../../Downloads/Cat.mp3; sourceTree = "<group>"; };
 		B41FBE942A47082600037A54 /* Waves.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Waves.mp3; path = ../../../../../../Downloads/Waves.mp3; sourceTree = "<group>"; };
 		B41FBE962A48AC2700037A54 /* Keyboard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Keyboard.mp3; path = ../../../../../../Downloads/Keyboard.mp3; sourceTree = "<group>"; };
+		B41FBE982A49D57900037A54 /* Frogs.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Frogs.mp3; path = ../../../../../../Downloads/Frogs.mp3; sourceTree = "<group>"; };
+		B41FBE9A2A4B1E5600037A54 /* River.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = River.mp3; path = ../../../../../../Downloads/River.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 		B41FBE3F2A41945900037A54 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
+				B41FBE9A2A4B1E5600037A54 /* River.mp3 */,
+				B41FBE982A49D57900037A54 /* Frogs.mp3 */,
 				B41FBE962A48AC2700037A54 /* Keyboard.mp3 */,
 				B41FBE942A47082600037A54 /* Waves.mp3 */,
 				B41FBE922A47063C00037A54 /* Cat.mp3 */,
@@ -284,8 +290,10 @@
 				B41FBE482A42208A00037A54 /* StormClouds.mp3 in Resources */,
 				B41FBE4C2A42740800037A54 /* SilentWood.mp3 in Resources */,
 				B41FBE4A2A42726E00037A54 /* Rain.mp3 in Resources */,
+				B41FBE9B2A4B1E5600037A54 /* River.mp3 in Resources */,
 				B41FBE972A48AC2700037A54 /* Keyboard.mp3 in Resources */,
 				B401E3932A3D73890084557F /* Assets.xcassets in Resources */,
+				B41FBE992A49D57900037A54 /* Frogs.mp3 in Resources */,
 				B401E39E2A3D74F30084557F /* PurrpleCat.mp3 in Resources */,
 				B41FBE3A2A4077B400037A54 /* Heart-Of-The-Ocean.mp3 in Resources */,
 				B41FBE8A2A46FBC800037A54 /* Forest.mp3 in Resources */,

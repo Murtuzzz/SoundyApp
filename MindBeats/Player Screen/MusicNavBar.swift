@@ -5,6 +5,7 @@ final class MusicNavBar: UIView {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 34)
         label.textColor = R.Colors.blueBG
+        
         return label
     }()
     

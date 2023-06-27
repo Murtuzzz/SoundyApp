@@ -13,8 +13,9 @@ class NatureCollectionCell: UICollectionViewCell {
     static var id = "ChildComposerCollection"
     
     private var player = AVAudioPlayer()
-    let musicList: [String] = ["RainSound","Waves","Forest","Fire"]
+    let musicList: [String] = ["RainSound","Waves","Forest","Fire","River"]
     private var condition = true
+    private var timer: Timer?
     
     private let container: UIView = {
         let view = UIView()
@@ -23,7 +24,7 @@ class NatureCollectionCell: UICollectionViewCell {
         view.layer.borderWidth = 1
         view.layer.borderColor = R.Colors.green.cgColor
         view.backgroundColor = .white
-        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 1.0;
         view.layer.shadowRadius = 1.0;
         view.layer.shadowOffset = CGSizeMake(5, 5);
@@ -45,7 +46,7 @@ class NatureCollectionCell: UICollectionViewCell {
         view.backgroundColor = R.Colors.green
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
-        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 1.0;
         view.layer.shadowRadius = 1.0;
         view.layer.shadowOffset = CGSizeMake(5, 5);
@@ -70,7 +71,8 @@ class NatureCollectionCell: UICollectionViewCell {
         contentView.addSubview(myImageView)
         contentView.addSubview(mainLabel)
        
-        
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(soundRepeat), userInfo: nil, repeats: true)
+
         
        // contentView.backgroundColor = R.Colors.background
         contentView.clipsToBounds = true
@@ -83,9 +85,18 @@ class NatureCollectionCell: UICollectionViewCell {
         
     }
     
+    @objc func soundRepeat() {
+        
+        if Int(player.currentTime) == Int(player.duration) - 1 {
+            player.currentTime = 0
+            player.play()
+        }
+    }
+    
     public func configure(label: String, image: UIImage) {
         mainLabel.text = label
-        myImageView.image = image
+        myImageView.image = image.withRenderingMode(.alwaysTemplate)
+        myImageView.tintColor = R.Colors.blueBG
         
         
     }

@@ -12,9 +12,10 @@ class AnimalCollectionCell: UICollectionViewCell {
     
     static var id = "ChildComposerCollection"
     private var condition = true
+    private var timer: Timer?
     
     private var player = AVAudioPlayer()
-    let musicList: [String] = ["birds", "Cat",""]
+    let musicList: [String] = ["birds", "Cat","Frogs"]
     
     private let container: UIView = {
         let view = UIView()
@@ -23,7 +24,7 @@ class AnimalCollectionCell: UICollectionViewCell {
         view.layer.borderWidth = 1
         view.layer.borderColor = R.Colors.green.cgColor
         view.backgroundColor = .white
-        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 1.0;
         view.layer.shadowRadius = 1.0;
         view.layer.shadowOffset = CGSizeMake(5, 5);
@@ -45,7 +46,7 @@ class AnimalCollectionCell: UICollectionViewCell {
         view.backgroundColor = R.Colors.green
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
-        view.layer.shadowColor = R.Colors.gray.cgColor
+        view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 1.0;
         view.layer.shadowRadius = 1.0;
         view.layer.shadowOffset = CGSizeMake(5, 5);
@@ -70,6 +71,8 @@ class AnimalCollectionCell: UICollectionViewCell {
         contentView.addSubview(myImageView)
         contentView.addSubview(mainLabel)
         
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(soundRepeat), userInfo: nil, repeats: true)
+        
         // contentView.backgroundColor = R.Colors.background
         contentView.clipsToBounds = true
         constraints()
@@ -79,6 +82,14 @@ class AnimalCollectionCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
         
+    }
+    
+    @objc func soundRepeat() {
+        
+        if Int(player.currentTime) == Int(player.duration) - 1 {
+            player.currentTime = 0
+            player.play()
+        }
     }
     
     public func configure(label: String, image: UIImage) {

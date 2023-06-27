@@ -36,9 +36,10 @@ final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         
         dataSource = [
                     .init(title: "Rain", image: UIImage(systemName: "cloud.bolt.rain.fill")!),
-                    .init(title: "Waves", image: UIImage(systemName: "water.waves")!),
+                    .init(title: "Waves", image: UIImage(named: "ocean")!),
                     .init(title: "Forest", image: UIImage(systemName: "tree")!),
                     .init(title: "Fire", image: UIImage(systemName: "flame")!),
+                    .init(title: "River", image: UIImage(systemName: "water.waves")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

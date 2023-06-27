@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SoundsController: UIViewController {
     
@@ -70,10 +71,13 @@ class SoundsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         
-        blurEffectView.frame = view.bounds
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
         
         
         addViews()

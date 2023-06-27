@@ -33,7 +33,6 @@ final class OtherCollection: UIView, UICollectionViewDelegateFlowLayout, UIColle
             .init(title: "Waves", image: UIImage(systemName: "water.waves")!),
             .init(title: "Forest", image: UIImage(systemName: "tree")!),
             .init(title: "Fire", image: UIImage(systemName: "flame")!),
-            .init(title: "Wind", image: UIImage(systemName: "wind")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

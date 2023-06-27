@@ -29,7 +29,7 @@ final class Disk: UIView {
     
     private let circleBig: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 55
+        view.layer.cornerRadius = 45
         view.backgroundColor = .black
         view.alpha = 0.3
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -83,13 +83,13 @@ final class Disk: UIView {
             
             circle.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
             circle.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
-            circle.heightAnchor.constraint(equalToConstant: 50),
-            circle.widthAnchor.constraint(equalToConstant: 50),
+            circle.heightAnchor.constraint(equalToConstant: 30),
+            circle.widthAnchor.constraint(equalToConstant: 30),
             
             circleBig.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
             circleBig.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
-            circleBig.heightAnchor.constraint(equalToConstant: 110),
-            circleBig.widthAnchor.constraint(equalToConstant: 110),
+            circleBig.heightAnchor.constraint(equalToConstant: 90),
+            circleBig.widthAnchor.constraint(equalToConstant: 90),
         
         
         ])

@@ -63,13 +63,15 @@ final class MusicController: UIViewController {
     
     private var player = AVAudioPlayer()
     
-    @objc func updateSlider() {
-        slider.value = Float(player.currentTime)
-    }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print(error)
+        }
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.regular)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -102,6 +104,7 @@ final class MusicController: UIViewController {
     }
     
     
+    
     func createPlayer(_ num: Int) {
         
         
@@ -114,8 +117,6 @@ final class MusicController: UIViewController {
         }
         
     }
-    
-    
     
     override func viewWillDisappear(_ animated: Bool) {
         if (self.isMovingFromParent) {
@@ -144,21 +145,42 @@ final class MusicController: UIViewController {
         prevButton.tintColor = .gray
     }
     
+    @objc func updateSlider() {
+        slider.value = Float(player.currentTime)
+        
+        if Int(player.currentTime) == Int(player.duration) - 5 {
+            if isRepeating == true {
+                player.currentTime = 0
+                player.play()
+            } else {
+                if index != (musicList.count - 1) {
+                    player.stop()
+                    isRotating = false
+                    index += 1
+                    createPlayer(index)
+                    startButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                    mainDisk.imageView.image = UIImage(named: musicList[index])
+                    albumView.image = UIImage(named: musicList[index])
+                    player.play()
+                    prevButton.tintColor = .white
+                    if index == (musicList.count - 1) {
+                        nextButton.tintColor = .gray
+                    }
+                    
+                }
+            }
+        }
+    }
+    
     @objc
     func repeatSong() {
         if isRepeating == true {
-            isRepeating = false
             repeatButton.backgroundColor = .black.withAlphaComponent(0.3)
+            isRepeating = false
         } else {
-            isRepeating = true
             repeatButton.backgroundColor = R.Colors.active
-            if player.currentTime == player.duration {
-                player.currentTime = 0
-                player.play()
-            }
+            isRepeating = true
         }
-        
-        
     }
     
     @objc
@@ -169,10 +191,6 @@ final class MusicController: UIViewController {
         if index == (musicList.count - 1) {
         } else {
             player.stop()
-            self.rotationAngle = 0.0
-            mainDisk.layer.removeAllAnimations()
-            mainDisk.transform = CGAffineTransform(rotationAngle: 0)
-            isRotating = false
             index += 1
             createPlayer(index)
             startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
@@ -221,10 +239,11 @@ final class MusicController: UIViewController {
     func change(_ sender: UISlider) {
         if sender == slider {
             player.currentTime = TimeInterval(sender.value)
-            if (player.duration - player.currentTime) == player.duration {
+            if player.currentTime == player.duration {
                 self.rotationAngle = 0.0
                 mainDisk.layer.removeAllAnimations()
                 mainDisk.transform = CGAffineTransform(rotationAngle: 0)
+                print("End")
             }
         }
     }
@@ -291,8 +310,9 @@ final class MusicController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            repeatButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
-            repeatButton.topAnchor.constraint(equalTo: mainDisk.bottomAnchor, constant: 20),
+//            repeatButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
+            repeatButton.bottomAnchor.constraint(equalTo: mainDisk.bottomAnchor, constant: -10),
+            repeatButton.trailingAnchor.constraint(equalTo: mainDisk.trailingAnchor, constant: -10),
             repeatButton.heightAnchor.constraint(equalToConstant: 50),
             repeatButton.widthAnchor.constraint(equalToConstant: 50),
             
