@@ -11,7 +11,7 @@ import AVFoundation
 
 final class MusicController: UIViewController {
     
-    private let musicNavBar = MusicNavBar(header: "Concentration")
+    private let musicNavBar = MusicNavBar(header: "Lo-Fi")
     
     private var timer: Timer?
     var rotationAngle: CGFloat = 0.0
@@ -54,7 +54,7 @@ final class MusicController: UIViewController {
         let button = ButtonView(buttonImage: UIImage(systemName: "repeat")!, type: .system)
         button.backgroundColor = .black.withAlphaComponent(0.3)
         button.tintColor = .white
-        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 20
         
         return button
     }()
@@ -313,8 +313,8 @@ final class MusicController: UIViewController {
 //            repeatButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -70),
             repeatButton.bottomAnchor.constraint(equalTo: mainDisk.bottomAnchor, constant: -10),
             repeatButton.trailingAnchor.constraint(equalTo: mainDisk.trailingAnchor, constant: -10),
-            repeatButton.heightAnchor.constraint(equalToConstant: 50),
-            repeatButton.widthAnchor.constraint(equalToConstant: 50),
+            repeatButton.heightAnchor.constraint(equalToConstant: 40),
+            repeatButton.widthAnchor.constraint(equalToConstant: 40),
             
             musicNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             musicNavBar.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),

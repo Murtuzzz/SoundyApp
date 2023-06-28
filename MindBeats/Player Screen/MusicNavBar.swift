@@ -4,7 +4,8 @@ final class MusicNavBar: UIView {
     private let label: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 34)
-        label.textColor = R.Colors.blueBG
+        label.textColor = .white
+        label.textAlignment = .center
         
         return label
     }()
@@ -15,6 +16,7 @@ final class MusicNavBar: UIView {
         settings()
         addSubview(label)
         constraints()
+      
        
     }
     

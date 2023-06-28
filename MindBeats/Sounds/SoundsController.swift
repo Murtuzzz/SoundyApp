@@ -10,6 +10,22 @@ import AVFoundation
 
 class SoundsController: UIViewController {
     
+    private let timerButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "stopwatch"), for: .normal)
+        button.backgroundColor = R.Colors.green
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.black.cgColor
+        button.tintColor = .white
+        button.layer.cornerRadius = 10
+        button.layer.shadowColor = UIColor.black.cgColor
+        button.layer.shadowOpacity = 1.0;
+        button.layer.shadowRadius = 1.0;
+        button.layer.shadowOffset = CGSizeMake(5, 5);
+        return button
+    }()
+    
     private let gradient: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor(hexString: "#ACAD9D").cgColor, UIColor(hexString: "#2D322B").cgColor]
@@ -37,7 +53,6 @@ class SoundsController: UIViewController {
     let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         return view
     }()
     
@@ -56,7 +71,19 @@ class SoundsController: UIViewController {
     private let natureHeader = MusicHeaders(header: "Animals", desc: "Animal voices will improve your sleep")
     private let animalHeader = MusicHeaders(header: "Other", desc: "Animal voices will improve your sleep")
     
-    private let navController = MusicNavBar(header: "Sounds")
+    private let navController: MusicNavBar = {
+        let view = MusicNavBar(header: "Sounds")
+        view.backgroundColor = R.Colors.green
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.black.cgColor
+        view.tintColor = .white
+        view.layer.cornerRadius = 10
+//        view.layer.shadowColor = UIColor.black.cgColor
+//        view.layer.shadowOpacity = 1.0;
+//        view.layer.shadowRadius = 1.0;
+//        view.layer.shadowOffset = CGSizeMake(5, 5);
+        return view
+    }()
     
     private var collectionView: UICollectionView?
     
@@ -101,6 +128,7 @@ class SoundsController: UIViewController {
         view.addSubview(scrollView)
         middleView.addSubview(backgroundView)
         view.addSubview(navController)
+        view.addSubview(timerButton)
         middleView.addSubview(childCollection)
         middleView.addSubview(childHeader)
         middleView.addSubview(natureCollection)
@@ -177,7 +205,12 @@ class SoundsController: UIViewController {
 
             navController.topAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.topAnchor, constant: 10),
             navController.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-            navController.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            navController.widthAnchor.constraint(equalToConstant: 110),
+            
+            timerButton.centerYAnchor.constraint(equalTo:  navController.centerYAnchor),
+            timerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+            timerButton.widthAnchor.constraint(equalToConstant: 40),
+            timerButton.heightAnchor.constraint(equalToConstant: 40),
             
             
         ])
