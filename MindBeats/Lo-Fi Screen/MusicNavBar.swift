@@ -5,7 +5,7 @@ final class MusicNavBar: UINavigationBar {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 34)
         label.textColor = .white
-        label.textAlignment = .center
+        label.textAlignment = .left
         
         return label
     }()
@@ -16,7 +16,7 @@ final class MusicNavBar: UINavigationBar {
         settings()
         addSubview(label)
         constraints()
-        self.label.textAlignment = .left
+//        self.label.textAlignment = .center
        
     }
     

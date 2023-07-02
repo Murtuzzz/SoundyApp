@@ -48,6 +48,7 @@
 		B41FBE9F2A50A94000037A54 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE9E2A50A94000037A54 /* Descriptions.swift */; };
 		B41FBEA12A51626200037A54 /* Train.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBEA02A51626200037A54 /* Train.mp3 */; };
 		B41FBEA32A51685000037A54 /* Bar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBEA22A51685000037A54 /* Bar.mp3 */; };
+		B41FBEA62A51747F00037A54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B41FBEA82A51747F00037A54 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,11 @@
 		B41FBE9E2A50A94000037A54 /* Descriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Descriptions.swift; sourceTree = "<group>"; };
 		B41FBEA02A51626200037A54 /* Train.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Train.mp3; path = ../../../../../../Downloads/Train.mp3; sourceTree = "<group>"; };
 		B41FBEA22A51685000037A54 /* Bar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Bar.mp3; path = ../../../../../../Downloads/Bar.mp3; sourceTree = "<group>"; };
+		B41FBEA72A51747F00037A54 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B41FBEA92A51749F00037A54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B41FBEAA2A51749F00037A54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B41FBEAB2A5174AF00037A54 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B41FBEAC2A5174AF00037A54 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 				B41FBE442A41D8AB00037A54 /* Ext.swift */,
 				B401E38B2A3D73870084557F /* SceneDelegate.swift */,
 				B401E3892A3D73870084557F /* AppDelegate.swift */,
+				B41FBEA82A51747F00037A54 /* Localizable.strings */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -278,6 +285,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				es,
 			);
 			mainGroup = B401E37D2A3D73870084557F;
 			productRefGroup = B401E3872A3D73870084557F /* Products */;
@@ -299,6 +308,7 @@
 				B41FBE8C2A46FCD600037A54 /* Fire.mp3 in Resources */,
 				B41FBE842A46E76F00037A54 /* birds.mp3 in Resources */,
 				B41FBEA12A51626200037A54 /* Train.mp3 in Resources */,
+				B41FBEA62A51747F00037A54 /* Localizable.strings in Resources */,
 				B41FBE862A46F0BE00037A54 /* RainSound.mp3 in Resources */,
 				B41FBE482A42208A00037A54 /* StormClouds.mp3 in Resources */,
 				B41FBE4C2A42740800037A54 /* SilentWood.mp3 in Resources */,
@@ -355,8 +365,20 @@
 			isa = PBXVariantGroup;
 			children = (
 				B401E3952A3D73890084557F /* Base */,
+				B41FBEA92A51749F00037A54 /* ru */,
+				B41FBEAB2A5174AF00037A54 /* es */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B41FBEA82A51747F00037A54 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B41FBEA72A51747F00037A54 /* en */,
+				B41FBEAA2A51749F00037A54 /* ru */,
+				B41FBEAC2A5174AF00037A54 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,6 +388,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -426,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

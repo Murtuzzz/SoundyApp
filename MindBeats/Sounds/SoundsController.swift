@@ -95,21 +95,22 @@ class SoundsController: UIViewController {
     let animalCollection = AnimalCollection()
     let otherCollection = OtherCollection()
     
-    private let natureHeader = MusicHeaders(header: "Nature", desc: "It will allow you to merge with nature")
-    private let animalHeader = MusicHeaders(header: "Animals", desc: "Animal voices will improve your sleep")
-    private let otherHeader = MusicHeaders(header: "Other", desc: "Animal voices will improve your sleep")
+    private let natureHeader = MusicHeaders(header: "Nature".localized(), desc: "It will allow you to merge with nature".localized())
+    private let animalHeader = MusicHeaders(header: "Animals".localized(), desc: "Animal voices will improve your sleep".localized())
+    private let otherHeader = MusicHeaders(header: "Other".localized(), desc: "Other enjoyable sounds".localized())
     
     private let navController: MusicNavBar = {
-        let view = MusicNavBar(header: "Sounds")
-//        view.backgroundColor = R.Colors.green
-//        view.layer.borderWidth = 1
-//        view.layer.borderColor = UIColor.black.cgColor
-//        view.tintColor = .white
-//        view.layer.cornerRadius = 10
-//        view.layer.shadowColor = UIColor.black.cgColor
-//        view.layer.shadowOpacity = 1.0;
-//        view.layer.shadowRadius = 1.0;
-//        view.layer.shadowOffset = CGSizeMake(5, 5);
+        let view = MusicNavBar(header: "Sounds".localized())
+        //view.backgroundColor = R.Colors.green
+        //view.layer.borderWidth = 1
+        //view.layer.borderColor = UIColor.black.cgColor
+        view.tintColor = .white
+        //view.layer.cornerRadius = 10
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOpacity = 0.5;
+        view.layer.shadowRadius = 2;
+        view.layer.shadowOffset = CGSizeMake(5, 5);
+        
         return view
     }()
     
@@ -273,8 +274,8 @@ class SoundsController: UIViewController {
             timerButton.heightAnchor.constraint(equalToConstant: 40),
             
             timerLabel.centerYAnchor.constraint(equalTo:  navController.centerYAnchor),
-            timerLabel.trailingAnchor.constraint(equalTo: timerButton.leadingAnchor, constant: -20),
-            timerLabel.widthAnchor.constraint(equalToConstant: 100),
+            timerLabel.trailingAnchor.constraint(equalTo: timerButton.leadingAnchor, constant: -5),
+            timerLabel.widthAnchor.constraint(equalToConstant: 80),
             timerLabel.heightAnchor.constraint(equalToConstant: 21),
             
             

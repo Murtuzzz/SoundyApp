@@ -33,9 +33,9 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         layout.minimumInteritemSpacing = 1
         
         dataSource = [
-            .init(title: "Birds", image: UIImage(systemName: "bird.fill")!),
-            .init(title: "Cats", image: UIImage(named: "cats")!),
-            .init(title: "Frogs", image: UIImage(named: "frogs")!),
+            .init(title: "Birds".localized(), image: UIImage(systemName: "bird.fill")!),
+            .init(title: "Cats".localized(), image: UIImage(named: "cats")!),
+            .init(title: "Frogs".localized(), image: UIImage(named: "frogs")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

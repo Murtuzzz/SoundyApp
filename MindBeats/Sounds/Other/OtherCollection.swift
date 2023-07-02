@@ -29,9 +29,9 @@ final class OtherCollection: UIView, UICollectionViewDelegateFlowLayout, UIColle
         layout.minimumInteritemSpacing = 1
         
         dataSource = [
-            .init(title: "Keyboard", image: UIImage(systemName: "keyboard.fill")!),
-            .init(title: "Train", image: UIImage(systemName: "train.side.rear.car")!),
-            .init(title: "Bar", image: UIImage(systemName: "wineglass.fill")!),
+            .init(title: "Keyboard".localized(), image: UIImage(systemName: "keyboard.fill")!),
+            .init(title: "Train".localized(), image: UIImage(systemName: "train.side.rear.car")!),
+            .init(title: "Bar".localized(), image: UIImage(systemName: "wineglass.fill")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

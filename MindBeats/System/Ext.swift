@@ -49,3 +49,36 @@ extension UIViewController {
     }
 }
 
+
+extension String {
+    func localized() -> String {
+        NSLocalizedString(self,tableName: "Localizable",bundle: .main, value: self, comment: self)
+    }
+}
+
+extension UIButton {
+    func makeSystem(_ button: UIButton) {
+        button.addTarget(self, action: #selector(handleIn), for: [
+            .touchDown,
+            .touchDragInside
+        ])
+        
+        button.addTarget(self, action: #selector(handleOut), for: [
+            .touchDragOutside,
+            .touchUpInside,
+            .touchDragExit,
+            .touchCancel,
+            .touchUpOutside
+        ])
+    }
+    
+    @objc func handleIn() {
+        UIView.animate(withDuration: 0.15) {self.alpha = 0.55}
+        
+    }
+    
+    @objc func handleOut() {
+        UIView.animate(withDuration: 0.15) {self.alpha = 1}
+        
+    }
+}

@@ -12,7 +12,7 @@ final class MainView: UIViewController {
     private let mainTitle: UILabel =  {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Focus Flow"
+        label.text = "Mind Focus"
         label.font = R.Fonts.Italic(with: 72)
         label.numberOfLines = 2
         label.adjustsFontForContentSizeCategory = true
@@ -22,8 +22,6 @@ final class MainView: UIViewController {
         label.layer.masksToBounds = true
         return label
     }()
-    
-    
     
     private let container: UIView = {
         let view = UIView()
@@ -81,7 +79,8 @@ final class MainView: UIViewController {
     private let soundsTitle: UILabel =  {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sounds"
+        label.text = "Sounds".localized()
+        label.textAlignment = .center
         label.font = R.Fonts.Italic(with: 48)
         label.textColor = R.Colors.background
         return label
@@ -118,7 +117,6 @@ final class MainView: UIViewController {
         view.addSubview(lofiTitle)
         view.addSubview(soundsTitle)
         view.addSubview(mainTitle)
-        
         
         constraints()
         view.backgroundColor = R.Colors.greenBg

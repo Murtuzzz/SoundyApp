@@ -27,8 +27,8 @@ final class MusicHeaders: UIView {
         label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
         label.layer.shadowColor = UIColor.black.cgColor
-        label.layer.shadowOpacity = 1.0;
-        label.layer.shadowRadius = 1.0;
+        label.layer.shadowOpacity = 0.5;
+        label.layer.shadowRadius = 2.0;
         label.layer.shadowOffset = CGSizeMake(4, 4);
         return label
     }()

@@ -53,7 +53,7 @@ final class TimerController: UIViewController {
         button.layer.cornerRadius = 20
         button.titleLabel?.font = R.Fonts.Italic(with: 24)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Done", for: .normal)
+        button.setTitle("Done".localized(), for: .normal)
         button.layer.shadowColor = UIColor.gray.cgColor
         button.layer.shadowOpacity = 1.0;
         button.layer.shadowRadius = 1.0;
@@ -68,7 +68,7 @@ final class TimerController: UIViewController {
         button.layer.cornerRadius = 20
         button.titleLabel?.font = R.Fonts.Italic(with: 24)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Close", for: .normal)
+        button.setTitle("Close".localized(), for: .normal)
         button.layer.shadowColor = UIColor.gray.cgColor
         button.layer.shadowOpacity = 1.0;
         button.layer.shadowRadius = 1.0;
@@ -151,12 +151,12 @@ final class TimerController: UIViewController {
 
             
             doneButton.heightAnchor.constraint(equalToConstant: 60),
-            doneButton.widthAnchor.constraint(equalToConstant: 90),
+            doneButton.widthAnchor.constraint(equalToConstant: 110),
             doneButton.topAnchor.constraint(equalTo: timer.bottomAnchor, constant: 20),
             doneButton.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -40),
             
             closeButton.heightAnchor.constraint(equalToConstant: 60),
-            closeButton.widthAnchor.constraint(equalToConstant: 90),
+            closeButton.widthAnchor.constraint(equalToConstant: 110),
             closeButton.topAnchor.constraint(equalTo: timer.bottomAnchor, constant: 20),
             closeButton.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 40)
             

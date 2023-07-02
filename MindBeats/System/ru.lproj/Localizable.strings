@@ -1,0 +1,27 @@
+/* 
+  Localizable.strings
+  MindBeats
+
+  Created by Мурат Кудухов on 02.07.2023.
+  
+*/
+"Sounds" = "Звуки";
+"Nature" = "Природа";
+"Animals" = "Животные";
+"Other" = "Другие";
+"Rain" = "Дождь";
+"River" = "Река";
+"Waves" = "Волны";
+"Forest" = "Лес";
+"Fire" = "Огонь";
+"Birds" = "Птицы";
+"Cats" = "Кошка";
+"Frogs" = "Лягушки";
+"Keyboard" = "Клавиатура";
+"Train" = "Поезд";
+"Bar" = "Бар";
+"It will allow you to merge with nature" = "Для концентрации и слияния с природой";
+"Animal voices will improve your sleep" = "Звуки животных улучшат твой сон";
+"Other enjoyable sounds" = "Другие приятные звуки";
+"Done" = "Готово";
+"Close" = "Закрыть";

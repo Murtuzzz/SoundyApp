@@ -35,11 +35,11 @@ final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         layout.minimumInteritemSpacing = 1
         
         dataSource = [
-                    .init(title: "Rain", image: UIImage(systemName: "cloud.bolt.rain.fill")!),
-                    .init(title: "Waves", image: UIImage(named: "ocean")!),
-                    .init(title: "Forest", image: UIImage(systemName: "tree")!),
-                    .init(title: "Fire", image: UIImage(systemName: "flame")!),
-                    .init(title: "River", image: UIImage(systemName: "water.waves")!),
+                    .init(title: "Rain".localized(), image: UIImage(systemName: "cloud.bolt.rain.fill")!),
+                    .init(title: "Waves".localized(), image: UIImage(named: "ocean")!),
+                    .init(title: "Forest".localized(), image: UIImage(systemName: "tree")!),
+                    .init(title: "Fire".localized(), image: UIImage(systemName: "flame")!),
+                    .init(title: "River".localized(), image: UIImage(systemName: "water.waves")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
