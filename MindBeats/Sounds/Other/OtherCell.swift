@@ -14,7 +14,7 @@ class OtherCollectionCell: UICollectionViewCell {
     static var id = "ChildComposerCollection"
     
     private var player = AVAudioPlayer()
-    let musicList: [String] = ["Keyboard","Waves","Forest","Fire"]
+    let musicList: [String] = ["Keyboard","Train","Bar"]
     private var condition = true
     private var timer: Timer?
     
@@ -75,7 +75,7 @@ class OtherCollectionCell: UICollectionViewCell {
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(soundRepeat), userInfo: nil, repeats: true)
 
         
-       // contentView.backgroundColor = R.Colors.background
+        // contentView.backgroundColor = R.Colors.background
         contentView.clipsToBounds = true
         constraints()
         
@@ -84,6 +84,14 @@ class OtherCollectionCell: UICollectionViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
         
+    }
+    
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        if superview == nil {
+            player.stop()
+        }
     }
     
     @objc func soundRepeat() {
@@ -124,6 +132,13 @@ class OtherCollectionCell: UICollectionViewCell {
             print("Error")
         }
         
+    }
+    
+    func stopPlayer() {
+        condition = true
+        container.backgroundColor = .white
+        myImageView.tintColor = R.Colors.blueBG
+        player.stop()
     }
     
     func constraints() {

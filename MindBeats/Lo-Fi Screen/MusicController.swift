@@ -16,6 +16,7 @@ final class MusicController: UIViewController {
     private var timer: Timer?
     var rotationAngle: CGFloat = 0.0
     var isRotating = false
+    var descriptionIsShown = false
     private var mainDisk = Disk()
     var index = 0
     var isRepeating = false
@@ -50,6 +51,17 @@ final class MusicController: UIViewController {
         return button
     }()
     
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = ""
+        label.font = R.Fonts.Italic(with: 15)
+        label.numberOfLines = 5
+        label.textAlignment = .center
+        label.textColor = .systemBackground
+        return label
+    }()
+    
     private let repeatButton: ButtonView = {
         let button = ButtonView(buttonImage: UIImage(systemName: "repeat")!, type: .system)
         button.backgroundColor = .black.withAlphaComponent(0.3)
@@ -58,6 +70,16 @@ final class MusicController: UIViewController {
         
         return button
     }()
+    
+    private let infoButton: ButtonView = {
+        let button = ButtonView(buttonImage: UIImage(systemName: "info.circle")!, type: .system)
+        button.backgroundColor = .black.withAlphaComponent(0.3)
+        button.tintColor = .white
+        button.layer.cornerRadius = 20
+        
+        return button
+    }()
+    
     private let nextButton = ButtonView(buttonImage: UIImage(systemName: "forward.fill")!,type: .system)
     private let prevButton = ButtonView(buttonImage: UIImage(systemName: "backward.fill")!,type: .system)
     
@@ -65,6 +87,8 @@ final class MusicController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.navigationBar.tintColor = R.Colors.bar
         
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
@@ -86,6 +110,7 @@ final class MusicController: UIViewController {
         
         view.addSubview(albumView)
         view.addSubview(blurEffectView)
+        view.addSubview(descriptionLabel)
         view.addSubview(slider)
         view.addSubview(mainDisk)
         view.addSubview(musicNavBar)
@@ -94,6 +119,7 @@ final class MusicController: UIViewController {
         view.addSubview(prevButton)
         view.addSubview(startButton)
         view.addSubview(slider)
+        view.addSubview(infoButton)
                 //view.backgroundColor = R.Colors.greenBg
         constraints()
         
@@ -101,6 +127,8 @@ final class MusicController: UIViewController {
     
         createPlayer(index)
         settings()
+        
+        
     }
     
     
@@ -122,7 +150,7 @@ final class MusicController: UIViewController {
         if (self.isMovingFromParent) {
             isRotating = false
             player.stop()
-            
+
             }
     }
     
@@ -131,6 +159,7 @@ final class MusicController: UIViewController {
         nextButton.addTarget(self, action: #selector(nextSong), for: .touchUpInside)
         prevButton.addTarget(self, action: #selector(prevSong), for: .touchUpInside)
         slider.addTarget(self, action: #selector(change), for: .valueChanged)
+        infoButton.addTarget(self, action: #selector(showDescription), for: .touchUpInside)
         
         repeatButton.addTarget(self, action: #selector(repeatSong), for: .touchUpInside)
         
@@ -143,6 +172,18 @@ final class MusicController: UIViewController {
             startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
         }
         prevButton.tintColor = .gray
+    }
+    
+    @objc func showDescription() {
+        if descriptionIsShown == false {
+            descriptionIsShown = true
+            infoButton.backgroundColor = R.Colors.active
+            descriptionLabel.text = descriptions[index]
+        } else {
+            descriptionIsShown = false
+            infoButton.backgroundColor = .black.withAlphaComponent(0.3)
+            descriptionLabel.text = ""
+        }
     }
     
     @objc func updateSlider() {
@@ -192,8 +233,12 @@ final class MusicController: UIViewController {
         } else {
             player.stop()
             index += 1
+            descriptionIsShown = false
+            descriptionLabel.text = ""
+            infoButton.backgroundColor = .black.withAlphaComponent(0.3)
             createPlayer(index)
-            startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+            player.play()
+            startButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
             mainDisk.imageView.image = UIImage(named: musicList[index])
             albumView.image = UIImage(named: musicList[index])
             if index == (musicList.count - 1) {
@@ -207,19 +252,19 @@ final class MusicController: UIViewController {
     
     @objc
     func prevSong() {
-        if index == musicList.count - 1 {
+        if index >= musicList.count - 1 {
             nextButton.tintColor = .white
         }
         if index == 1 {
             prevButton.tintColor = .gray
         }
         if index > 0 {
-            if player.duration - player.currentTime == player.duration {
+            if player.currentTime < 3 {
                 player.stop()
-                self.rotationAngle = 0.0
-                mainDisk.layer.removeAllAnimations()
-                mainDisk.transform = CGAffineTransform(rotationAngle: 0)
                 isRotating = false
+                descriptionIsShown = false
+                descriptionLabel.text = ""
+                infoButton.backgroundColor = .black.withAlphaComponent(0.3)
                 index -= 1
                 createPlayer(index)
                 startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
@@ -316,8 +361,18 @@ final class MusicController: UIViewController {
             repeatButton.heightAnchor.constraint(equalToConstant: 40),
             repeatButton.widthAnchor.constraint(equalToConstant: 40),
             
+            infoButton.bottomAnchor.constraint(equalTo: mainDisk.bottomAnchor, constant: -10),
+            infoButton.leadingAnchor.constraint(equalTo: mainDisk.leadingAnchor, constant: 10),
+            infoButton.heightAnchor.constraint(equalToConstant: 40),
+            infoButton.widthAnchor.constraint(equalToConstant: 40),
+            
             musicNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             musicNavBar.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+            
+            descriptionLabel.heightAnchor.constraint(equalToConstant: 100),
+            descriptionLabel.widthAnchor.constraint(equalToConstant: 300),
+            descriptionLabel.topAnchor.constraint(equalTo: mainDisk.bottomAnchor, constant: 10),
+            descriptionLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             mainDisk.heightAnchor.constraint(equalToConstant: 300),
             mainDisk.widthAnchor.constraint(equalToConstant: 300),

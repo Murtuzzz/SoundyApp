@@ -85,6 +85,14 @@ class NatureCollectionCell: UICollectionViewCell {
         
     }
     
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        if superview == nil {
+            player.stop()
+        }
+    }
+    
     @objc func soundRepeat() {
         
         if Int(player.currentTime) == Int(player.duration) - 1 {
@@ -124,6 +132,13 @@ class NatureCollectionCell: UICollectionViewCell {
             print("Error")
         }
         
+    }
+    
+    func stopPlayer() {
+        condition = true
+        container.backgroundColor = .white
+        myImageView.tintColor = R.Colors.blueBG
+        player.stop()
     }
     
     func constraints() {

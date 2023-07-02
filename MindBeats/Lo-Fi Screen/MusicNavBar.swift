@@ -1,6 +1,6 @@
 import UIKit
 
-final class MusicNavBar: UIView {
+final class MusicNavBar: UINavigationBar {
     private let label: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.Italic(with: 34)
@@ -16,7 +16,7 @@ final class MusicNavBar: UIView {
         settings()
         addSubview(label)
         constraints()
-      
+        self.label.textAlignment = .left
        
     }
     

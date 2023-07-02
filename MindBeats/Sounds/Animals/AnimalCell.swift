@@ -84,6 +84,14 @@ class AnimalCollectionCell: UICollectionViewCell {
         
     }
     
+    override func didMoveToSuperview() {
+        super.didMoveToSuperview()
+        
+        if superview == nil {
+            player.stop()
+        }
+    }
+    
     @objc func soundRepeat() {
         
         if Int(player.currentTime) == Int(player.duration) - 1 {
@@ -104,16 +112,35 @@ class AnimalCollectionCell: UICollectionViewCell {
             container.backgroundColor = R.Colors.green
             myImageView.tintColor = .white
             createPlayer(num)
-            player.play()
+            //player.play()
             condition = false
         } else {
             condition = true
             container.backgroundColor = .white
             myImageView.tintColor = R.Colors.blueBG
-            player.stop()
+            //player.stop()
         }
 
     }
+    
+    public func startPlayer() {
+        if (condition == true) {
+            player.stop()
+        } else {
+            player.play()
+        }
+    }
+    
+    public func stopPlayer() {
+        if condition == true {
+            condition = false
+            container.backgroundColor = .white
+            myImageView.tintColor = R.Colors.blueBG
+            player.stop()
+        }
+    }
+    
+   
     
     func createPlayer(_ num: Int) {
         do {

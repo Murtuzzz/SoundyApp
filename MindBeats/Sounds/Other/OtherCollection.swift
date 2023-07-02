@@ -30,9 +30,8 @@ final class OtherCollection: UIView, UICollectionViewDelegateFlowLayout, UIColle
         
         dataSource = [
             .init(title: "Keyboard", image: UIImage(systemName: "keyboard.fill")!),
-            .init(title: "Waves", image: UIImage(systemName: "water.waves")!),
-            .init(title: "Forest", image: UIImage(systemName: "tree")!),
-            .init(title: "Fire", image: UIImage(systemName: "flame")!),
+            .init(title: "Train", image: UIImage(systemName: "train.side.rear.car")!),
+            .init(title: "Bar", image: UIImage(systemName: "wineglass.fill")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)

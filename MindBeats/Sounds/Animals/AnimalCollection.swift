@@ -24,6 +24,8 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
     func collectionApperance() {
        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -59,6 +61,9 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
                ])
     }
     
+    
+    
+    
     func constraints() {
         
     }
@@ -90,6 +95,7 @@ extension AnimalCollection {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! AnimalCollectionCell
         cell.changeCondition(indexPath.row)
+        cell.startPlayer()
         
         
     }

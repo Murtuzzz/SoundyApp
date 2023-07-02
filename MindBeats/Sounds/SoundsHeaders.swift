@@ -14,10 +14,10 @@ final class MusicHeaders: UIView {
         label.font = R.Fonts.Italic(with: 22)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.layer.shadowColor = UIColor.black.cgColor
-        label.layer.shadowOpacity = 1.0;
-        label.layer.shadowRadius = 1.0;
-        label.layer.shadowOffset = CGSizeMake(4, 4);
+//        label.layer.shadowColor = UIColor.black.cgColor
+//        label.layer.shadowOpacity = 1.0;
+//        label.layer.shadowRadius = 1.0;
+//        label.layer.shadowOffset = CGSizeMake(4, 4);
         return label
     }()
     

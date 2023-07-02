@@ -10,6 +10,34 @@ import AVFoundation
 
 class SoundsController: UIViewController {
     
+    private var timerValue = 0 {
+        didSet {
+            if timerValue == 0 {
+                navigationController?.popViewController(animated: true)
+            }
+        }
+    }
+    
+    private var isTimerOn = false
+    private var timer: Timer?
+    
+    private let dateComponentsFormatter: DateComponentsFormatter = {
+        let dateComponentsFormatter = DateComponentsFormatter()
+        dateComponentsFormatter.unitsStyle = .positional
+        dateComponentsFormatter.zeroFormattingBehavior = .pad
+        dateComponentsFormatter.allowedUnits = [.hour, .minute, .second]
+        return dateComponentsFormatter
+    }()
+    
+    private let timerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = ""
+        label.font = R.Fonts.Italic(with: 20)
+        label.textColor = .white
+        return label
+    }()
+    
     private let timerButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -63,21 +91,21 @@ class SoundsController: UIViewController {
         return view
     }()
     
-    let childCollection = NatureCollection()
-    let natureCollection = AnimalCollection()
-    let animalCollection = OtherCollection()
+    let natureCollection = NatureCollection()
+    let animalCollection = AnimalCollection()
+    let otherCollection = OtherCollection()
     
-    private let childHeader = MusicHeaders(header: "Nature", desc: "It will allow you to merge with nature")
-    private let natureHeader = MusicHeaders(header: "Animals", desc: "Animal voices will improve your sleep")
-    private let animalHeader = MusicHeaders(header: "Other", desc: "Animal voices will improve your sleep")
+    private let natureHeader = MusicHeaders(header: "Nature", desc: "It will allow you to merge with nature")
+    private let animalHeader = MusicHeaders(header: "Animals", desc: "Animal voices will improve your sleep")
+    private let otherHeader = MusicHeaders(header: "Other", desc: "Animal voices will improve your sleep")
     
     private let navController: MusicNavBar = {
         let view = MusicNavBar(header: "Sounds")
-        view.backgroundColor = R.Colors.green
-        view.layer.borderWidth = 1
-        view.layer.borderColor = UIColor.black.cgColor
-        view.tintColor = .white
-        view.layer.cornerRadius = 10
+//        view.backgroundColor = R.Colors.green
+//        view.layer.borderWidth = 1
+//        view.layer.borderColor = UIColor.black.cgColor
+//        view.tintColor = .white
+//        view.layer.cornerRadius = 10
 //        view.layer.shadowColor = UIColor.black.cgColor
 //        view.layer.shadowOpacity = 1.0;
 //        view.layer.shadowRadius = 1.0;
@@ -87,14 +115,16 @@ class SoundsController: UIViewController {
     
     private var collectionView: UICollectionView?
     
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
-     
-    }
+        
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,31 +140,61 @@ class SoundsController: UIViewController {
         addViews()
         view.backgroundColor = .white
         constraints()
-        addNavBarButton(at: .left,and: UIImage(systemName: "arrow.left"))
+        //addNavBarButton(at: .left,and: UIImage(systemName: "arrow.left"))
         
-        
-        //gradient.frame = view.bounds
-        //view.layer.insertSublayer(gradient, at: 0)
+        timerButton.addTarget(self, action: #selector(timerScreen), for: .touchUpInside)
+    
         
     }
     
-    override func navBarLeftButtonHandler() {
-        navigationController?.popViewController(animated: true)
+    override func viewWillDisappear(_ animated: Bool) {
+        timer?.invalidate()
+        
     }
     
+    @objc
+    func timerScreen() {
+        let vc = TimerController { minutes in
+            self.timer?.invalidate()
+            let minutes = minutes
+            self.timerLabel.text = self.dateComponentsFormatter.string(from: TimeInterval(Int(minutes)))
+            self.timerValue = Int(minutes)
+            self.isTimerOn = true
+            print(self.isTimerOn)
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startTimer), userInfo: nil, repeats: true)
+        }
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
+    }
+    
+    @objc func startTimer() {
+        if timerValue != 0 {
+            timerValue -= 1
+            print(timerValue)
+            timerLabel.text = self.dateComponentsFormatter.string(from: TimeInterval(Int(timerValue)))
+        }
+    }
+    
+    func close() {
+        dismiss(animated: true)
+    }
     
     func addViews() {
+        
+        navigationController?.navigationBar.tintColor = R.Colors.green
         
         view.addSubview(scrollView)
         middleView.addSubview(backgroundView)
         view.addSubview(navController)
+        view.addSubview(timerLabel)
         view.addSubview(timerButton)
-        middleView.addSubview(childCollection)
-        middleView.addSubview(childHeader)
         middleView.addSubview(natureCollection)
         middleView.addSubview(natureHeader)
         middleView.addSubview(animalCollection)
         middleView.addSubview(animalHeader)
+        middleView.addSubview(otherCollection)
+        middleView.addSubview(otherHeader)
         
         contentView.addSubview(middleView)
         
@@ -142,13 +202,13 @@ class SoundsController: UIViewController {
     }
     
     func constraints() {
-        childCollection.translatesAutoresizingMaskIntoConstraints = false
         natureCollection.translatesAutoresizingMaskIntoConstraints = false
         animalCollection.translatesAutoresizingMaskIntoConstraints = false
+        otherCollection.translatesAutoresizingMaskIntoConstraints = false
         navController.translatesAutoresizingMaskIntoConstraints = false
-        childHeader.translatesAutoresizingMaskIntoConstraints = false
         natureHeader.translatesAutoresizingMaskIntoConstraints = false
         animalHeader.translatesAutoresizingMaskIntoConstraints = false
+        otherHeader.translatesAutoresizingMaskIntoConstraints = false
 
         
         
@@ -174,19 +234,11 @@ class SoundsController: UIViewController {
             
             //---------- SCROLL VIEW --------
             
-            childHeader.topAnchor.constraint(equalTo: middleView.topAnchor, constant: 0),
-            childHeader.heightAnchor.constraint(equalToConstant: 60),
-            childHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width),
-            
-            childCollection.topAnchor.constraint(equalTo: middleView.topAnchor, constant: 20),
-            childCollection.heightAnchor.constraint(equalToConstant: 200),
-            childCollection.widthAnchor.constraint(equalToConstant: view.frame.width),
-            
-            natureHeader.topAnchor.constraint(equalTo: childCollection.bottomAnchor, constant: 10),
+            natureHeader.topAnchor.constraint(equalTo: middleView.topAnchor, constant: 0),
             natureHeader.heightAnchor.constraint(equalToConstant: 60),
             natureHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width),
             
-            natureCollection.topAnchor.constraint(equalTo: childCollection.bottomAnchor, constant: 30),
+            natureCollection.topAnchor.constraint(equalTo: middleView.topAnchor, constant: 20),
             natureCollection.heightAnchor.constraint(equalToConstant: 200),
             natureCollection.widthAnchor.constraint(equalToConstant: view.frame.width),
             
@@ -197,6 +249,14 @@ class SoundsController: UIViewController {
             animalCollection.topAnchor.constraint(equalTo: natureCollection.bottomAnchor, constant: 30),
             animalCollection.heightAnchor.constraint(equalToConstant: 200),
             animalCollection.widthAnchor.constraint(equalToConstant: view.frame.width),
+            
+            otherHeader.topAnchor.constraint(equalTo: animalCollection.bottomAnchor, constant: 10),
+            otherHeader.heightAnchor.constraint(equalToConstant: 60),
+            otherHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width),
+            
+            otherCollection.topAnchor.constraint(equalTo: animalCollection.bottomAnchor, constant: 30),
+            otherCollection.heightAnchor.constraint(equalToConstant: 200),
+            otherCollection.widthAnchor.constraint(equalToConstant: view.frame.width),
             
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -300),
@@ -211,6 +271,11 @@ class SoundsController: UIViewController {
             timerButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             timerButton.widthAnchor.constraint(equalToConstant: 40),
             timerButton.heightAnchor.constraint(equalToConstant: 40),
+            
+            timerLabel.centerYAnchor.constraint(equalTo:  navController.centerYAnchor),
+            timerLabel.trailingAnchor.constraint(equalTo: timerButton.leadingAnchor, constant: -20),
+            timerLabel.widthAnchor.constraint(equalToConstant: 100),
+            timerLabel.heightAnchor.constraint(equalToConstant: 21),
             
             
         ])

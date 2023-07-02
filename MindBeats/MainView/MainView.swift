@@ -12,7 +12,7 @@ final class MainView: UIViewController {
     private let mainTitle: UILabel =  {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Mind`s Beats"
+        label.text = "Focus Flow"
         label.font = R.Fonts.Italic(with: 72)
         label.numberOfLines = 2
         label.adjustsFontForContentSizeCategory = true
@@ -119,7 +119,6 @@ final class MainView: UIViewController {
         view.addSubview(soundsTitle)
         view.addSubview(mainTitle)
         
-       
         
         constraints()
         view.backgroundColor = R.Colors.greenBg
