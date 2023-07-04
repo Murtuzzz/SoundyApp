@@ -41,7 +41,7 @@ class SoundsController: UIViewController {
     private let timerButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "stopwatch"), for: .normal)
+        button.setImage(UIImage(systemName: "moon.zzz"), for: .normal)
         button.backgroundColor = R.Colors.green
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.black.cgColor

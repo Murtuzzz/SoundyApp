@@ -15,7 +15,7 @@ class AnimalCollectionCell: UICollectionViewCell {
     private var timer: Timer?
     
     private var player = AVAudioPlayer()
-    let musicList: [String] = ["birds", "Cat","Frogs"]
+    let musicList: [String] = ["birds", "Cat","Frogs","Owl"]
     
     private let container: UIView = {
         let view = UIView()

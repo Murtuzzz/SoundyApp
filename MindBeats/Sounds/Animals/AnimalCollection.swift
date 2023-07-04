@@ -14,6 +14,7 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
     
     private var dataSource:[NatureItems] = []
     private var collectionView: UICollectionView?
+    private let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,6 +37,7 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
             .init(title: "Birds".localized(), image: UIImage(systemName: "bird.fill")!),
             .init(title: "Cats".localized(), image: UIImage(named: "cats")!),
             .init(title: "Frogs".localized(), image: UIImage(named: "frogs")!),
+            .init(title: "Owl".localized(), image: UIImage(named: "owl")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -47,7 +49,7 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.showsHorizontalScrollIndicator = true
+        collectionView.showsHorizontalScrollIndicator = false
         
         addSubview(collectionView)
         
@@ -96,7 +98,7 @@ extension AnimalCollection {
         let cell = collectionView.cellForItem(at: indexPath) as! AnimalCollectionCell
         cell.changeCondition(indexPath.row)
         cell.startPlayer()
-        
+        hapticFeedback.impactOccurred()
         
     }
 }

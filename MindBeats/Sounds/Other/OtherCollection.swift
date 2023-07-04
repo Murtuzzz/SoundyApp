@@ -12,6 +12,7 @@ final class OtherCollection: UIView, UICollectionViewDelegateFlowLayout, UIColle
     
     private var dataSource:[NatureItems] = []
     private var collectionView: UICollectionView?
+    let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -87,7 +88,7 @@ extension OtherCollection {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! OtherCollectionCell
         cell.changeCondition(indexPath.row)
-        
+        hapticFeedback.impactOccurred()
         
     }
 }

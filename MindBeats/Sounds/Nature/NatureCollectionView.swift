@@ -18,10 +18,12 @@ final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
     
     private var dataSource:[ChildItems] = []
     private var collectionView: UICollectionView?
+    private let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         collectionApperance()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -35,11 +37,12 @@ final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
         layout.minimumInteritemSpacing = 1
         
         dataSource = [
-                    .init(title: "Rain".localized(), image: UIImage(systemName: "cloud.bolt.rain.fill")!),
+                    .init(title: "Rain".localized(), image: UIImage(systemName: "cloud.heavyrain.fill")!),
                     .init(title: "Waves".localized(), image: UIImage(named: "ocean")!),
                     .init(title: "Forest".localized(), image: UIImage(systemName: "tree")!),
                     .init(title: "Fire".localized(), image: UIImage(systemName: "flame")!),
                     .init(title: "River".localized(), image: UIImage(systemName: "water.waves")!),
+                    .init(title: "Thunder".localized(), image: UIImage(systemName: "cloud.bolt.rain.fill")!),
                   ]
         
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -95,6 +98,7 @@ extension NatureCollection {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! NatureCollectionCell
         cell.changeCondition(indexPath.row)
+        hapticFeedback.impactOccurred()
         
         
     }

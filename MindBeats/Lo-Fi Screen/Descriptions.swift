@@ -12,7 +12,9 @@ let descriptions = ["",
                     "Storm Clouds by Purrple Cat | https://purrplecat.com/Music promoted by https://www.chosic.com/free-music/all/ Creative Commons CC BY-SA 3.0  https://creativecommons.org/licenses/by-sa/3.0/",
                     "",
                     "Silent Wood by Purrple Cat | https://purrplecat.com/ Music promoted by https://www.chosic.com/free-music/all/ Creative Commons CC BY-SA  3.0https://creativecommons.org/licenses/by-sa/3.0/",
-                    "Purple Dream by Ghostrifter bit.ly/ghostrifter-yt Creative Commons — Attribution-NoDerivs 3.0 Unported — CC BY-ND 3.0 Music promoted by https://www.chosic.com/free-music/all/"
-                    
+                    "Purple Dream by Ghostrifter bit.ly/ghostrifter-yt Creative Commons — Attribution-NoDerivs 3.0 Unported — CC BY-ND 3.0 Music promoted by https://www.chosic.com/free-music/all/",
+                    "Crescent Moon by Purrple Cat | https://purrplecat.com/Music promoted by https://www.chosic.com/free-music/all/ Creative Commons CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/",
+                    "Midnight Snack by Purrple Cat | https://purrplecat.com/ Music promoted by https://www.chosic.com/free-music/all/ Creative Commons CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/",
+                    "Journey’s End by Purrple Cat | https://purrplecat.com/ Music promoted by https://www.chosic.com/free-music/all/ Creative Commons CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/",
 ]
 

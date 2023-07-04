@@ -8,12 +8,13 @@
 import UIKit
 import AVFAudio
 
+
 class NatureCollectionCell: UICollectionViewCell {
     
     static var id = "ChildComposerCollection"
     
     private var player = AVAudioPlayer()
-    let musicList: [String] = ["RainSound","Waves","Forest","Fire","River"]
+    let musicList: [String] = ["RainSound","Waves","Forest","Fire","River","Thunder"]
     private var condition = true
     private var timer: Timer?
     
@@ -96,7 +97,7 @@ class NatureCollectionCell: UICollectionViewCell {
     @objc func soundRepeat() {
         
         if Int(player.currentTime) == Int(player.duration) - 1 {
-            player.currentTime = 0
+            player.currentTime = 1
             player.play()
         }
     }

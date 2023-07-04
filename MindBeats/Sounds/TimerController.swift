@@ -25,11 +25,12 @@ final class TimerController: UIViewController {
     private var sum = 0.0
     private var timerValue: Timer?
     private let onTimeSelected: (Double) -> ()
+    private let hapticFeedback = UIImpactFeedbackGenerator(style: .light)
     
     private let container: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         view.layer.cornerRadius = 25
         return view
     }()
@@ -54,10 +55,10 @@ final class TimerController: UIViewController {
         button.titleLabel?.font = R.Fonts.Italic(with: 24)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Done".localized(), for: .normal)
-        button.layer.shadowColor = UIColor.gray.cgColor
-        button.layer.shadowOpacity = 1.0;
-        button.layer.shadowRadius = 1.0;
-        button.layer.shadowOffset = CGSizeMake(5, 5);
+//        button.layer.shadowColor = UIColor.gray.cgColor
+//        button.layer.shadowOpacity = 1.0;
+//        button.layer.shadowRadius = 1.0;
+//        button.layer.shadowOffset = CGSizeMake(5, 5);
         return button
     }()
     
@@ -69,10 +70,10 @@ final class TimerController: UIViewController {
         button.titleLabel?.font = R.Fonts.Italic(with: 24)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Close".localized(), for: .normal)
-        button.layer.shadowColor = UIColor.gray.cgColor
-        button.layer.shadowOpacity = 1.0;
-        button.layer.shadowRadius = 1.0;
-        button.layer.shadowOffset = CGSizeMake(5, 5);
+//        button.layer.shadowColor = UIColor.gray.cgColor
+//        button.layer.shadowOpacity = 1.0;
+//        button.layer.shadowRadius = 1.0;
+//        button.layer.shadowOffset = CGSizeMake(5, 5);
         return button
     }()
     
@@ -105,11 +106,8 @@ final class TimerController: UIViewController {
     @objc
     func buttonTapped() {
         
-        print("Tapped")
-        //timerValue = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
-        
+        hapticFeedback.impactOccurred()
         onTimeSelected(min)
-        print(min)
         
         dismiss(animated: true)
     }

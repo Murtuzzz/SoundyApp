@@ -12,16 +12,27 @@ import AVFoundation
 final class MusicController: UIViewController {
     
     private let musicNavBar = MusicNavBar(header: "Lo-Fi")
+    private let hapticFeedback = UIImpactFeedbackGenerator(style: .light)
+    
+    private var timerValue = 0 {
+        didSet {
+            if timerValue == 0 {
+                navigationController?.popViewController(animated: true)
+            }
+        }
+    }
     
     private var timer: Timer?
+    private var sleepTimer: Timer?
     var rotationAngle: CGFloat = 0.0
     var isRotating = false
     var descriptionIsShown = false
     private var mainDisk = Disk()
     var index = 0
     var isRepeating = false
+    private var isTimerOn = false
     
-    let musicList: [String] = ["PurrpleCat", "Heart-Of-The-Ocean","StormClouds","Rain","SilentWood","PurpleDream"]
+    let musicList: [String] = ["PurrpleCat", "Heart-Of-The-Ocean","StormClouds","Rain","SilentWood","PurpleDream","Moon", "Snack", "Journey"]
     
     private let albumView: UIImageView = {
         let view = UIImageView()
@@ -39,6 +50,23 @@ final class MusicController: UIViewController {
         slider.transform = CGAffineTransform(scaleX: 1, y: sliderHeightMultiplier)
         slider.tintColor = R.Colors.bar
         return slider
+    }()
+    
+    private let dateComponentsFormatter: DateComponentsFormatter = {
+        let dateComponentsFormatter = DateComponentsFormatter()
+        dateComponentsFormatter.unitsStyle = .positional
+        dateComponentsFormatter.zeroFormattingBehavior = .pad
+        dateComponentsFormatter.allowedUnits = [.hour, .minute, .second]
+        return dateComponentsFormatter
+    }()
+    
+    private let timerLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "00:00:00"
+        label.font = R.Fonts.Italic(with: 20)
+        label.textColor = .white
+        return label
     }()
     
     private let startButton: UIButton = {
@@ -64,6 +92,15 @@ final class MusicController: UIViewController {
     
     private let repeatButton: ButtonView = {
         let button = ButtonView(buttonImage: UIImage(systemName: "repeat")!, type: .system)
+        button.backgroundColor = .black.withAlphaComponent(0.3)
+        button.tintColor = .white
+        button.layer.cornerRadius = 20
+        
+        return button
+    }()
+    
+    private let timerButton: ButtonView = {
+        let button = ButtonView(buttonImage: UIImage(systemName: "moon.stars")!, type: .system)
         button.backgroundColor = .black.withAlphaComponent(0.3)
         button.tintColor = .white
         button.layer.cornerRadius = 20
@@ -120,10 +157,13 @@ final class MusicController: UIViewController {
         view.addSubview(startButton)
         view.addSubview(slider)
         view.addSubview(infoButton)
+        view.addSubview(timerButton)
+        view.addSubview(timerLabel)
                 //view.backgroundColor = R.Colors.greenBg
         constraints()
         
         albumView.image = UIImage(named: musicList[index])
+        timerButton.addTarget(self, action: #selector(timerScreen), for: .touchUpInside)
     
         createPlayer(index)
         settings()
@@ -132,7 +172,15 @@ final class MusicController: UIViewController {
     }
     
     
-    
+    override func viewWillDisappear(_ animated: Bool) {
+            if (self.isMovingFromParent) {
+                isRotating = false
+                player.stop()
+                sleepTimer?.invalidate()
+
+                }
+        }
+
     func createPlayer(_ num: Int) {
         
         
@@ -146,13 +194,7 @@ final class MusicController: UIViewController {
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        if (self.isMovingFromParent) {
-            isRotating = false
-            player.stop()
-
-            }
-    }
+    
     
     func settings() {
         startButton.addTarget(self, action: #selector(start), for: .touchUpInside)
@@ -206,7 +248,20 @@ final class MusicController: UIViewController {
                     prevButton.tintColor = .white
                     if index == (musicList.count - 1) {
                         nextButton.tintColor = .gray
+                        
                     }
+                } else {
+                    player.stop()
+                    isRotating = false
+                    index = 0
+                    createPlayer(index)
+                    prevButton.tintColor = .gray
+                    nextButton.tintColor = .white
+                    startButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
+                    mainDisk.imageView.image = UIImage(named: musicList[index])
+                    albumView.image = UIImage(named: musicList[index])
+                    player.play()
+                    
                     
                 }
             }
@@ -298,7 +353,7 @@ final class MusicController: UIViewController {
         
     @objc
     func start() {
-        
+        hapticFeedback.impactOccurred()
         if player.isPlaying {
             startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
             //stopRotation(mainDisk)
@@ -314,34 +369,8 @@ final class MusicController: UIViewController {
         }
         
         
-        timer?.invalidate() // Остановите существующий таймер, если он уже запущен
+        //timer?.invalidate() // Остановите существующий таймер, если он уже запущен
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateSlider), userInfo: nil, repeats: true)
-    }
-    
-    func rotateView(_ viewToRotate: UIView) {
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {
-          // Рассчитываение угла поворота
-            self.rotationAngle += .pi / 60
-          viewToRotate.transform = CGAffineTransform(rotationAngle: self.rotationAngle)
-       }) { finished in
-           if self.isRotating {
-               // Рекурсивный вызов функции для продолжения вращения
-               self.rotateView(viewToRotate)
-           }
-       }
-    }
-    
-    func stopRotation(_ viewToRotate: UIView) {
-        UIView.animate(withDuration: 0, delay: 0.0, options: .curveLinear, animations: {
-          // Рассчитываение угла поворота
-          self.rotationAngle += 0
-          viewToRotate.transform = CGAffineTransform(rotationAngle: self.rotationAngle)
-       }) { finished in
-           if self.isRotating == false {
-               // Рекурсивный вызов функции для продолжения вращения
-               self.stopRotation(viewToRotate)
-           }
-       }
     }
     
     func constraints() {
@@ -366,6 +395,11 @@ final class MusicController: UIViewController {
             infoButton.heightAnchor.constraint(equalToConstant: 40),
             infoButton.widthAnchor.constraint(equalToConstant: 40),
             
+            timerButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 10),
+            timerButton.leadingAnchor.constraint(equalTo: slider.leadingAnchor),
+            timerButton.heightAnchor.constraint(equalToConstant: 40),
+            timerButton.widthAnchor.constraint(equalToConstant: 40),
+            
             musicNavBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             musicNavBar.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
             
@@ -389,7 +423,6 @@ final class MusicController: UIViewController {
             slider.widthAnchor.constraint(equalToConstant: 150),
             
             startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            startButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 50),
             startButton.heightAnchor.constraint(equalToConstant: 60),
             startButton.widthAnchor.constraint(equalToConstant: 60),
             startButton.centerYAnchor.constraint(equalTo: mainDisk.centerYAnchor),
@@ -403,6 +436,11 @@ final class MusicController: UIViewController {
             prevButton.centerYAnchor.constraint(equalTo: startButton.centerYAnchor, constant: 7),
             prevButton.heightAnchor.constraint(equalToConstant: 40),
             prevButton.widthAnchor.constraint(equalToConstant: 40),
+            
+            timerLabel.centerYAnchor.constraint(equalTo:  timerButton.centerYAnchor),
+            timerLabel.leadingAnchor.constraint(equalTo: timerButton.trailingAnchor, constant: 10),
+            timerLabel.widthAnchor.constraint(equalToConstant: 80),
+            timerLabel.heightAnchor.constraint(equalToConstant: 21),
             
         ])
     }
@@ -446,5 +484,29 @@ extension MusicController {
         UIGraphicsEndImageContext()
         
         return thumbImage
+    }
+    
+    @objc
+    func timerScreen() {
+        let vc = TimerController { minutes in
+            self.sleepTimer?.invalidate()
+            let minutes = minutes
+            self.timerLabel.text = self.dateComponentsFormatter.string(from: TimeInterval(Int(minutes)))
+            self.timerValue = Int(minutes)
+            self.isTimerOn = true
+            print(self.isTimerOn)
+            self.sleepTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.startTimer), userInfo: nil, repeats: true)
+        }
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true)
+    }
+    
+    @objc func startTimer() {
+        if timerValue != 0 {
+            timerValue -= 1
+            print(timerValue)
+            timerLabel.text = self.dateComponentsFormatter.string(from: TimeInterval(Int(timerValue)))
+        }
     }
 }
