@@ -59,7 +59,7 @@ class OtherCollectionCell: UICollectionViewCell {
         label.text = "Album"
         label.textColor = R.Colors.background
         label.textAlignment = .left
-        label.font = R.Fonts.nonItalic(with: 15)
+        label.font = R.Fonts.avenir(with: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -105,8 +105,6 @@ class OtherCollectionCell: UICollectionViewCell {
     public func configure(label: String, image: UIImage) {
         mainLabel.text = label
         myImageView.image = image
-        
-        
     }
     
     public func changeCondition(_ num: Int) {

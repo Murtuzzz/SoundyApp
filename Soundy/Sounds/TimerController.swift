@@ -48,7 +48,7 @@ final class TimerController: UIViewController {
         button.backgroundColor = R.Colors.green
         button.tintColor = .white
         button.layer.cornerRadius = 20
-        button.titleLabel?.font = R.Fonts.Italic(with: 24)
+        button.titleLabel?.font = R.Fonts.nonItalic(with: 24)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Done".localized(), for: .normal)
         return button
@@ -59,7 +59,7 @@ final class TimerController: UIViewController {
         button.backgroundColor = R.Colors.blueBG
         button.tintColor = .white
         button.layer.cornerRadius = 20
-        button.titleLabel?.font = R.Fonts.Italic(with: 24)
+        button.titleLabel?.font = R.Fonts.nonItalic(with: 24)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Close".localized(), for: .normal)
         return button
@@ -106,7 +106,6 @@ final class TimerController: UIViewController {
     }
     
     @objc func startTimer() {
-      
         let res = timer.countDownDuration
         if min != timer.countDownDuration {
             
@@ -116,12 +115,9 @@ final class TimerController: UIViewController {
             timerValue?.invalidate()
             min = 0.0
         }
-        
     }
     
     func constraints() {
-        
-        
         NSLayoutConstraint.activate([
             
             container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),

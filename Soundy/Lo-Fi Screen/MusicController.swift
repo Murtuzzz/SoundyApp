@@ -138,7 +138,6 @@ final class MusicController: UIViewController {
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         
         blurEffectView.frame = view.bounds
-        //blurEffectView.alpha = 0.9
         
         let thumbImageSize = CGSize(width: 0.1, height: 0.1) // Установите нужный размер для кастомного thumb
         if let thumbImage = createThumbImage(withSize: thumbImageSize) {

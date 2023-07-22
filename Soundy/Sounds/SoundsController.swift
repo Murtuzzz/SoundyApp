@@ -43,14 +43,8 @@ class SoundsController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "moon.zzz"), for: .normal)
         button.backgroundColor = R.Colors.green
-        button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.black.cgColor
         button.tintColor = .white
         button.layer.cornerRadius = 10
-//        button.layer.shadowColor = UIColor.black.cgColor
-//        button.layer.shadowOpacity = 1.0;
-//        button.layer.shadowRadius = 1.0;
-//        button.layer.shadowOffset = CGSizeMake(5, 5);
         return button
     }()
     
@@ -64,8 +58,9 @@ class SoundsController: UIViewController {
     
     private let backgroundView: UIImageView = {
         let view = UIImageView()
-        view.image = UIImage(named: "bg4")
+        view.image = UIImage(named: "blurBg4")
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -175,13 +170,21 @@ class SoundsController: UIViewController {
     
     func addViews() {
         
+//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemThinMaterial)
+//        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+//
+//        blurEffectView.frame = view.bounds
+//        blurEffectView.alpha = 1
+        
         navigationController?.navigationBar.tintColor = R.Colors.green
         
         view.addSubview(scrollView)
         middleView.addSubview(backgroundView)
+        
         view.addSubview(navController)
         view.addSubview(timerLabel)
         view.addSubview(timerButton)
+       // middleView.addSubview(blurEffectView)
         middleView.addSubview(natureCollection)
         middleView.addSubview(natureHeader)
         middleView.addSubview(animalCollection)

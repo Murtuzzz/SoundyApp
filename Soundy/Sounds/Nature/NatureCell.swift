@@ -59,7 +59,7 @@ class NatureCollectionCell: UICollectionViewCell {
         label.text = "Album"
         label.textColor = .white
         label.textAlignment = .left
-        label.font = R.Fonts.nonItalic(with: 15)
+        label.font = R.Fonts.avenir(with: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -105,8 +105,6 @@ class NatureCollectionCell: UICollectionViewCell {
     public func configure(label: String, image: UIImage) {
         mainLabel.text = label
         myImageView.image = image.withRenderingMode(.alwaysTemplate)
-        myImageView.tintColor = R.Colors.blueBG
-        
         
     }
     

@@ -19,13 +19,13 @@ final class MusicHeaders: UIView {
     
     private let subTitle: UILabel = {
         let label = UILabel()
-        label.font = R.Fonts.Italic(with: 18)
+        label.font = R.Fonts.avenir(with: 18)
         label.textColor = .gray
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.layer.shadowColor = UIColor.black.cgColor
-        label.layer.shadowOpacity = 0.5;
-        label.layer.shadowRadius = 2.0;
-        label.layer.shadowOffset = CGSizeMake(4, 4);
+//        label.layer.shadowColor = UIColor.black.cgColor
+//        label.layer.shadowOpacity = 0.5;
+//        label.layer.shadowRadius = 2.0;
+//        label.layer.shadowOffset = CGSizeMake(4, 4);
         return label
     }()
     
