@@ -20,7 +20,7 @@
 		B401E3AF2A4048860084557F /* MusicNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3AE2A4048860084557F /* MusicNavBar.swift */; };
 		B401E3B12A404F350084557F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3B02A404F350084557F /* Button.swift */; };
 		B41FBE3A2A4077B400037A54 /* Heart-Of-The-Ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE392A4077B400037A54 /* Heart-Of-The-Ocean.mp3 */; };
-		B41FBE412A4194CF00037A54 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE402A4194CF00037A54 /* MainView.swift */; };
+		B41FBE412A4194CF00037A54 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE402A4194CF00037A54 /* MainViewController.swift */; };
 		B41FBE432A41AC9A00037A54 /* MainScreenButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE422A41AC9A00037A54 /* MainScreenButtons.swift */; };
 		B41FBE452A41D8AB00037A54 /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE442A41D8AB00037A54 /* Ext.swift */; };
 		B41FBE482A42208A00037A54 /* StormClouds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE472A42208A00037A54 /* StormClouds.mp3 */; };
@@ -73,7 +73,7 @@
 		B401E3AE2A4048860084557F /* MusicNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicNavBar.swift; sourceTree = "<group>"; };
 		B401E3B02A404F350084557F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
 		B41FBE392A4077B400037A54 /* Heart-Of-The-Ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Heart-Of-The-Ocean.mp3"; sourceTree = "<group>"; };
-		B41FBE402A4194CF00037A54 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B41FBE402A4194CF00037A54 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B41FBE422A41AC9A00037A54 /* MainScreenButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButtons.swift; sourceTree = "<group>"; };
 		B41FBE442A41D8AB00037A54 /* Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
 		B41FBE472A42208A00037A54 /* StormClouds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = StormClouds.mp3; path = ../../../../../../Downloads/StormClouds.mp3; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		B41FBE462A41E7E700037A54 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
-				B41FBE402A4194CF00037A54 /* MainView.swift */,
+				B41FBE402A4194CF00037A54 /* MainViewController.swift */,
 				B41FBE422A41AC9A00037A54 /* MainScreenButtons.swift */,
 			);
 			path = MainView;
@@ -375,7 +375,7 @@
 				B401E3A22A3D768B0084557F /* R.swift in Sources */,
 				B41FBE822A44A2AA00037A54 /* NatureCollectionView.swift in Sources */,
 				B401E3B12A404F350084557F /* Button.swift in Sources */,
-				B41FBE412A4194CF00037A54 /* MainView.swift in Sources */,
+				B41FBE412A4194CF00037A54 /* MainViewController.swift in Sources */,
 				B401E3A72A3D85710084557F /* MusicController.swift in Sources */,
 				B401E3AF2A4048860084557F /* MusicNavBar.swift in Sources */,
 				B401E38C2A3D73870084557F /* SceneDelegate.swift in Sources */,
@@ -530,22 +530,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = N4AY2827DP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soundy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Soundy;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = MK.MindBeats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -563,22 +563,22 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = N4AY2827DP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soundy/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Soundy;
-				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.music";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = MK.MindBeats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

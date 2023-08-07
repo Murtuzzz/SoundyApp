@@ -48,7 +48,7 @@ final class TimerController: UIViewController {
         button.backgroundColor = R.Colors.green
         button.tintColor = .white
         button.layer.cornerRadius = 20
-        button.titleLabel?.font = R.Fonts.nonItalic(with: 24)
+        button.titleLabel?.font = R.Fonts.nonItalic(with: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Done".localized(), for: .normal)
         return button
@@ -59,7 +59,7 @@ final class TimerController: UIViewController {
         button.backgroundColor = R.Colors.blueBG
         button.tintColor = .white
         button.layer.cornerRadius = 20
-        button.titleLabel?.font = R.Fonts.nonItalic(with: 24)
+        button.titleLabel?.font = R.Fonts.nonItalic(with: 20)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Close".localized(), for: .normal)
         return button

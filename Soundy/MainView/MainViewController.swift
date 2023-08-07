@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class MainView: UIViewController {
+final class MainViewController: UIViewController {
     
     private let mainTitle: UILabel =  {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Soundy"
-        label.font = R.Fonts.Italic(with: 72)
+        label.font = R.Fonts.avenirBook(with: 72)
         label.numberOfLines = 2
         label.adjustsFontForContentSizeCategory = true
         label.adjustsFontSizeToFitWidth = true
@@ -71,7 +71,10 @@ final class MainView: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Lo-Fi"
-        label.font = R.Fonts.Italic(with: 52)
+        label.adjustsFontForContentSizeCategory = true
+        label.adjustsFontSizeToFitWidth = true
+        label.textAlignment = .center
+        label.font = R.Fonts.avenirBook(with: 52)
         label.textColor = R.Colors.background
         return label
     }()
@@ -80,8 +83,10 @@ final class MainView: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sounds".localized()
+        label.adjustsFontForContentSizeCategory = true
+        label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
-        label.font = R.Fonts.Italic(with: 48)
+        label.font = R.Fonts.avenirBook(with: 48)
         label.textColor = R.Colors.background
         return label
     }()

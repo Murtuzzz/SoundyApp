@@ -58,7 +58,7 @@ class AnimalCollectionCell: UICollectionViewCell {
         label.text = "Album"
         label.textColor = R.Colors.background
         label.textAlignment = .left
-        label.font = R.Fonts.avenir(with: 15)
+        label.font = R.Fonts.avenirBook(with: 15)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

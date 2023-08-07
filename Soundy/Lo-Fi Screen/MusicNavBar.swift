@@ -3,10 +3,11 @@ import UIKit
 final class MusicNavBar: UINavigationBar {
     private let label: UILabel = {
         let label = UILabel()
-        label.font = R.Fonts.nonItalic(with: 34)
+        label.font = R.Fonts.avenirBook(with: 34)
         label.textColor = .white
         label.textAlignment = .left
-        
+        label.adjustsFontForContentSizeCategory = true
+        label.adjustsFontSizeToFitWidth = true
         return label
     }()
     

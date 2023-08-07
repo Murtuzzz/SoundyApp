@@ -60,7 +60,7 @@ class SoundsController: UIViewController {
         let view = UIImageView()
         view.image = UIImage(named: "blurBg4")
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleAspectFit
+        view.contentMode = .scaleToFill
         return view
     }()
     
@@ -70,12 +70,14 @@ class SoundsController: UIViewController {
         view.isDirectionalLockEnabled = true
         view.showsHorizontalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
         return view
     }()
     
     let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -177,9 +179,8 @@ class SoundsController: UIViewController {
 //        blurEffectView.alpha = 1
         
         navigationController?.navigationBar.tintColor = R.Colors.green
-        
+        view.addSubview(backgroundView)
         view.addSubview(scrollView)
-        middleView.addSubview(backgroundView)
         
         view.addSubview(navController)
         view.addSubview(timerLabel)
@@ -218,12 +219,12 @@ class SoundsController: UIViewController {
             contentView.widthAnchor.constraint(equalTo: view.widthAnchor), // Устанавливает ширину
             contentView.heightAnchor.constraint(equalToConstant: 740),
             
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 64),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
-            middleView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 70),
+            middleView.topAnchor.constraint(equalTo: contentView.topAnchor),
             middleView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             middleView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             middleView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
@@ -232,7 +233,8 @@ class SoundsController: UIViewController {
             
             natureHeader.topAnchor.constraint(equalTo: middleView.topAnchor, constant: 0),
             natureHeader.heightAnchor.constraint(equalToConstant: 60),
-            natureHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width),
+            //natureHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width),
+            natureHeader.leadingAnchor.constraint(equalTo: middleView.leadingAnchor, constant: 20),
             
             natureCollection.topAnchor.constraint(equalTo: middleView.topAnchor, constant: 20),
             natureCollection.heightAnchor.constraint(equalToConstant: 200),
@@ -240,7 +242,9 @@ class SoundsController: UIViewController {
             
             animalHeader.topAnchor.constraint(equalTo: natureCollection.bottomAnchor, constant: 10),
             animalHeader.heightAnchor.constraint(equalToConstant: 60),
-            animalHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width),
+            animalHeader.leadingAnchor.constraint(equalTo: middleView.leadingAnchor, constant: 20),
+//            animalHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width - 128),
+            animalHeader.trailingAnchor.constraint(equalTo: middleView.trailingAnchor, constant: -32),
             
             animalCollection.topAnchor.constraint(equalTo: natureCollection.bottomAnchor, constant: 30),
             animalCollection.heightAnchor.constraint(equalToConstant: 200),
@@ -249,14 +253,15 @@ class SoundsController: UIViewController {
             otherHeader.topAnchor.constraint(equalTo: animalCollection.bottomAnchor, constant: 10),
             otherHeader.heightAnchor.constraint(equalToConstant: 60),
             otherHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width),
+            otherHeader.leadingAnchor.constraint(equalTo: middleView.leadingAnchor, constant: 20),
             
             otherCollection.topAnchor.constraint(equalTo: animalCollection.bottomAnchor, constant: 30),
             otherCollection.heightAnchor.constraint(equalToConstant: 200),
             otherCollection.widthAnchor.constraint(equalToConstant: view.frame.width),
             
             backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
-            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -300),
-            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 300),
+            backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
             navController.topAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.topAnchor, constant: 10),

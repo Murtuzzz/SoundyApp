@@ -18,8 +18,9 @@ enum R {
         static let background = UIColor(hexString: "#f0f0f0")
         static let inactive = UIColor(hexString: "#E4C8A2")
         static let orange = UIColor(hexString: "#FF9C41")
-        static let blueBG = UIColor(hexString: "#293447")
-        
+        static let blueBG = UIColor(hexString: "#201E46")
+        static let pink = UIColor(hexString: "#DF61EC")
+        static let purple = UIColor(hexString: "#5A32C9")
     }
     enum Images {
         static let moon = UIImage(named: "moon")
@@ -51,6 +52,10 @@ enum R {
         
         static func avenirItalic(with size: CGFloat) -> UIFont {
             UIFont(name: "AvenirNext-MediumItalic", size: size) ?? UIFont()
+        }
+        
+        static func avenirBook(with size: CGFloat) -> UIFont {
+            UIFont(name: "Avenir-Book", size: size) ?? UIFont()
         }
     }
 }

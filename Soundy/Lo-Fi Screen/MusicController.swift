@@ -154,7 +154,7 @@ final class MusicController: UIViewController {
         view.addSubview(nextButton)
         view.addSubview(prevButton)
         view.addSubview(startButton)
-        view.addSubview(slider)
+        //view.addSubview(slider)
         view.addSubview(infoButton)
         view.addSubview(timerButton)
         view.addSubview(timerLabel)
@@ -317,7 +317,8 @@ final class MusicController: UIViewController {
                 infoButton.backgroundColor = .black.withAlphaComponent(0.3)
                 index -= 1
                 createPlayer(index)
-                startButton.setImage(UIImage(systemName: "play.fill"), for: .normal)
+                player.play()
+                startButton.setImage(UIImage(systemName: "pause.fill"), for: .normal)
                 mainDisk.imageView.image = UIImage(named: musicList[index])
                 albumView.image = UIImage(named: musicList[index])
                 print(index)
@@ -390,8 +391,8 @@ final class MusicController: UIViewController {
             infoButton.heightAnchor.constraint(equalToConstant: 40),
             infoButton.widthAnchor.constraint(equalToConstant: 40),
             
-            timerButton.topAnchor.constraint(equalTo: slider.bottomAnchor, constant: 10),
-            timerButton.leadingAnchor.constraint(equalTo: slider.leadingAnchor),
+            timerButton.topAnchor.constraint(equalTo: musicNavBar.bottomAnchor, constant: 10),
+            timerButton.leadingAnchor.constraint(equalTo: musicNavBar.leadingAnchor, constant: -40),
             timerButton.heightAnchor.constraint(equalToConstant: 40),
             timerButton.widthAnchor.constraint(equalToConstant: 40),
             
@@ -413,9 +414,9 @@ final class MusicController: UIViewController {
             albumView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 200),
             albumView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
-            slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            slider.topAnchor.constraint(equalTo: musicNavBar.bottomAnchor, constant: 5),
-            slider.widthAnchor.constraint(equalToConstant: 150),
+//            slider.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            slider.topAnchor.constraint(equalTo: musicNavBar.bottomAnchor, constant: 5),
+//            slider.widthAnchor.constraint(equalToConstant: 150),
             
             startButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             startButton.heightAnchor.constraint(equalToConstant: 60),

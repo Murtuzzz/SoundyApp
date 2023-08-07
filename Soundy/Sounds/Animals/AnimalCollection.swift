@@ -85,7 +85,7 @@ extension AnimalCollection {
         let item = dataSource[indexPath.row]
         
         cell.configure(label: item.title, image: item.image)
-                  return cell
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
