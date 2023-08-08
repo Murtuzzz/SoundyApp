@@ -42,9 +42,9 @@ class SoundsController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "moon.zzz"), for: .normal)
-        button.backgroundColor = R.Colors.green
+        button.backgroundColor = R.Colors.purple
         button.tintColor = .white
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = 20
         return button
     }()
     
@@ -56,11 +56,21 @@ class SoundsController: UIViewController {
         return gradientLayer
     }()
     
-    private let backgroundView: UIImageView = {
+    private let headerImageView: UIImageView = {
         let view = UIImageView()
         view.image = UIImage(named: "blurBg4")
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .scaleToFill
+        view.contentMode = .scaleAspectFill
+        return view
+    }()
+    
+    private let backgroundView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "gradientBg")
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFill
+        view.layer.cornerRadius = 30
+        view.clipsToBounds = true
         return view
     }()
     
@@ -71,6 +81,7 @@ class SoundsController: UIViewController {
         view.showsHorizontalScrollIndicator = false
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
+        view.layer.cornerRadius = 30
         return view
     }()
     
@@ -78,6 +89,7 @@ class SoundsController: UIViewController {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
+        view.layer.cornerRadius = 30
         return view
     }()
     
@@ -85,6 +97,7 @@ class SoundsController: UIViewController {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
+        view.layer.cornerRadius = 30
         return view
     }()
     
@@ -117,6 +130,7 @@ class SoundsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        natureCollection.layer.cornerRadius = 45
         
         
         do {
@@ -128,7 +142,7 @@ class SoundsController: UIViewController {
         
         
         addViews()
-        view.backgroundColor = .white
+        
         constraints()
         //addNavBarButton(at: .left,and: UIImage(systemName: "arrow.left"))
         
@@ -172,20 +186,21 @@ class SoundsController: UIViewController {
     
     func addViews() {
         
-//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.systemThinMaterial)
+//        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
 //        let blurEffectView = UIVisualEffectView(effect: blurEffect)
 //
 //        blurEffectView.frame = view.bounds
 //        blurEffectView.alpha = 1
         
-        navigationController?.navigationBar.tintColor = R.Colors.green
+        navigationController?.navigationBar.tintColor = R.Colors.pink
+        view.addSubview(headerImageView)
         view.addSubview(backgroundView)
         view.addSubview(scrollView)
         
         view.addSubview(navController)
         view.addSubview(timerLabel)
         view.addSubview(timerButton)
-       // middleView.addSubview(blurEffectView)
+        //middleView.addSubview(blurEffectView)
         middleView.addSubview(natureCollection)
         middleView.addSubview(natureHeader)
         middleView.addSubview(animalCollection)
@@ -196,6 +211,7 @@ class SoundsController: UIViewController {
         contentView.addSubview(middleView)
         
         scrollView.addSubview(contentView)
+        view.backgroundColor = R.Colors.blueBG
     }
     
     func constraints() {
@@ -214,7 +230,7 @@ class SoundsController: UIViewController {
             //--------- SCROLL VIEW ---------
             contentView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 16),
             contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
             contentView.widthAnchor.constraint(equalTo: view.widthAnchor), // Устанавливает ширину
             contentView.heightAnchor.constraint(equalToConstant: 740),
@@ -231,7 +247,7 @@ class SoundsController: UIViewController {
             
             //---------- SCROLL VIEW --------
             
-            natureHeader.topAnchor.constraint(equalTo: middleView.topAnchor, constant: 0),
+            natureHeader.topAnchor.constraint(equalTo: middleView.topAnchor),
             natureHeader.heightAnchor.constraint(equalToConstant: 60),
             //natureHeader.widthAnchor.constraint(equalToConstant: middleView.frame.width),
             natureHeader.leadingAnchor.constraint(equalTo: middleView.leadingAnchor, constant: 20),
@@ -259,11 +275,17 @@ class SoundsController: UIViewController {
             otherCollection.heightAnchor.constraint(equalToConstant: 200),
             otherCollection.widthAnchor.constraint(equalToConstant: view.frame.width),
             
-            backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+            headerImageView.topAnchor.constraint(equalTo: view.topAnchor),
+            headerImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            headerImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            headerImageView.bottomAnchor.constraint(equalTo: navController.bottomAnchor, constant: 32),
+
+            backgroundView.topAnchor.constraint(equalTo: scrollView.topAnchor),
             backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             backgroundView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
 
+            
             navController.topAnchor.constraint(equalTo:  view.safeAreaLayoutGuide.topAnchor, constant: 10),
             navController.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             navController.widthAnchor.constraint(equalToConstant: 110),

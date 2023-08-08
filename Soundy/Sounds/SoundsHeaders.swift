@@ -19,7 +19,7 @@ final class MusicHeaders: UIView {
     private let title: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.avenirBook(with: 22)
-        label.textColor = .white
+        label.textColor = R.Colors.pink
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
         label.adjustsFontSizeToFitWidth = true
@@ -30,7 +30,7 @@ final class MusicHeaders: UIView {
     private let subTitle: UILabel = {
         let label = UILabel()
         label.font = R.Fonts.avenir(with: 16)
-        label.textColor = .gray
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
         label.adjustsFontSizeToFitWidth = true
@@ -47,9 +47,11 @@ final class MusicHeaders: UIView {
         
         title.text = header
         subTitle.text = desc
+     
         addSubview(title)
         addSubview(subTitle)
         addSubview(container)
+        
       
         constraints()
         
@@ -72,8 +74,6 @@ final class MusicHeaders: UIView {
             
             subTitle.topAnchor.constraint(equalTo: title.bottomAnchor),
             subTitle.leadingAnchor.constraint(equalTo: leadingAnchor),
-            //subTitle.widthAnchor.constraint(equalToConstant: <#T##CGFloat#>),
-            //subTitle.trailingAnchor.constraint(equalTo: trailingAnchor),
             
         ])
         

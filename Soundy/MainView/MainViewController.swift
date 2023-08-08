@@ -56,6 +56,7 @@ final class MainViewController: UIViewController {
     private let soundsImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .black
         view.layer.cornerRadius = 30
         view.layer.masksToBounds = true
         view.contentMode = .scaleAspectFill
@@ -97,7 +98,7 @@ final class MainViewController: UIViewController {
         button.backgroundColor = .black
         button.layer.cornerRadius = 30
         button.layer.masksToBounds = true
-        button.alpha = 0.3
+        button.alpha = 0.4
         return button
     }()
     

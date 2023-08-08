@@ -11,23 +11,26 @@ import AVFAudio
 class AnimalCollectionCell: UICollectionViewCell {
     
     static var id = "ChildComposerCollection"
+    
+    private var minTextBackgroundHeight: CGFloat = 35
+    private var textBackgroundHeight: NSLayoutConstraint? = nil
+    
     private var condition = true
     private var timer: Timer?
+    private var activeTimer: Timer?
+    private var inactiveTimer: Timer?
+    
     
     private var player = AVAudioPlayer()
     let musicList: [String] = ["birds", "Cat","Frogs","Owl"]
     
     private let container: UIView = {
         let view = UIView()
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 25
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderWidth = 1
-        view.layer.borderColor = R.Colors.green.cgColor
+        view.layer.borderColor = R.Colors.purple.cgColor
         view.backgroundColor = .white
-//        view.layer.shadowColor = UIColor.black.cgColor
-//        view.layer.shadowOpacity = 1.0;
-//        view.layer.shadowRadius = 1.0;
-//        view.layer.shadowOffset = CGSizeMake(5, 5);
         return view
     }()
     
@@ -43,7 +46,7 @@ class AnimalCollectionCell: UICollectionViewCell {
     
     private let textBackground: UIView = {
         let view = UIImageView()
-        view.backgroundColor = R.Colors.green
+        view.backgroundColor = R.Colors.purple
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 10
 //        view.layer.shadowColor = UIColor.black.cgColor
@@ -72,11 +75,10 @@ class AnimalCollectionCell: UICollectionViewCell {
         contentView.addSubview(mainLabel)
         
         timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(soundRepeat), userInfo: nil, repeats: true)
+        textBackgroundAnimation()
         
-        // contentView.backgroundColor = R.Colors.background
         contentView.clipsToBounds = true
         constraints()
-        
     }
     
     required init?(coder: NSCoder) {
@@ -108,18 +110,79 @@ class AnimalCollectionCell: UICollectionViewCell {
     
     public func changeCondition(_ num: Int) {
         if (condition == true) {
-            container.backgroundColor = R.Colors.green
+            textBackground.removeConstraint(textBackgroundHeight!)
+            activeTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(cellActivate), userInfo: nil, repeats: true)
+            textBackground.layer.cornerRadius = 20
             myImageView.tintColor = .white
             createPlayer(num)
-            //player.play()
+            player.play()
             condition = false
         } else {
             condition = true
-            container.backgroundColor = .white
+            textBackground.removeConstraint(textBackgroundHeight!)
+            inactiveTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(cellDeactivate), userInfo: nil, repeats: true)
+            textBackground.layer.cornerRadius = 15
+            textBackground.removeConstraint(textBackgroundHeight!)
             myImageView.tintColor = R.Colors.blueBG
-            //player.stop()
+            player.stop()
         }
-
+    }
+    
+    @objc func cellActivate() {
+        inactiveTimer?.invalidate()
+        if minTextBackgroundHeight != 120 {
+            textBackground.removeConstraint(textBackgroundHeight!)
+            minTextBackgroundHeight += 5
+            textBackgroundAnimation()
+            print(minTextBackgroundHeight)
+        } else if minTextBackgroundHeight > 120 {
+            textBackground.removeConstraint(textBackgroundHeight!)
+            minTextBackgroundHeight = 120
+            textBackgroundAnimation()
+        } else {
+            activeTimer?.invalidate()
+            textBackgroundAnimation()
+        }
+    }
+    
+    @objc func cellDeactivate() {
+        activeTimer?.invalidate()
+        if minTextBackgroundHeight != 35 {
+            textBackground.removeConstraint(textBackgroundHeight!)
+            minTextBackgroundHeight -= 5
+            textBackgroundAnimation()
+            print(minTextBackgroundHeight)
+        } else if minTextBackgroundHeight < 35 {
+            textBackground.removeConstraint(textBackgroundHeight!)
+            minTextBackgroundHeight = 35
+            textBackgroundAnimation()
+        }  else {
+            inactiveTimer?.invalidate()
+            textBackgroundAnimation()
+        }
+    }
+    
+    private func textBackgroundAnimation() {
+        
+        if minTextBackgroundHeight >= 0 {
+            if textBackgroundHeight == nil {
+                textBackgroundHeight = textBackground.heightAnchor.constraint(equalToConstant: minTextBackgroundHeight)
+                NSLayoutConstraint.activate([
+                    textBackgroundHeight!,
+                    textBackground.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+                    textBackground.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+                    textBackground.bottomAnchor .constraint(equalTo: container.bottomAnchor),
+                ])
+            } else {
+                textBackgroundHeight?.constant = minTextBackgroundHeight
+                NSLayoutConstraint.activate([
+                    textBackgroundHeight!,
+                    textBackground.leadingAnchor.constraint(equalTo: container.leadingAnchor),
+                    textBackground.trailingAnchor.constraint(equalTo: container.trailingAnchor),
+                    textBackground.bottomAnchor .constraint(equalTo: container.bottomAnchor),
+                ])
+            }
+        }
     }
     
     public func startPlayer() {
@@ -161,15 +224,8 @@ class AnimalCollectionCell: UICollectionViewCell {
             container.centerYAnchor.constraint(equalTo: centerYAnchor),
             container.heightAnchor.constraint(equalToConstant: 120),
             
-            textBackground.leadingAnchor.constraint(equalTo: container.leadingAnchor),
-            textBackground.trailingAnchor.constraint(equalTo: container.trailingAnchor),
-            textBackground.bottomAnchor .constraint(equalTo: container.bottomAnchor),
-            textBackground.heightAnchor.constraint(equalToConstant: 35),
-            
-            
-            mainLabel.centerYAnchor.constraint(equalTo: textBackground.centerYAnchor),
+            mainLabel.centerYAnchor.constraint(equalTo: textBackground.bottomAnchor, constant: -16),
             mainLabel.centerXAnchor.constraint(equalTo: textBackground.centerXAnchor),
-            ////
             
             myImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -10),
             myImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),

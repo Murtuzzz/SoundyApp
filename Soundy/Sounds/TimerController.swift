@@ -45,7 +45,7 @@ final class TimerController: UIViewController {
     
     private let doneButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = R.Colors.green
+        button.backgroundColor = R.Colors.purple
         button.tintColor = .white
         button.layer.cornerRadius = 20
         button.titleLabel?.font = R.Fonts.nonItalic(with: 20)
