@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  MindBeats
-//
-//  Created by Мурат Кудухов on 17.06.2023.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -18,10 +11,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        window?.rootViewController = NavBar(rootViewController: MainViewController()) 
+        window?.rootViewController = NavBar(rootViewController: MainViewController())
         window?.makeKeyAndVisible()
         
     }
-
 }
-

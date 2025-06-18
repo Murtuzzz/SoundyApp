@@ -17,13 +17,30 @@ struct ChildItems {
 final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     private var dataSource:[ChildItems] = []
-    private var collectionView: UICollectionView?
+    var collectionView: UICollectionView? // Сделано публичным для доступа извне
     private let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         collectionApperance()
-        
+        setupNotifications()
+    }
+    
+    private func setupNotifications() {
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(stopAllAudio),
+            name: .stopAllOtherAudio,
+            object: nil
+        )
+    }
+    
+    @objc private func stopAllAudio() {
+        stopAllPlayers()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     
     required init?(coder: NSCoder) {
@@ -71,6 +88,12 @@ final class NatureCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
     func constraints() {
         
     }
+    
+    // MARK: - Audio Control
+    func stopAllPlayers() {
+        // Используем централизованный AudioManager для остановки
+        AudioManager.shared.stopCurrentTrack()
+    }
 }
 
 
@@ -85,14 +108,14 @@ extension NatureCollection {
         
         let item = dataSource[indexPath.row]
         
-        cell.configure(label: item.title, image: item.image)
+        cell.configure(label: item.title, image: item.image, index: indexPath.item)
                   return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 126, height: 180)
+        CGSize(width: 126, height: 152)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -101,5 +124,19 @@ extension NatureCollection {
         hapticFeedback.impactOccurred()
         
         
+    }
+    
+    // MARK: - Cell Animation
+    func animateCells() {
+        guard let collectionView = collectionView else { return }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            for (index, cell) in collectionView.visibleCells.enumerated() {
+                if let natureCell = cell as? NatureCollectionCell {
+                    let delay = TimeInterval(index) * 0.1
+                    natureCell.animateEntry(delay: delay)
+                }
+            }
+        }
     }
 }

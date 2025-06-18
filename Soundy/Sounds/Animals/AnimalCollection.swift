@@ -7,13 +7,10 @@ struct NatureItems {
     let image: UIImage
 }
 
-
-
 final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
-    
     private var dataSource:[NatureItems] = []
-    private var collectionView: UICollectionView?
+    var collectionView: UICollectionView? // Сделано публичным для доступа извне
     private let hapticFeedback = UIImpactFeedbackGenerator(style: .medium)
     
     override init(frame: CGRect) {
@@ -24,8 +21,6 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
     
     func collectionApperance() {
        let layout = UICollectionViewFlowLayout()
@@ -44,7 +39,7 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
          
         guard let collectionView = collectionView else {return}
         
-        collectionView.register(AnimalCollectionCell.self, forCellWithReuseIdentifier: AnimalCollectionCell.id)
+        collectionView.register(AnimalCollectionCell.self, forCellWithReuseIdentifier: "AnimalCollectionCell")
         
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
@@ -62,17 +57,7 @@ final class AnimalCollection: UIView, UICollectionViewDelegateFlowLayout, UIColl
                    collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
                ])
     }
-    
-    
-    
-    
-    func constraints() {
-        
-    }
-    
 }
-
-
 
 extension AnimalCollection {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -80,25 +65,50 @@ extension AnimalCollection {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AnimalCollectionCell.id, for: indexPath) as! AnimalCollectionCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "AnimalCollectionCell", for: indexPath) as! AnimalCollectionCell
         
         let item = dataSource[indexPath.row]
         
-        cell.configure(label: item.title, image: item.image)
+        cell.configure(label: item.title, image: item.image, index: indexPath.row)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 126, height: 180)
+        CGSize(width: 126, height: 152)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! AnimalCollectionCell
+        
         cell.changeCondition(indexPath.row)
         cell.startPlayer()
         hapticFeedback.impactOccurred()
+    }
+    
+    // MARK: - Audio Control
+    func stopAllPlayers() {
+        guard let collectionView = collectionView else { return }
         
+        for cell in collectionView.visibleCells {
+            if let animalCell = cell as? AnimalCollectionCell {
+                animalCell.stopPlayer()
+            }
+        }
+    }
+    
+    // MARK: - Cell Animation
+    func animateCells() {
+        guard let collectionView = collectionView else { return }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            for (index, cell) in collectionView.visibleCells.enumerated() {
+                if let animalCell = cell as? AnimalCollectionCell {
+                    let delay = TimeInterval(index) * 0.1
+                    animalCell.animateEntry(delay: delay)
+                }
+            }
+        }
     }
 }

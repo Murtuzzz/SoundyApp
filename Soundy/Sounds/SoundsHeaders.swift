@@ -23,7 +23,6 @@ final class MusicHeaders: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.adjustsFontForContentSizeCategory = true
         label.adjustsFontSizeToFitWidth = true
-        
         return label
     }()
     
@@ -51,7 +50,6 @@ final class MusicHeaders: UIView {
         addSubview(title)
         addSubview(subTitle)
         addSubview(container)
-        
       
         constraints()
         

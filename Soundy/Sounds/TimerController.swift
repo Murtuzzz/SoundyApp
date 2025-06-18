@@ -20,7 +20,6 @@ final class TimerController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     private var min = 60.0
     private var sum = 0.0
     private var timerValue: Timer?
@@ -65,10 +64,17 @@ final class TimerController: UIViewController {
         return button
     }()
     
+    private let bgCloseButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         timerValue?.invalidate()
         
+        view.addSubview(bgCloseButton)
         view.addSubview(container)
         view.addSubview(timer)
         view.addSubview(doneButton)
@@ -77,8 +83,9 @@ final class TimerController: UIViewController {
         print(timer.countDownDuration)
         timer.addTarget(self, action: #selector(change), for: .valueChanged)
         
-        doneButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        doneButton.addTarget(self, action: #selector(doneButtonAction), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(close), for: .touchUpInside)
+        bgCloseButton.addTarget(self, action: #selector(close), for: .touchUpInside)
         
         constraints()
         
@@ -92,7 +99,7 @@ final class TimerController: UIViewController {
     }
     
     @objc
-    func buttonTapped() {
+    func doneButtonAction() {
         
         hapticFeedback.impactOccurred()
         onTimeSelected(min)
@@ -119,6 +126,11 @@ final class TimerController: UIViewController {
     
     func constraints() {
         NSLayoutConstraint.activate([
+            
+            bgCloseButton.topAnchor.constraint(equalTo: view.topAnchor),
+            bgCloseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            bgCloseButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bgCloseButton.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             container.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             container.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30),

@@ -11,15 +11,13 @@
 		B401E38C2A3D73870084557F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E38B2A3D73870084557F /* SceneDelegate.swift */; };
 		B401E3932A3D73890084557F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B401E3922A3D73890084557F /* Assets.xcassets */; };
 		B401E3962A3D73890084557F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B401E3942A3D73890084557F /* LaunchScreen.storyboard */; };
-		B401E39E2A3D74F30084557F /* PurrpleCat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B401E39D2A3D74F30084557F /* PurrpleCat.mp3 */; };
 		B401E3A02A3D75440084557F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E39F2A3D75440084557F /* Colors.swift */; };
 		B401E3A22A3D768B0084557F /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3A12A3D768B0084557F /* R.swift */; };
-		B401E3A72A3D85710084557F /* MusicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E38D2A3D73870084557F /* MusicController.swift */; };
-		B401E3AB2A3F99BD0084557F /* Disk.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3AA2A3F99BD0084557F /* Disk.swift */; };
+		B401E3A72A3D85710084557F /* LofiController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E38D2A3D73870084557F /* LofiController.swift */; };
+		B401E3AB2A3F99BD0084557F /* AlbumCover.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3AA2A3F99BD0084557F /* AlbumCover.swift */; };
 		B401E3AD2A40474E0084557F /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3AC2A40474E0084557F /* NavigationBar.swift */; };
 		B401E3AF2A4048860084557F /* MusicNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3AE2A4048860084557F /* MusicNavBar.swift */; };
 		B401E3B12A404F350084557F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3B02A404F350084557F /* Button.swift */; };
-		B41FBE3A2A4077B400037A54 /* Heart-Of-The-Ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBE392A4077B400037A54 /* Heart-Of-The-Ocean.mp3 */; };
 		B41FBE412A4194CF00037A54 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE402A4194CF00037A54 /* MainViewController.swift */; };
 		B41FBE432A41AC9A00037A54 /* MainScreenButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE422A41AC9A00037A54 /* MainScreenButtons.swift */; };
 		B41FBE452A41D8AB00037A54 /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE442A41D8AB00037A54 /* Ext.swift */; };
@@ -48,31 +46,37 @@
 		B41FBE9F2A50A94000037A54 /* Descriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE9E2A50A94000037A54 /* Descriptions.swift */; };
 		B41FBEA32A51685000037A54 /* Bar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B41FBEA22A51685000037A54 /* Bar.mp3 */; };
 		B41FBEA62A51747F00037A54 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B41FBEA82A51747F00037A54 /* Localizable.strings */; };
+		B442D2792CA6AD2C002BE169 /* Life.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B442D2782CA6AD2C002BE169 /* Life.mp3 */; };
 		B44DF1232A528BC3002D6B61 /* Moon.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B44DF1222A528BC3002D6B61 /* Moon.mp3 */; };
 		B44DF1252A528FDE002D6B61 /* Snack.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B44DF1242A528FDE002D6B61 /* Snack.mp3 */; };
 		B460B88E2A52FA0500A4E410 /* LoFITimerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B460B88D2A52FA0500A4E410 /* LoFITimerController.swift */; };
+		B4AE7A632E02D05C00A065C0 /* Train.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4AE7A622E02D05B00A065C0 /* Train.mp3 */; };
+		B4AE7A652E02D07200A065C0 /* Journey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4AE7A642E02D07200A065C0 /* Journey.mp3 */; };
 		B4B7A0372A5322D100572226 /* Thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4B7A0362A5322D100572226 /* Thunder.mp3 */; };
-		B4B7A0392A5325DD00572226 /* Train.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4B7A0382A5325DD00572226 /* Train.mp3 */; };
-		B4B7A03B2A532BD000572226 /* Journey.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4B7A03A2A532BCF00572226 /* Journey.mp3 */; };
 		B4D933F92A531D61004CB45F /* Owl.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4D933F82A531D61004CB45F /* Owl.mp3 */; };
+		B4E87D322BE1954200A1EE71 /* Summer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D312BE1954200A1EE71 /* Summer.mp3 */; };
+		B4E87D342BE2EBFA00A1EE71 /* Samuray.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D332BE2EBFA00A1EE71 /* Samuray.mp3 */; };
+		B4E87D362BE3B9AA00A1EE71 /* Sakura.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D352BE3B9AA00A1EE71 /* Sakura.mp3 */; };
+		B4E87D382BE3C49D00A1EE71 /* Heart-Of-The-Ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D372BE3C49D00A1EE71 /* Heart-Of-The-Ocean.mp3 */; };
+		B4E87D3A2BE3C5D500A1EE71 /* PurrpleCat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D392BE3C5D500A1EE71 /* PurrpleCat.mp3 */; };
+		B4E87D3C2BE3FA8D00A1EE71 /* mountVid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D3B2BE3FA6A00A1EE71 /* mountVid.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B401E3862A3D73870084557F /* Soundy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Soundy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B401E3892A3D73870084557F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B401E38B2A3D73870084557F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B401E38D2A3D73870084557F /* MusicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicController.swift; sourceTree = "<group>"; };
+		B401E38D2A3D73870084557F /* LofiController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LofiController.swift; sourceTree = "<group>"; };
 		B401E3922A3D73890084557F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B401E3952A3D73890084557F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B401E3972A3D73890084557F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B401E39D2A3D74F30084557F /* PurrpleCat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PurrpleCat.mp3; sourceTree = "<group>"; };
+
 		B401E39F2A3D75440084557F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B401E3A12A3D768B0084557F /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
-		B401E3AA2A3F99BD0084557F /* Disk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Disk.swift; sourceTree = "<group>"; };
+		B401E3AA2A3F99BD0084557F /* AlbumCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCover.swift; sourceTree = "<group>"; };
 		B401E3AC2A40474E0084557F /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		B401E3AE2A4048860084557F /* MusicNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicNavBar.swift; sourceTree = "<group>"; };
 		B401E3B02A404F350084557F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		B41FBE392A4077B400037A54 /* Heart-Of-The-Ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Heart-Of-The-Ocean.mp3"; sourceTree = "<group>"; };
 		B41FBE402A4194CF00037A54 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B41FBE422A41AC9A00037A54 /* MainScreenButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButtons.swift; sourceTree = "<group>"; };
 		B41FBE442A41D8AB00037A54 /* Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
@@ -105,13 +109,20 @@
 		B41FBEAA2A51749F00037A54 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B41FBEAB2A5174AF00037A54 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B41FBEAC2A5174AF00037A54 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B442D2782CA6AD2C002BE169 /* Life.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Life.mp3; sourceTree = "<group>"; };
 		B44DF1222A528BC3002D6B61 /* Moon.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Moon.mp3; path = ../../../../../../Downloads/Moon.mp3; sourceTree = "<group>"; };
 		B44DF1242A528FDE002D6B61 /* Snack.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Snack.mp3; path = ../../../../../../Downloads/Snack.mp3; sourceTree = "<group>"; };
 		B460B88D2A52FA0500A4E410 /* LoFITimerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoFITimerController.swift; sourceTree = "<group>"; };
+		B4AE7A622E02D05B00A065C0 /* Train.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Train.mp3; sourceTree = "<group>"; };
+		B4AE7A642E02D07200A065C0 /* Journey.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Journey.mp3; sourceTree = "<group>"; };
 		B4B7A0362A5322D100572226 /* Thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Thunder.mp3; path = ../../../../../../Downloads/Thunder.mp3; sourceTree = "<group>"; };
-		B4B7A0382A5325DD00572226 /* Train.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Train.mp3; path = ../../../../../../Downloads/Train.mp3; sourceTree = "<group>"; };
-		B4B7A03A2A532BCF00572226 /* Journey.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Journey.mp3; path = ../../../../../../Downloads/Journey.mp3; sourceTree = "<group>"; };
 		B4D933F82A531D61004CB45F /* Owl.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Owl.mp3; path = ../../../../../../Downloads/Owl.mp3; sourceTree = "<group>"; };
+		B4E87D312BE1954200A1EE71 /* Summer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Summer.mp3; path = ../../../../../../Downloads/Summer.mp3; sourceTree = "<group>"; };
+		B4E87D332BE2EBFA00A1EE71 /* Samuray.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Samuray.mp3; path = ../../../../../../Downloads/Samuray.mp3; sourceTree = "<group>"; };
+		B4E87D352BE3B9AA00A1EE71 /* Sakura.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Sakura.mp3; path = ../../../../../../Downloads/Sakura.mp3; sourceTree = "<group>"; };
+		B4E87D372BE3C49D00A1EE71 /* Heart-Of-The-Ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Heart-Of-The-Ocean.mp3"; path = "../../../../../../Downloads/Heart-Of-The-Ocean.mp3"; sourceTree = "<group>"; };
+		B4E87D392BE3C5D500A1EE71 /* PurrpleCat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PurrpleCat.mp3; path = ../../../../../../Downloads/PurrpleCat.mp3; sourceTree = "<group>"; };
+		B4E87D3B2BE3FA6A00A1EE71 /* mountVid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = mountVid.mp4; path = ../../../../../../Downloads/mountVid.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,9 +171,9 @@
 			isa = PBXGroup;
 			children = (
 				B401E3AE2A4048860084557F /* MusicNavBar.swift */,
-				B401E38D2A3D73870084557F /* MusicController.swift */,
+				B401E38D2A3D73870084557F /* LofiController.swift */,
 				B401E3B02A404F350084557F /* Button.swift */,
-				B401E3AA2A3F99BD0084557F /* Disk.swift */,
+				B401E3AA2A3F99BD0084557F /* AlbumCover.swift */,
 				B41FBE9E2A50A94000037A54 /* Descriptions.swift */,
 				B460B88D2A52FA0500A4E410 /* LoFITimerController.swift */,
 			);
@@ -186,14 +197,17 @@
 		B41FBE3F2A41945900037A54 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
-				B4B7A03A2A532BCF00572226 /* Journey.mp3 */,
-				B4B7A0382A5325DD00572226 /* Train.mp3 */,
+				B4E87D332BE2EBFA00A1EE71 /* Samuray.mp3 */,
 				B4B7A0362A5322D100572226 /* Thunder.mp3 */,
+				B4AE7A622E02D05B00A065C0 /* Train.mp3 */,
+				B4AE7A642E02D07200A065C0 /* Journey.mp3 */,
 				B4D933F82A531D61004CB45F /* Owl.mp3 */,
 				B44DF1222A528BC3002D6B61 /* Moon.mp3 */,
 				B41FBEA22A51685000037A54 /* Bar.mp3 */,
+				B4E87D352BE3B9AA00A1EE71 /* Sakura.mp3 */,
 				B41FBE9A2A4B1E5600037A54 /* River.mp3 */,
 				B41FBE982A49D57900037A54 /* Frogs.mp3 */,
+				B4E87D312BE1954200A1EE71 /* Summer.mp3 */,
 				B41FBE962A48AC2700037A54 /* Keyboard.mp3 */,
 				B41FBE942A47082600037A54 /* Waves.mp3 */,
 				B41FBE922A47063C00037A54 /* Cat.mp3 */,
@@ -202,11 +216,13 @@
 				B41FBE852A46F0BE00037A54 /* RainSound.mp3 */,
 				B44DF1242A528FDE002D6B61 /* Snack.mp3 */,
 				B41FBE832A46E76F00037A54 /* birds.mp3 */,
-				B401E39D2A3D74F30084557F /* PurrpleCat.mp3 */,
-				B41FBE392A4077B400037A54 /* Heart-Of-The-Ocean.mp3 */,
+				B4E87D372BE3C49D00A1EE71 /* Heart-Of-The-Ocean.mp3 */,
+				B4E87D392BE3C5D500A1EE71 /* PurrpleCat.mp3 */,
+				B4E87D3B2BE3FA6A00A1EE71 /* mountVid.mp4 */,
 				B41FBE492A42726E00037A54 /* Rain.mp3 */,
 				B41FBE4B2A42740800037A54 /* SilentWood.mp3 */,
 				B41FBE472A42208A00037A54 /* StormClouds.mp3 */,
+				B442D2782CA6AD2C002BE169 /* Life.mp3 */,
 				B41FBE4D2A42757200037A54 /* PurpleDream.mp3 */,
 			);
 			path = Songs;
@@ -288,8 +304,8 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					B401E3852A3D73870084557F = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -321,31 +337,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E87D3C2BE3FA8D00A1EE71 /* mountVid.mp4 in Resources */,
 				B401E3962A3D73890084557F /* LaunchScreen.storyboard in Resources */,
+				B4AE7A652E02D07200A065C0 /* Journey.mp3 in Resources */,
 				B41FBE4E2A42757200037A54 /* PurpleDream.mp3 in Resources */,
+				B4AE7A632E02D05C00A065C0 /* Train.mp3 in Resources */,
 				B41FBE8C2A46FCD600037A54 /* Fire.mp3 in Resources */,
 				B44DF1252A528FDE002D6B61 /* Snack.mp3 in Resources */,
 				B41FBE842A46E76F00037A54 /* birds.mp3 in Resources */,
 				B41FBEA62A51747F00037A54 /* Localizable.strings in Resources */,
-				B4B7A0392A5325DD00572226 /* Train.mp3 in Resources */,
 				B41FBE862A46F0BE00037A54 /* RainSound.mp3 in Resources */,
+				B4E87D322BE1954200A1EE71 /* Summer.mp3 in Resources */,
 				B41FBE482A42208A00037A54 /* StormClouds.mp3 in Resources */,
 				B41FBE4C2A42740800037A54 /* SilentWood.mp3 in Resources */,
 				B41FBE4A2A42726E00037A54 /* Rain.mp3 in Resources */,
 				B4B7A0372A5322D100572226 /* Thunder.mp3 in Resources */,
+				B4E87D362BE3B9AA00A1EE71 /* Sakura.mp3 in Resources */,
 				B41FBE9B2A4B1E5600037A54 /* River.mp3 in Resources */,
 				B41FBEA32A51685000037A54 /* Bar.mp3 in Resources */,
 				B41FBE972A48AC2700037A54 /* Keyboard.mp3 in Resources */,
 				B4D933F92A531D61004CB45F /* Owl.mp3 in Resources */,
+				B4E87D3A2BE3C5D500A1EE71 /* PurrpleCat.mp3 in Resources */,
+				B4E87D382BE3C49D00A1EE71 /* Heart-Of-The-Ocean.mp3 in Resources */,
 				B401E3932A3D73890084557F /* Assets.xcassets in Resources */,
+				B442D2792CA6AD2C002BE169 /* Life.mp3 in Resources */,
 				B41FBE992A49D57900037A54 /* Frogs.mp3 in Resources */,
-				B401E39E2A3D74F30084557F /* PurrpleCat.mp3 in Resources */,
-				B41FBE3A2A4077B400037A54 /* Heart-Of-The-Ocean.mp3 in Resources */,
+				B4E87D342BE2EBFA00A1EE71 /* Samuray.mp3 in Resources */,
 				B41FBE8A2A46FBC800037A54 /* Forest.mp3 in Resources */,
 				B41FBE932A47063C00037A54 /* Cat.mp3 in Resources */,
 				B44DF1232A528BC3002D6B61 /* Moon.mp3 in Resources */,
 				B41FBE952A47082600037A54 /* Waves.mp3 in Resources */,
-				B4B7A03B2A532BD000572226 /* Journey.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B41FBE772A44A1C500037A54 /* AnimalCollection.swift in Sources */,
-				B401E3AB2A3F99BD0084557F /* Disk.swift in Sources */,
+				B401E3AB2A3F99BD0084557F /* AlbumCover.swift in Sources */,
 				B41FBE792A44A1D400037A54 /* AnimalCell.swift in Sources */,
 				B41FBE742A44A19300037A54 /* OtherCell.swift in Sources */,
 				B401E3AD2A40474E0084557F /* NavigationBar.swift in Sources */,
@@ -376,7 +397,7 @@
 				B41FBE822A44A2AA00037A54 /* NatureCollectionView.swift in Sources */,
 				B401E3B12A404F350084557F /* Button.swift in Sources */,
 				B41FBE412A4194CF00037A54 /* MainViewController.swift in Sources */,
-				B401E3A72A3D85710084557F /* MusicController.swift in Sources */,
+				B401E3A72A3D85710084557F /* LofiController.swift in Sources */,
 				B401E3AF2A4048860084557F /* MusicNavBar.swift in Sources */,
 				B401E38C2A3D73870084557F /* SceneDelegate.swift in Sources */,
 			);
@@ -412,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -473,6 +495,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -530,7 +553,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = N4AY2827DP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soundy/Info.plist;
@@ -545,7 +568,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = MK.MindBeats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -563,7 +586,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = N4AY2827DP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Soundy/Info.plist;
@@ -578,7 +601,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = MK.MindBeats;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

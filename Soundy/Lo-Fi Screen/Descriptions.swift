@@ -16,5 +16,9 @@ let descriptions = ["Purple Dream by Ghostrifter bit.ly/ghostrifter-yt Creative 
                     "Crescent Moon by Purrple Cat | https://purrplecat.com/Music promoted by https://www.chosic.com/free-music/all/ Creative Commons CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/",
                     "Midnight Snack by Purrple Cat | https://purrplecat.com/ Music promoted by https://www.chosic.com/free-music/all/ Creative Commons CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/",
                     "Journey’s End by Purrple Cat | https://purrplecat.com/ Music promoted by https://www.chosic.com/free-music/all/ Creative Commons CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0/",
+                    "Ocean Vibes",
+                    "Samurai Dream by Mura",
+                    "Sakura Sunset",
+                    "The drem of life by Mura"
 ]
 
