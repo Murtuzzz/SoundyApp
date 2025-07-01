@@ -91,13 +91,8 @@ extension OtherCollection {
     
     // MARK: - Audio Control
     func stopAllPlayers() {
-        guard let collectionView = collectionView else { return }
-        
-        for cell in collectionView.visibleCells {
-            if let otherCell = cell as? OtherCollectionCell {
-                otherCell.stopPlayer()
-            }
-        }
+        // Используем централизованный AudioManager для остановки
+        AudioManager.shared.stopAllTracks()
     }
     
     // MARK: - Cell Animation

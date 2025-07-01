@@ -27,3 +27,19 @@
 "Close" = "Закрыть";
 "Thunder" = "Гром";
 "Owl" = "Cова";
+
+// Timer completion
+"Sleep Timer Completed" = "Таймер сна завершен";
+"It's time to sleep! All sounds have been stopped." = "Время спать! Все звуки остановлены.";
+
+// Active Sounds Controller
+"Active Sounds" = "Активные звуки";
+"Stop All" = "Остановить все";
+"No active sounds" = "Нет активных звуков";
+"Stop All Sounds" = "Остановить все звуки";
+"Are you sure you want to stop all active sounds?" = "Вы уверены, что хотите остановить все активные звуки?";
+"Cancel" = "Отмена";
+"Unknown" = "Неизвестно";
+
+// Track Menu
+"Track List" = "Список треков";

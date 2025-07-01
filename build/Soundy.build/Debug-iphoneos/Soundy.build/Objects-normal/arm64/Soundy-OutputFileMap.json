@@ -1,0 +1,268 @@
+{
+  "" : {
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Soundy-master.dia",
+    "emit-module-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Soundy-master-emit-module.d",
+    "emit-module-diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Soundy-master-emit-module.dia",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Soundy-master.swiftdeps"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Lo-Fi Screen/AlbumCover.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AlbumCover.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AlbumCover.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AlbumCover.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AlbumCover.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AlbumCover.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AlbumCover.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AlbumCover.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AlbumCover~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Lo-Fi Screen/Button.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Button.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Button.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Button.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Button.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Button.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Button.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Button.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Button~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Lo-Fi Screen/Descriptions.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Descriptions.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Descriptions.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Descriptions.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Descriptions.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Descriptions.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Descriptions.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Descriptions.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Descriptions~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Lo-Fi Screen/LoFITimerController.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LoFITimerController.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LoFITimerController.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LoFITimerController.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LoFITimerController.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LoFITimerController.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LoFITimerController.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LoFITimerController.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LoFITimerController~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Lo-Fi Screen/LofiController.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LofiController.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LofiController.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LofiController.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LofiController.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LofiController.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LofiController.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LofiController.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/LofiController~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Lo-Fi Screen/MusicNavBar.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MusicNavBar.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MusicNavBar.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MusicNavBar.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MusicNavBar.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MusicNavBar.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MusicNavBar.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MusicNavBar.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MusicNavBar~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/MainView/MainScreenButtons.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainScreenButtons.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainScreenButtons.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainScreenButtons.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainScreenButtons.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainScreenButtons.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainScreenButtons.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainScreenButtons.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainScreenButtons~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/MainView/MainViewController.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainViewController.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainViewController.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainViewController.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainViewController.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainViewController.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainViewController.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainViewController.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/MainViewController~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/ActiveSoundsController.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/ActiveSoundsController.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/ActiveSoundsController.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/ActiveSoundsController.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/ActiveSoundsController.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/ActiveSoundsController.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/ActiveSoundsController.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/ActiveSoundsController.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/ActiveSoundsController~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/Animals/AnimalCell.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCell.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCell.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCell.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCell.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCell.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCell.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCell.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCell~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/Animals/AnimalCollection.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCollection.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCollection.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCollection.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCollection.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCollection.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCollection.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCollection.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AnimalCollection~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/Nature/NatureCell.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCell.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCell.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCell.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCell.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCell.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCell.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCell.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCell~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/Nature/NatureCollectionView.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCollectionView.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCollectionView.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCollectionView.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCollectionView.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCollectionView.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCollectionView.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCollectionView.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NatureCollectionView~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/Other/OtherCell.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCell.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCell.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCell.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCell.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCell.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCell.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCell.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCell~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/Other/OtherCollection.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCollection.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCollection.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCollection.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCollection.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCollection.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCollection.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCollection.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/OtherCollection~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/Other/VolumeControllerMain.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/VolumeControllerMain.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/VolumeControllerMain.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/VolumeControllerMain.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/VolumeControllerMain.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/VolumeControllerMain.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/VolumeControllerMain.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/VolumeControllerMain.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/VolumeControllerMain~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/SoundsController.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsController.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsController.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsController.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsController.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsController.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsController.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsController.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsController~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/SoundsHeaders.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsHeaders.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsHeaders.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsHeaders.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsHeaders.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsHeaders.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsHeaders.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsHeaders.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SoundsHeaders~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/Sounds/TimerController.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/TimerController.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/TimerController.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/TimerController.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/TimerController.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/TimerController.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/TimerController.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/TimerController.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/TimerController~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/System/AppDelegate.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AppDelegate.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AppDelegate.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AppDelegate.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AppDelegate.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AppDelegate.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AppDelegate.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AppDelegate.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/AppDelegate~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/System/Colors.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Colors.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Colors.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Colors.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Colors.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Colors.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Colors.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Colors.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Colors~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/System/Ext.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Ext.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Ext.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Ext.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Ext.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Ext.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Ext.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Ext.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/Ext~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/System/NavigationBar.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NavigationBar.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NavigationBar.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NavigationBar.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NavigationBar.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NavigationBar.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NavigationBar.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NavigationBar.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/NavigationBar~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/System/R.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/R.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/R.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/R.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/R.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/R.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/R.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/R.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/R~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/Soundy/System/SceneDelegate.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SceneDelegate.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SceneDelegate.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SceneDelegate.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SceneDelegate.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SceneDelegate.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SceneDelegate.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SceneDelegate.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/SceneDelegate~partial.swiftmodule"
+  },
+  "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "const-values" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftconstvalues",
+    "dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/GeneratedAssetSymbols.d",
+    "diagnostics" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/GeneratedAssetSymbols.dia",
+    "index-unit-output-path" : "/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "swift-dependencies" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/GeneratedAssetSymbols.swiftdeps",
+    "swiftmodule" : "/Users/muratkuduhov/Desktop/Apps/MyApps/Soundy/build/Soundy.build/Debug-iphoneos/Soundy.build/Objects-normal/arm64/GeneratedAssetSymbols~partial.swiftmodule"
+  }
+}

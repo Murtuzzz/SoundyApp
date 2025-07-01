@@ -18,6 +18,8 @@
 		B401E3AD2A40474E0084557F /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3AC2A40474E0084557F /* NavigationBar.swift */; };
 		B401E3AF2A4048860084557F /* MusicNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3AE2A4048860084557F /* MusicNavBar.swift */; };
 		B401E3B12A404F350084557F /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = B401E3B02A404F350084557F /* Button.swift */; };
+		B40C31482E0E896B0061F0F4 /* VolumeControllerMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C31472E0E896B0061F0F4 /* VolumeControllerMain.swift */; };
+		B40C314A2E0E90040061F0F4 /* ActiveSoundsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40C31492E0E90040061F0F4 /* ActiveSoundsController.swift */; };
 		B41FBE412A4194CF00037A54 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE402A4194CF00037A54 /* MainViewController.swift */; };
 		B41FBE432A41AC9A00037A54 /* MainScreenButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE422A41AC9A00037A54 /* MainScreenButtons.swift */; };
 		B41FBE452A41D8AB00037A54 /* Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41FBE442A41D8AB00037A54 /* Ext.swift */; };
@@ -60,6 +62,7 @@
 		B4E87D382BE3C49D00A1EE71 /* Heart-Of-The-Ocean.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D372BE3C49D00A1EE71 /* Heart-Of-The-Ocean.mp3 */; };
 		B4E87D3A2BE3C5D500A1EE71 /* PurrpleCat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D392BE3C5D500A1EE71 /* PurrpleCat.mp3 */; };
 		B4E87D3C2BE3FA8D00A1EE71 /* mountVid.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B4E87D3B2BE3FA6A00A1EE71 /* mountVid.mp4 */; };
+		B4F8EF132E0EAA7B008A4E77 /* Sadness.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4F8EF122E0EAA7B008A4E77 /* Sadness.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,13 +73,14 @@
 		B401E3922A3D73890084557F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B401E3952A3D73890084557F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B401E3972A3D73890084557F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-
 		B401E39F2A3D75440084557F /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B401E3A12A3D768B0084557F /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		B401E3AA2A3F99BD0084557F /* AlbumCover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCover.swift; sourceTree = "<group>"; };
 		B401E3AC2A40474E0084557F /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		B401E3AE2A4048860084557F /* MusicNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicNavBar.swift; sourceTree = "<group>"; };
 		B401E3B02A404F350084557F /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		B40C31472E0E896B0061F0F4 /* VolumeControllerMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeControllerMain.swift; sourceTree = "<group>"; };
+		B40C31492E0E90040061F0F4 /* ActiveSoundsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveSoundsController.swift; sourceTree = "<group>"; };
 		B41FBE402A4194CF00037A54 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B41FBE422A41AC9A00037A54 /* MainScreenButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButtons.swift; sourceTree = "<group>"; };
 		B41FBE442A41D8AB00037A54 /* Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ext.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		B4E87D372BE3C49D00A1EE71 /* Heart-Of-The-Ocean.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "Heart-Of-The-Ocean.mp3"; path = "../../../../../../Downloads/Heart-Of-The-Ocean.mp3"; sourceTree = "<group>"; };
 		B4E87D392BE3C5D500A1EE71 /* PurrpleCat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = PurrpleCat.mp3; path = ../../../../../../Downloads/PurrpleCat.mp3; sourceTree = "<group>"; };
 		B4E87D3B2BE3FA6A00A1EE71 /* mountVid.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = mountVid.mp4; path = ../../../../../../Downloads/mountVid.mp4; sourceTree = "<group>"; };
+		B4F8EF122E0EAA7B008A4E77 /* Sadness.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Sadness.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E87D332BE2EBFA00A1EE71 /* Samuray.mp3 */,
+				B4F8EF122E0EAA7B008A4E77 /* Sadness.mp3 */,
 				B4B7A0362A5322D100572226 /* Thunder.mp3 */,
 				B4AE7A622E02D05B00A065C0 /* Train.mp3 */,
 				B4AE7A642E02D07200A065C0 /* Journey.mp3 */,
@@ -246,6 +252,7 @@
 				B41FBE6D2A44A14800037A54 /* SoundsController.swift */,
 				B41FBE9C2A4CA30E00037A54 /* TimerController.swift */,
 				B41FBE7A2A44A21800037A54 /* SoundsHeaders.swift */,
+				B40C31492E0E90040061F0F4 /* ActiveSoundsController.swift */,
 			);
 			path = Sounds;
 			sourceTree = "<group>";
@@ -255,6 +262,7 @@
 			children = (
 				B41FBE712A44A18600037A54 /* OtherCollection.swift */,
 				B41FBE732A44A19300037A54 /* OtherCell.swift */,
+				B40C31472E0E896B0061F0F4 /* VolumeControllerMain.swift */,
 			);
 			path = Other;
 			sourceTree = "<group>";
@@ -348,6 +356,7 @@
 				B41FBEA62A51747F00037A54 /* Localizable.strings in Resources */,
 				B41FBE862A46F0BE00037A54 /* RainSound.mp3 in Resources */,
 				B4E87D322BE1954200A1EE71 /* Summer.mp3 in Resources */,
+				B4F8EF132E0EAA7B008A4E77 /* Sadness.mp3 in Resources */,
 				B41FBE482A42208A00037A54 /* StormClouds.mp3 in Resources */,
 				B41FBE4C2A42740800037A54 /* SilentWood.mp3 in Resources */,
 				B41FBE4A2A42726E00037A54 /* Rain.mp3 in Resources */,
@@ -381,6 +390,7 @@
 				B401E3AB2A3F99BD0084557F /* AlbumCover.swift in Sources */,
 				B41FBE792A44A1D400037A54 /* AnimalCell.swift in Sources */,
 				B41FBE742A44A19300037A54 /* OtherCell.swift in Sources */,
+				B40C314A2E0E90040061F0F4 /* ActiveSoundsController.swift in Sources */,
 				B401E3AD2A40474E0084557F /* NavigationBar.swift in Sources */,
 				B41FBE7F2A44A27A00037A54 /* NatureCell.swift in Sources */,
 				B41FBE9F2A50A94000037A54 /* Descriptions.swift in Sources */,
@@ -389,6 +399,7 @@
 				B41FBE432A41AC9A00037A54 /* MainScreenButtons.swift in Sources */,
 				B41FBE722A44A18600037A54 /* OtherCollection.swift in Sources */,
 				B41FBE6E2A44A14800037A54 /* SoundsController.swift in Sources */,
+				B40C31482E0E896B0061F0F4 /* VolumeControllerMain.swift in Sources */,
 				B460B88E2A52FA0500A4E410 /* LoFITimerController.swift in Sources */,
 				B41FBE9D2A4CA30E00037A54 /* TimerController.swift in Sources */,
 				B41FBE452A41D8AB00037A54 /* Ext.swift in Sources */,

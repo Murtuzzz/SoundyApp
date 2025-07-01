@@ -71,7 +71,7 @@ enum R {
         }
         
         enum Size {
-            case caption, body, subheadline, headline, title, largeTitle
+            case caption, body, subheadline, headline, title, title2, title3, largeTitle
             
             var value: CGFloat {
                 switch self {
@@ -79,6 +79,8 @@ enum R {
                 case .body: return 16
                 case .subheadline: return 15
                 case .headline: return 18
+                case .title3: return 20
+                case .title2: return 22
                 case .title: return 24
                 case .largeTitle: return 34
                 }

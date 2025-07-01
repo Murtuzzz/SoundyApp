@@ -87,6 +87,16 @@ class SoundsController: UIViewController {
         return label
     }()
     
+    private let activeSoundsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(systemName: "speaker.wave.2.fill"), for: .normal)
+        //button.backgroundColor = R.Colors.accent.withAlphaComponent(0.8)
+        button.tintColor = .white
+        button.layer.cornerRadius = 20
+        return button
+    }()
+    
     private let gradient: CAGradientLayer = {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [UIColor(hexString: "#ACAD9D").cgColor, UIColor(hexString: "#2D322B").cgColor]
@@ -173,6 +183,7 @@ class SoundsController: UIViewController {
         //setupRemoteTransportControls()
         
         timerButton.addTarget(self, action: #selector(timerScreen), for: .touchUpInside)
+        activeSoundsButton.addTarget(self, action: #selector(activeSoundsButtonTapped), for: .touchUpInside)
         // stopAllButton.addTarget(self, action: #selector(stopAllAudio), for: .touchUpInside)
         
         // Подписываемся на изменения аудио состояния
@@ -376,6 +387,7 @@ class SoundsController: UIViewController {
         view.addSubview(navController)
         view.addSubview(timerLabel)
         view.addSubview(timerButton)
+        view.addSubview(activeSoundsButton)
         //view.addSubview(stopAllButton)
         view.addSubview(activeTracksLabel)
         
@@ -480,7 +492,12 @@ class SoundsController: UIViewController {
             activeTracksLabel.centerYAnchor.constraint(equalTo: timerButton.centerYAnchor, constant: -30),
             activeTracksLabel.trailingAnchor.constraint(equalTo: timerLabel.leadingAnchor, constant: -8),
             activeTracksLabel.widthAnchor.constraint(lessThanOrEqualToConstant: 100),
-            activeTracksLabel.heightAnchor.constraint(equalToConstant: 16)
+            activeTracksLabel.heightAnchor.constraint(equalToConstant: 16),
+            
+            activeSoundsButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 130),
+            activeSoundsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            activeSoundsButton.widthAnchor.constraint(equalToConstant: 48),
+            activeSoundsButton.heightAnchor.constraint(equalToConstant: 48)
         ])
     }
     
@@ -495,6 +512,9 @@ class SoundsController: UIViewController {
         
         timerButton.alpha = 0
         timerButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        
+        activeSoundsButton.alpha = 0
+        activeSoundsButton.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
         
         timerLabel.alpha = 0
         activeTracksLabel.alpha = 0
@@ -552,8 +572,16 @@ class SoundsController: UIViewController {
             self.addPulseAnimation(to: self.timerButton)
         }
         
+        // Active Sounds Button
+        UIView.animate(withDuration: 0.4, delay: 0.2, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.8, options: [.curveEaseOut]) {
+            self.activeSoundsButton.alpha = 1
+            self.activeSoundsButton.transform = .identity
+        } completion: { _ in
+            self.addPulseAnimation(to: self.activeSoundsButton)
+        }
+        
         // Timer Label - уменьшаем задержку
-        UIView.animate(withDuration: 0.3, delay: 0.2) {
+        UIView.animate(withDuration: 0.3, delay: 0.3) {
             self.timerLabel.alpha = 1
             self.activeTracksLabel.alpha = 0 // Показываем только при необходимости
         }
@@ -690,9 +718,13 @@ class SoundsController: UIViewController {
         }
     }
     
-//    deinit {
-//        NotificationCenter.default.removeObserver(self)
-//    }
+    @objc
+    func activeSoundsButtonTapped() {
+        let activeSoundsController = ActiveSoundsController()
+        //activeSoundsController.modalPresentationStyle = .overFullScreen
+        //activeSoundsController.modalTransitionStyle = .crossDissolve
+        present(activeSoundsController, animated: true)
+    }
 }
 
 // MARK: - Audio Manager
@@ -812,6 +844,22 @@ class AudioManager {
             guard components.count == 2,
                   let index = Int(components[1]) else { return nil }
             return (category: String(components[0]), index: index)
+        }
+    }
+    
+    func getTrackName(for index: Int, category: String) -> String {
+        switch category {
+        case "nature":
+            let names = ["Rain".localized(), "Waves".localized(), "Forest".localized(), "Fire".localized(), "River".localized(), "Thunder".localized()]
+            return index < names.count ? names[index] : "Unknown".localized()
+        case "animals":
+            let names = ["Birds".localized(), "Cats".localized(), "Frogs".localized(), "Owl".localized()]
+            return index < names.count ? names[index] : "Unknown".localized()
+        case "other":
+            let names = ["Keyboard".localized(), "Train".localized(), "Bar".localized()]
+            return index < names.count ? names[index] : "Unknown".localized()
+        default:
+            return "Unknown".localized()
         }
     }
     

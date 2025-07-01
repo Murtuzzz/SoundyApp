@@ -10,3 +10,39 @@
 "Sleep Timer Completed" = "Sleep Timer Completed";
 "It's time to sleep! All sounds have been stopped." = "It's time to sleep! All sounds have been stopped.";
 
+// Active Sounds Controller
+"Active Sounds" = "Active Sounds";
+"Stop All" = "Stop All";
+"No active sounds" = "No active sounds";
+"Stop All Sounds" = "Stop All Sounds";
+"Are you sure you want to stop all active sounds?" = "Are you sure you want to stop all active sounds?";
+"Cancel" = "Cancel";
+"Unknown" = "Unknown";
+
+// Track Menu
+"Track List" = "Track List";
+
+// Sound Categories
+"Nature" = "Nature";
+"Animals" = "Animals";
+"Other" = "Other";
+
+// Nature Sounds
+"Rain" = "Rain";
+"Waves" = "Waves";
+"Forest" = "Forest";
+"Fire" = "Fire";
+"River" = "River";
+"Thunder" = "Thunder";
+
+// Animal Sounds
+"Birds" = "Birds";
+"Cats" = "Cats";
+"Frogs" = "Frogs";
+"Owl" = "Owl";
+
+// Other Sounds
+"Keyboard" = "Keyboard";
+"Train" = "Train";
+"Bar" = "Bar";
+

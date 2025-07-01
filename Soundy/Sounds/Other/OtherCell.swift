@@ -166,6 +166,14 @@ class OtherCollectionCell: UICollectionViewCell {
             hint: "Double tap to play or pause",
             traits: .button
         )
+        
+        // Подписываемся на уведомления AudioManager
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(audioStateChanged(_:)),
+            name: .audioStateChanged,
+            object: nil
+        )
     }
     
     @objc private func cellTapped() {
@@ -179,6 +187,28 @@ class OtherCollectionCell: UICollectionViewCell {
         }
     }
     
+    @objc private func audioStateChanged(_ notification: Notification) {
+        guard let userInfo = notification.userInfo,
+              let isPlaying = userInfo["isPlaying"] as? Bool,
+              let trackIndex = userInfo["trackIndex"] as? Int,
+              let category = userInfo["category"] as? String else { return }
+        
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            
+            // Проверяем только другие звуки и именно нашу ячейку
+            if category == "other" && trackIndex == self.cellIndex {
+                if isPlaying {
+                    self.animateToActiveState()
+                    self.condition = false // Следующий тап будет stop
+                } else {
+                    self.animateToInactiveState()
+                    self.condition = true // Следующий тап будет play
+                }
+            }
+        }
+    }
+    
     // MARK: - Layout
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -187,6 +217,7 @@ class OtherCollectionCell: UICollectionViewCell {
     
     // MARK: - Memory Management
     deinit {
+        NotificationCenter.default.removeObserver(self)
         cleanupResources()
         print("OtherCollectionCell deinit")
     }
@@ -260,13 +291,14 @@ class OtherCollectionCell: UICollectionViewCell {
         myImageView.image = image.withRenderingMode(.alwaysTemplate)
         cellIndex = index
         
-        // Проверяем, играет ли сейчас этот трек
-        let shouldBeActive = isPlaying && player.isPlaying
-        if shouldBeActive {
-            condition = false // Означает что следующий тап будет stop
+        // Check current state from AudioManager
+        let isCurrentlyPlaying = AudioManager.shared.isPlaying(trackIndex: index, category: "other")
+        condition = !isCurrentlyPlaying
+        
+        // Update UI to match current state
+        if isCurrentlyPlaying {
             animateToActiveState()
         } else {
-            condition = true // Означает что следующий тап будет play
             animateToInactiveState()
         }
         
@@ -279,37 +311,8 @@ class OtherCollectionCell: UICollectionViewCell {
     }
     
     public func changeCondition(_ num: Int) {
-        if condition {
-            // Start playing
-            startPlaying(num)
-        } else {
-            // Stop playing
-            stopPlaying()
-        }
-        condition.toggle()
-    }
-    
-    private func startPlaying(_ num: Int) {
-        isPlaying = true
-        createPlayer(num)
-        player.play()
-        
-        // Update UI
-        animateToActiveState()
-        
-        // Update accessibility
-        container.setupPlaybackAccessibility(isPlaying: true, trackName: mainLabel.text ?? "")
-    }
-    
-    private func stopPlaying() {
-        isPlaying = false
-            player.stop()
-        
-        // Update UI
-        animateToInactiveState()
-        
-        // Update accessibility
-        container.setupPlaybackAccessibility(isPlaying: false, trackName: mainLabel.text ?? "")
+        // Используем AudioManager для управления воспроизведением
+        AudioManager.shared.toggleTrack(num, trackName: mainLabel.text ?? "", musicList: musicList, category: "other")
     }
     
     // MARK: - Animations

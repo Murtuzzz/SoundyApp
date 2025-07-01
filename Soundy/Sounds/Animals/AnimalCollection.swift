@@ -83,19 +83,13 @@ extension AnimalCollection {
         let cell = collectionView.cellForItem(at: indexPath) as! AnimalCollectionCell
         
         cell.changeCondition(indexPath.row)
-        cell.startPlayer()
         hapticFeedback.impactOccurred()
     }
     
     // MARK: - Audio Control
     func stopAllPlayers() {
-        guard let collectionView = collectionView else { return }
-        
-        for cell in collectionView.visibleCells {
-            if let animalCell = cell as? AnimalCollectionCell {
-                animalCell.stopPlayer()
-            }
-        }
+        // Используем централизованный AudioManager для остановки
+        AudioManager.shared.stopAllTracks()
     }
     
     // MARK: - Cell Animation

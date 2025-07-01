@@ -28,4 +28,20 @@
 "Owl" = "Búho";
 "Thunder" = "Trueno";
 
+// Timer completion
+"Sleep Timer Completed" = "Timer de sueño completado";
+"It's time to sleep! All sounds have been stopped." = "¡Es hora de dormir! Todos los sonidos han sido detenidos.";
+
+// Active Sounds Controller
+"Active Sounds" = "Sonidos activos";
+"Stop All" = "Detener todo";
+"No active sounds" = "No hay sonidos activos";
+"Stop All Sounds" = "Detener todos los sonidos";
+"Are you sure you want to stop all active sounds?" = "¿Estás seguro de que quieres detener todos los sonidos activos?";
+"Cancel" = "Cancelar";
+"Unknown" = "Desconocido";
+
+// Track Menu
+"Track List" = "Lista de pistas";
+
 
